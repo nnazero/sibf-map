@@ -1,0 +1,1427 @@
+[
+    {
+        "id": "b_001",
+        "booth_number": "B_001",
+        "gate": "B1 출입구",
+        "location": {
+            "x": 1658,
+            "y": 168
+        },
+        "size": {
+            "w": 61,
+            "h": 52
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_002",
+        "booth_number": "B_002",
+        "gate": "B1 출입구",
+        "location": {
+            "x": 1820,
+            "y": 158
+        },
+        "size": {
+            "w": 32,
+            "h": 32
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_003",
+        "booth_number": "B_003",
+        "gate": "B1 출입구",
+        "location": {
+            "x": 930,
+            "y": 223
+        },
+        "size": {
+            "w": 227,
+            "h": 163
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_004",
+        "booth_number": "B_004",
+        "gate": "B1 출입구",
+        "location": {
+            "x": 1131,
+            "y": 223
+        },
+        "size": {
+            "w": 89,
+            "h": 163
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_005",
+        "booth_number": "B_005",
+        "gate": "B1 출입구",
+        "location": {
+            "x": 1263,
+            "y": 223
+        },
+        "size": {
+            "w": 89,
+            "h": 163
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_006",
+        "booth_number": "B_006",
+        "gate": "B1 출입구",
+        "location": {
+            "x": 1467,
+            "y": 223
+        },
+        "size": {
+            "w": 233,
+            "h": 163
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_007",
+        "booth_number": "B_007",
+        "gate": "B1 출입구",
+        "location": {
+            "x": 1658,
+            "y": 224
+        },
+        "size": {
+            "w": 61,
+            "h": 52
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_008",
+        "booth_number": "B_008",
+        "gate": "B1 출입구",
+        "location": {
+            "x": 1658,
+            "y": 279
+        },
+        "size": {
+            "w": 61,
+            "h": 52
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_009",
+        "booth_number": "B_009",
+        "gate": "B1 출입구",
+        "location": {
+            "x": 1157,
+            "y": 395
+        },
+        "size": {
+            "w": 67,
+            "h": 67
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_010",
+        "booth_number": "B_010",
+        "gate": "B1 출입구",
+        "location": {
+            "x": 1269,
+            "y": 395
+        },
+        "size": {
+            "w": 67,
+            "h": 67
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_011",
+        "booth_number": "B_011",
+        "gate": "B1 출입구",
+        "location": {
+            "x": 1427,
+            "y": 412
+        },
+        "size": {
+            "w": 146,
+            "h": 101
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_012",
+        "booth_number": "B_012",
+        "gate": "B1 출입구",
+        "location": {
+            "x": 1577,
+            "y": 412
+        },
+        "size": {
+            "w": 68,
+            "h": 101
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_013",
+        "booth_number": "B_013",
+        "gate": "B1 출입구",
+        "location": {
+            "x": 1673,
+            "y": 412
+        },
+        "size": {
+            "w": 31,
+            "h": 101
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_014",
+        "booth_number": "B_014",
+        "gate": "B1 출입구",
+        "location": {
+            "x": 1836,
+            "y": 422
+        },
+        "size": {
+            "w": 159,
+            "h": 71
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_015",
+        "booth_number": "B_015",
+        "gate": "B1 출입구",
+        "location": {
+            "x": 944,
+            "y": 485
+        },
+        "size": {
+            "w": 255,
+            "h": 249
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_016",
+        "booth_number": "B_016",
+        "gate": "B1 출입구",
+        "location": {
+            "x": 1157,
+            "y": 541
+        },
+        "size": {
+            "w": 67,
+            "h": 138
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_017",
+        "booth_number": "B_017",
+        "gate": "B1 출입구",
+        "location": {
+            "x": 1269,
+            "y": 541
+        },
+        "size": {
+            "w": 67,
+            "h": 138
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_018",
+        "booth_number": "B_018",
+        "gate": "B1 출입구",
+        "location": {
+            "x": 1427,
+            "y": 559
+        },
+        "size": {
+            "w": 146,
+            "h": 101
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_019",
+        "booth_number": "B_019",
+        "gate": "B1 출입구",
+        "location": {
+            "x": 1616,
+            "y": 559
+        },
+        "size": {
+            "w": 146,
+            "h": 101
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_020",
+        "booth_number": "B_020",
+        "gate": "B1 출입구",
+        "location": {
+            "x": 1821,
+            "y": 594
+        },
+        "size": {
+            "w": 32,
+            "h": 32
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_021",
+        "booth_number": "B_021",
+        "gate": "B1 출입구",
+        "location": {
+            "x": 1897,
+            "y": 584
+        },
+        "size": {
+            "w": 68,
+            "h": 163
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_022",
+        "booth_number": "B_022",
+        "gate": "B1 출입구",
+        "location": {
+            "x": 1062,
+            "y": 754
+        },
+        "size": {
+            "w": 34,
+            "h": 174
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_023",
+        "booth_number": "B_023",
+        "gate": "B1 출입구",
+        "location": {
+            "x": 1157,
+            "y": 754
+        },
+        "size": {
+            "w": 67,
+            "h": 174
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_024",
+        "booth_number": "B_024",
+        "gate": "B1 출입구",
+        "location": {
+            "x": 1269,
+            "y": 754
+        },
+        "size": {
+            "w": 67,
+            "h": 174
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_025",
+        "booth_number": "B_025",
+        "gate": "B1 출입구",
+        "location": {
+            "x": 1380,
+            "y": 754
+        },
+        "size": {
+            "w": 67,
+            "h": 174
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_026",
+        "booth_number": "B_026",
+        "gate": "B1 출입구",
+        "location": {
+            "x": 1476,
+            "y": 754
+        },
+        "size": {
+            "w": 34,
+            "h": 174
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_027",
+        "booth_number": "A_001",
+        "gate": "A 출입구",
+        "location": {
+            "x": 1251,
+            "y": 941
+        },
+        "size": {
+            "w": 161,
+            "h": 64
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_028",
+        "booth_number": "A_002",
+        "gate": "A 출입구",
+        "location": {
+            "x": 335,
+            "y": 958
+        },
+        "size": {
+            "w": 32,
+            "h": 32
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_029",
+        "booth_number": "A_003",
+        "gate": "A 출입구",
+        "location": {
+            "x": 1345,
+            "y": 961
+        },
+        "size": {
+            "w": 25,
+            "h": 163
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_030",
+        "booth_number": "A_004",
+        "gate": "A 출입구",
+        "location": {
+            "x": 1345,
+            "y": 961
+        },
+        "size": {
+            "w": 25,
+            "h": 163
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_031",
+        "booth_number": "A_005",
+        "gate": "A 출입구",
+        "location": {
+            "x": 1612,
+            "y": 958
+        },
+        "size": {
+            "w": 32,
+            "h": 32
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_032",
+        "booth_number": "A_006",
+        "gate": "A 출입구",
+        "location": {
+            "x": 267,
+            "y": 1035
+        },
+        "size": {
+            "w": 33,
+            "h": 34
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_033",
+        "booth_number": "A_007",
+        "gate": "A 출입구",
+        "location": {
+            "x": 171,
+            "y": 1088
+        },
+        "size": {
+            "w": 74,
+            "h": 140
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_034",
+        "booth_number": "A_008",
+        "gate": "A 출입구",
+        "location": {
+            "x": 303,
+            "y": 1088
+        },
+        "size": {
+            "w": 34,
+            "h": 140
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_035",
+        "booth_number": "A_009",
+        "gate": "A 출입구",
+        "location": {
+            "x": 402,
+            "y": 1088
+        },
+        "size": {
+            "w": 67,
+            "h": 140
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_036",
+        "booth_number": "A_010",
+        "gate": "A 출입구",
+        "location": {
+            "x": 515,
+            "y": 1088
+        },
+        "size": {
+            "w": 65,
+            "h": 140
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_037",
+        "booth_number": "A_011",
+        "gate": "A 출입구",
+        "location": {
+            "x": 633,
+            "y": 1088
+        },
+        "size": {
+            "w": 67,
+            "h": 140
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_038",
+        "booth_number": "A_012",
+        "gate": "A 출입구",
+        "location": {
+            "x": 746,
+            "y": 1088
+        },
+        "size": {
+            "w": 64,
+            "h": 140
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_039",
+        "booth_number": "A_013",
+        "gate": "A 출입구",
+        "location": {
+            "x": 863,
+            "y": 1088
+        },
+        "size": {
+            "w": 67,
+            "h": 140
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_040",
+        "booth_number": "A_014",
+        "gate": "A 출입구",
+        "location": {
+            "x": 976,
+            "y": 1088
+        },
+        "size": {
+            "w": 64,
+            "h": 140
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_041",
+        "booth_number": "A_015",
+        "gate": "A 출입구",
+        "location": {
+            "x": 1088,
+            "y": 1088
+        },
+        "size": {
+            "w": 67,
+            "h": 140
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_042",
+        "booth_number": "A_016",
+        "gate": "A 출입구",
+        "location": {
+            "x": 1207,
+            "y": 1088
+        },
+        "size": {
+            "w": 67,
+            "h": 140
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_043",
+        "booth_number": "A_017",
+        "gate": "A 출입구",
+        "location": {
+            "x": 1320,
+            "y": 1088
+        },
+        "size": {
+            "w": 64,
+            "h": 140
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_044",
+        "booth_number": "A_018",
+        "gate": "A 출입구",
+        "location": {
+            "x": 1432,
+            "y": 1088
+        },
+        "size": {
+            "w": 67,
+            "h": 140
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_045",
+        "booth_number": "A_019",
+        "gate": "A 출입구",
+        "location": {
+            "x": 1551,
+            "y": 1088
+        },
+        "size": {
+            "w": 67,
+            "h": 140
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_046",
+        "booth_number": "A_020",
+        "gate": "A 출입구",
+        "location": {
+            "x": 1694,
+            "y": 1088
+        },
+        "size": {
+            "w": 125,
+            "h": 140
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_047",
+        "booth_number": "A_021",
+        "gate": "A 출입구",
+        "location": {
+            "x": 264,
+            "y": 1110
+        },
+        "size": {
+            "w": 34,
+            "h": 102
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_048",
+        "booth_number": "A_022",
+        "gate": "A 출입구",
+        "location": {
+            "x": 1737,
+            "y": 1212
+        },
+        "size": {
+            "w": 33,
+            "h": 65
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_049",
+        "booth_number": "A_023",
+        "gate": "A 출입구",
+        "location": {
+            "x": 150,
+            "y": 1282
+        },
+        "size": {
+            "w": 34,
+            "h": 140
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_050",
+        "booth_number": "A_024",
+        "gate": "A 출입구",
+        "location": {
+            "x": 245,
+            "y": 1282
+        },
+        "size": {
+            "w": 67,
+            "h": 140
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_051",
+        "booth_number": "A_025",
+        "gate": "A 출입구",
+        "location": {
+            "x": 362,
+            "y": 1282
+        },
+        "size": {
+            "w": 67,
+            "h": 140
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_052",
+        "booth_number": "A_026",
+        "gate": "A 출입구",
+        "location": {
+            "x": 475,
+            "y": 1282
+        },
+        "size": {
+            "w": 65,
+            "h": 140
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_053",
+        "booth_number": "A_027",
+        "gate": "A 출입구",
+        "location": {
+            "x": 594,
+            "y": 1282
+        },
+        "size": {
+            "w": 67,
+            "h": 140
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_054",
+        "booth_number": "A_028",
+        "gate": "A 출입구",
+        "location": {
+            "x": 707,
+            "y": 1282
+        },
+        "size": {
+            "w": 65,
+            "h": 140
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_055",
+        "booth_number": "A_029",
+        "gate": "A 출입구",
+        "location": {
+            "x": 826,
+            "y": 1282
+        },
+        "size": {
+            "w": 67,
+            "h": 140
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_056",
+        "booth_number": "A_030",
+        "gate": "A 출입구",
+        "location": {
+            "x": 939,
+            "y": 1282
+        },
+        "size": {
+            "w": 65,
+            "h": 140
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_057",
+        "booth_number": "A_031",
+        "gate": "A 출입구",
+        "location": {
+            "x": 1074,
+            "y": 1282
+        },
+        "size": {
+            "w": 98,
+            "h": 140
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_058",
+        "booth_number": "A_032",
+        "gate": "A 출입구",
+        "location": {
+            "x": 1219,
+            "y": 1282
+        },
+        "size": {
+            "w": 98,
+            "h": 140
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_059",
+        "booth_number": "A_033",
+        "gate": "A 출입구",
+        "location": {
+            "x": 1364,
+            "y": 1282
+        },
+        "size": {
+            "w": 98,
+            "h": 140
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_060",
+        "booth_number": "A_034",
+        "gate": "A 출입구",
+        "location": {
+            "x": 1529,
+            "y": 1282
+        },
+        "size": {
+            "w": 67,
+            "h": 140
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_061",
+        "booth_number": "A_035",
+        "gate": "A 출입구",
+        "location": {
+            "x": 1641,
+            "y": 1282
+        },
+        "size": {
+            "w": 65,
+            "h": 140
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_062",
+        "booth_number": "A_036",
+        "gate": "A 출입구",
+        "location": {
+            "x": 1737,
+            "y": 1301
+        },
+        "size": {
+            "w": 33,
+            "h": 102
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_063",
+        "booth_number": "A_037",
+        "gate": "A 출입구",
+        "location": {
+            "x": 150,
+            "y": 1476
+        },
+        "size": {
+            "w": 34,
+            "h": 140
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_064",
+        "booth_number": "A_038",
+        "gate": "A 출입구",
+        "location": {
+            "x": 245,
+            "y": 1475
+        },
+        "size": {
+            "w": 67,
+            "h": 140
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_065",
+        "booth_number": "A_039",
+        "gate": "A 출입구",
+        "location": {
+            "x": 362,
+            "y": 1476
+        },
+        "size": {
+            "w": 67,
+            "h": 140
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_066",
+        "booth_number": "A_040",
+        "gate": "A 출입구",
+        "location": {
+            "x": 475,
+            "y": 1476
+        },
+        "size": {
+            "w": 65,
+            "h": 140
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_067",
+        "booth_number": "A_041",
+        "gate": "A 출입구",
+        "location": {
+            "x": 594,
+            "y": 1476
+        },
+        "size": {
+            "w": 67,
+            "h": 140
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_068",
+        "booth_number": "A_042",
+        "gate": "A 출입구",
+        "location": {
+            "x": 707,
+            "y": 1476
+        },
+        "size": {
+            "w": 65,
+            "h": 140
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_069",
+        "booth_number": "A_043",
+        "gate": "A 출입구",
+        "location": {
+            "x": 826,
+            "y": 1476
+        },
+        "size": {
+            "w": 67,
+            "h": 140
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_070",
+        "booth_number": "A_044",
+        "gate": "A 출입구",
+        "location": {
+            "x": 939,
+            "y": 1476
+        },
+        "size": {
+            "w": 65,
+            "h": 140
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_071",
+        "booth_number": "A_045",
+        "gate": "A 출입구",
+        "location": {
+            "x": 1074,
+            "y": 1476
+        },
+        "size": {
+            "w": 98,
+            "h": 140
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_072",
+        "booth_number": "A_046",
+        "gate": "A 출입구",
+        "location": {
+            "x": 1219,
+            "y": 1476
+        },
+        "size": {
+            "w": 98,
+            "h": 140
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_073",
+        "booth_number": "A_047",
+        "gate": "A 출입구",
+        "location": {
+            "x": 1364,
+            "y": 1476
+        },
+        "size": {
+            "w": 98,
+            "h": 140
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_074",
+        "booth_number": "A_048",
+        "gate": "A 출입구",
+        "location": {
+            "x": 1514,
+            "y": 1476
+        },
+        "size": {
+            "w": 96,
+            "h": 140
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_075",
+        "booth_number": "A_049",
+        "gate": "A 출입구",
+        "location": {
+            "x": 1641,
+            "y": 1476
+        },
+        "size": {
+            "w": 65,
+            "h": 140
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_076",
+        "booth_number": "A_050",
+        "gate": "A 출입구",
+        "location": {
+            "x": 1737,
+            "y": 1460
+        },
+        "size": {
+            "w": 33,
+            "h": 172
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_077",
+        "booth_number": "A_051",
+        "gate": "A 출입구",
+        "location": {
+            "x": 150,
+            "y": 1670
+        },
+        "size": {
+            "w": 34,
+            "h": 140
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_078",
+        "booth_number": "A_052",
+        "gate": "A 출입구",
+        "location": {
+            "x": 245,
+            "y": 1670
+        },
+        "size": {
+            "w": 67,
+            "h": 140
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_079",
+        "booth_number": "A_053",
+        "gate": "A 출입구",
+        "location": {
+            "x": 362,
+            "y": 1670
+        },
+        "size": {
+            "w": 67,
+            "h": 140
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_080",
+        "booth_number": "A_054",
+        "gate": "A 출입구",
+        "location": {
+            "x": 476,
+            "y": 1670
+        },
+        "size": {
+            "w": 65,
+            "h": 140
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_081",
+        "booth_number": "A_055",
+        "gate": "A 출입구",
+        "location": {
+            "x": 594,
+            "y": 1670
+        },
+        "size": {
+            "w": 67,
+            "h": 140
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_082",
+        "booth_number": "A_056",
+        "gate": "A 출입구",
+        "location": {
+            "x": 707,
+            "y": 1670
+        },
+        "size": {
+            "w": 65,
+            "h": 140
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_083",
+        "booth_number": "A_057",
+        "gate": "A 출입구",
+        "location": {
+            "x": 826,
+            "y": 1670
+        },
+        "size": {
+            "w": 67,
+            "h": 140
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_084",
+        "booth_number": "A_058",
+        "gate": "A 출입구",
+        "location": {
+            "x": 939,
+            "y": 1670
+        },
+        "size": {
+            "w": 65,
+            "h": 140
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_085",
+        "booth_number": "A_059",
+        "gate": "A 출입구",
+        "location": {
+            "x": 1074,
+            "y": 1670
+        },
+        "size": {
+            "w": 98,
+            "h": 140
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_086",
+        "booth_number": "A_060",
+        "gate": "A 출입구",
+        "location": {
+            "x": 1219,
+            "y": 1670
+        },
+        "size": {
+            "w": 98,
+            "h": 140
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_087",
+        "booth_number": "A_061",
+        "gate": "A 출입구",
+        "location": {
+            "x": 1364,
+            "y": 1670
+        },
+        "size": {
+            "w": 98,
+            "h": 140
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_088",
+        "booth_number": "A_062",
+        "gate": "A 출입구",
+        "location": {
+            "x": 1553,
+            "y": 1670
+        },
+        "size": {
+            "w": 174,
+            "h": 140
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_089",
+        "booth_number": "A_063",
+        "gate": "A 출입구",
+        "location": {
+            "x": 1720,
+            "y": 1670
+        },
+        "size": {
+            "w": 68,
+            "h": 140
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_090",
+        "booth_number": "A_064",
+        "gate": "A 출입구",
+        "location": {
+            "x": 206,
+            "y": 1774
+        },
+        "size": {
+            "w": 145,
+            "h": 18
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_091",
+        "booth_number": "A_065",
+        "gate": "A 출입구",
+        "location": {
+            "x": 809,
+            "y": 1811
+        },
+        "size": {
+            "w": 32,
+            "h": 32
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_092",
+        "booth_number": "A_066",
+        "gate": "A 출입구",
+        "location": {
+            "x": 1126,
+            "y": 1811
+        },
+        "size": {
+            "w": 32,
+            "h": 32
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_093",
+        "booth_number": "A_067",
+        "gate": "A 출입구",
+        "location": {
+            "x": 1723,
+            "y": 1887
+        },
+        "size": {
+            "w": 164,
+            "h": 68
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_094",
+        "booth_number": "A_068",
+        "gate": "A 출입구",
+        "location": {
+            "x": 492,
+            "y": 1911
+        },
+        "size": {
+            "w": 109,
+            "h": 45
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    },
+    {
+        "id": "b_095",
+        "booth_number": "A_069",
+        "gate": "A 출입구",
+        "location": {
+            "x": 1404,
+            "y": 1911
+        },
+        "size": {
+            "w": 160,
+            "h": 45
+        },
+        "publisher_name": "엑셀 매칭 대기 중",
+        "category": "일반 부스"
+    }
+]
