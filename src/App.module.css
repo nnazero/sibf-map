@@ -1,55 +1,65 @@
+/* PC에서는 가운데 정렬된 모바일 프레임으로, 실제 폰에서는 100% 꽉 차게 작동 */
 .appContainer {
-  font-family: sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  max-width: 420px; /* 아이폰 14/16 프로 가로 폭 감안 */
   height: 100vh;
+  margin: 0 auto;
+  background-color: #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-}
-
-.header {
-  padding: 10px 20px;
-  background-color: #333;
-  color: #fff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.nickname {
-  font-size: 15px;
-}
-
-.resetButton {
-  padding: 5px 10px;
-  background-color: #ff4d4d;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.mainLayout {
-  flex: 1;
-  display: flex;
+  position: relative;
   overflow: hidden;
 }
 
-.sidebar {
-  width: 250px;
-  background-color: #f4f4f4;
-  padding: 15px;
-  border-right: 1px solid #ddd;
-}
-
-.mapArea {
-  flex: 1;
-  padding: 20px;
+.header {
+  padding: 12px 16px;
+  background-color: #ffffff;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  background-color: #e9e9e9;
+  border-bottom: 1px solid #f0f0f0;
+  z-index: 100;
 }
 
-.placeholderText {
-  text-align: center;
-  color: #555;
+.nickname {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+.resetButton {
+  padding: 4px 8px;
+  font-size: 12px;
+  background-color: #ffe5e5;
+  color: #ff4d4d;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* 지도가 전체 화면을 쓰고 리스트가 아래에 얹어지도록 세로 배치(column)로 변경 */
+.mainLayout {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 하단 부스 시트 컨테이너 (모바일 바텀 시트 스타일) */
+.sheetContainer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 280px; /* 지도를 넓게 확보하기 위해 콤팩트하게 조절 */
+  background-color: #ffffff;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  z-index: 50;
 }
