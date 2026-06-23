@@ -1,3 +1,4 @@
+//App.tsx
 import { useState, useEffect } from 'react';
 import Login from './components/Login';
 import MapArea from './components/MapArea';
@@ -37,9 +38,13 @@ export default function App() {
     setSelectedBooth(booth);
   };
 
-  if (!nickname) {
-    return <Login onLoginSuccess={handleLoginSuccess} />;
-  }
+ if (!nickname) {
+  return (
+    <div className={styles.appContainer}>
+      <Login onLoginSuccess={handleLoginSuccess} />
+    </div>
+  );
+}
 
   return (
     <div className={styles.appContainer}>

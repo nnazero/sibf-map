@@ -1,11 +1,14 @@
 /* PC에서는 가운데 정렬된 모바일 프레임으로, 실제 폰에서는 100% 꽉 차게 작동 */
 .appContainer {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  max-width: 420px; /* 아이폰 14/16 프로 가로 폭 감안 */
+  min-width: 300px; /* 아이폰 14/16 프로 가로 폭 감안 */
+  min-height: 100%;
+  width: 100%;
   height: 100vh;
-  margin: 0 auto;
+  margin: 0 0;
+  padding: 0;
   background-color: #fff;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  /*box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);*/
   display: flex;
   flex-direction: column;
   position: relative;
@@ -29,12 +32,18 @@
 }
 
 .resetButton {
-  padding: 4px 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 28px;
+  margin: 0;
+  padding: 0;
   font-size: 12px;
   background-color: #ffe5e5;
   color: #ff4d4d;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
   font-weight: bold;
 }
