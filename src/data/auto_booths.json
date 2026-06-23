@@ -1,112 +1,3060 @@
 [
     {
-        "id": "b_001",
-        "booth_number": "B_001",
-        "gate": "B1 출입구",
+        "id": "booth_A1001",
+        "booth_number": "A1001",
+        "gate": "A 출입구",
         "location": {
-            "x": 1658,
-            "y": 168
+            "x": 828,
+            "y": 1474
         },
         "size": {
-            "w": 61,
-            "h": 52
+            "w": 67,
+            "h": 140
         },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
+        "publisher_name": "평산책방, 주식회사 돌베개",
+        "category": "사회과학, 문학, 역사, 청소년"
     },
     {
-        "id": "b_002",
-        "booth_number": "B_002",
-        "gate": "B1 출입구",
+        "id": "booth_A1002",
+        "booth_number": "A1002",
+        "gate": "A 출입구",
         "location": {
-            "x": 1820,
-            "y": 158
+            "x": 940,
+            "y": 1474
+        },
+        "size": {
+            "w": 65,
+            "h": 140
+        },
+        "publisher_name": "재단법인 아모레퍼시픽재단",
+        "category": "인문, 자연, 과학, 예술 출판지원"
+    },
+    {
+        "id": "booth_A101",
+        "booth_number": "A101",
+        "gate": "A 출입구",
+        "location": {
+            "x": 151,
+            "y": 1720
+        },
+        "size": {
+            "w": 34,
+            "h": 35
+        },
+        "publisher_name": "고스트북스",
+        "category": "예술, 문학"
+    },
+    {
+        "id": "booth_A102",
+        "booth_number": "A102",
+        "gate": "A 출입구",
+        "location": {
+            "x": 151,
+            "y": 1685
+        },
+        "size": {
+            "w": 34,
+            "h": 34
+        },
+        "publisher_name": "별빛들",
+        "category": "문학"
+    },
+    {
+        "id": "booth_A103",
+        "booth_number": "A103",
+        "gate": "A 출입구",
+        "location": {
+            "x": 151,
+            "y": 1650
+        },
+        "size": {
+            "w": 34,
+            "h": 34
+        },
+        "publisher_name": "도서출판부카",
+        "category": "종합출판"
+    },
+    {
+        "id": "booth_A104",
+        "booth_number": "A104",
+        "gate": "A 출입구",
+        "location": {
+            "x": 151,
+            "y": 1615
+        },
+        "size": {
+            "w": 34,
+            "h": 34
+        },
+        "publisher_name": "봄봄출판사",
+        "category": "아동"
+    },
+    {
+        "id": "booth_A105",
+        "booth_number": "A105",
+        "gate": "A 출입구",
+        "location": {
+            "x": 230,
+            "y": 1720
+        },
+        "size": {
+            "w": 33,
+            "h": 35
+        },
+        "publisher_name": "단추 출판사",
+        "category": "사회과학, 예술, 아동"
+    },
+    {
+        "id": "booth_A106",
+        "booth_number": "A106",
+        "gate": "A 출입구",
+        "location": {
+            "x": 230,
+            "y": 1685
+        },
+        "size": {
+            "w": 33,
+            "h": 34
+        },
+        "publisher_name": "밝은세상",
+        "category": "문학, 전자출판"
+    },
+    {
+        "id": "booth_A107",
+        "booth_number": "A107",
+        "gate": "A 출입구",
+        "location": {
+            "x": 230,
+            "y": 1650
+        },
+        "size": {
+            "w": 33,
+            "h": 34
+        },
+        "publisher_name": "애플트리태일즈",
+        "category": "예술, 아동"
+    },
+    {
+        "id": "booth_A108",
+        "booth_number": "A108",
+        "gate": "A 출입구",
+        "location": {
+            "x": 230,
+            "y": 1615
+        },
+        "size": {
+            "w": 33,
+            "h": 34
+        },
+        "publisher_name": "도서출판 달리, 곰세마리",
+        "category": "아동, 유아, 그림책, 문학"
+    },
+    {
+        "id": "booth_A109",
+        "booth_number": "A109",
+        "gate": "A 출입구",
+        "location": {
+            "x": 264,
+            "y": 1720
+        },
+        "size": {
+            "w": 33,
+            "h": 35
+        },
+        "publisher_name": "핀드",
+        "category": "예술, 문학, 전자출판"
+    },
+    {
+        "id": "booth_A110",
+        "booth_number": "A110",
+        "gate": "A 출입구",
+        "location": {
+            "x": 264,
+            "y": 1685
+        },
+        "size": {
+            "w": 33,
+            "h": 34
+        },
+        "publisher_name": "소동출판사",
+        "category": "총류, 예술, 아동"
+    },
+    {
+        "id": "booth_A1101",
+        "booth_number": "A1101",
+        "gate": "A 출입구",
+        "location": {
+            "x": 1075,
+            "y": 1474
+        },
+        "size": {
+            "w": 98,
+            "h": 140
+        },
+        "publisher_name": "황금가지, 민음사 출판그룹",
+        "category": "문학, 종합출판"
+    },
+    {
+        "id": "booth_A1102",
+        "booth_number": "A1102",
+        "gate": "A 출입구",
+        "location": {
+            "x": 1220,
+            "y": 1474
+        },
+        "size": {
+            "w": 98,
+            "h": 140
+        },
+        "publisher_name": "윌라스토리, 윌라, 인플루엔셜",
+        "category": "오디오북, 웹소설, 종합출판"
+    },
+    {
+        "id": "booth_A1103",
+        "booth_number": "A1103",
+        "gate": "A 출입구",
+        "location": {
+            "x": 1365,
+            "y": 1474
+        },
+        "size": {
+            "w": 98,
+            "h": 140
+        },
+        "publisher_name": "신한은행, 서울특별시 서울도서관",
+        "category": "공공기관, 도서관, 금융총류"
+    },
+    {
+        "id": "booth_A111",
+        "booth_number": "A111",
+        "gate": "A 출입구",
+        "location": {
+            "x": 264,
+            "y": 1650
+        },
+        "size": {
+            "w": 33,
+            "h": 34
+        },
+        "publisher_name": "시사북스",
+        "category": "문학, 자기계발, 청소년"
+    },
+    {
+        "id": "booth_A112",
+        "booth_number": "A112",
+        "gate": "A 출입구",
+        "location": {
+            "x": 264,
+            "y": 1615
+        },
+        "size": {
+            "w": 33,
+            "h": 34
+        },
+        "publisher_name": "한국출판마케팅연구소",
+        "category": "종합출판"
+    },
+    {
+        "id": "booth_A113",
+        "booth_number": "A113",
+        "gate": "A 출입구",
+        "location": {
+            "x": 208,
+            "y": 1772
+        },
+        "size": {
+            "w": 145,
+            "h": 18
+        },
+        "publisher_name": "미등록 부스",
+        "category": "일반"
+    },
+    {
+        "id": "booth_A1201",
+        "booth_number": "A1201",
+        "gate": "A 출입구",
+        "location": {
+            "x": 1515,
+            "y": 1474
+        },
+        "size": {
+            "w": 96,
+            "h": 140
+        },
+        "publisher_name": "타이완콘텐츠진흥원, Grayhawk Agency, 타코쿠마, SpringHill, Rye Field, REVE BOOKS, Kuroro space, Caiji Art, JS Agency, Hakka Affairs, Dumpling Cat, CommonWealth",
+        "category": "대만 공동 기획관, 종합, 아동, 예술"
+    },
+    {
+        "id": "booth_A1202",
+        "booth_number": "A1202",
+        "gate": "A 출입구",
+        "location": {
+            "x": 1642,
+            "y": 1474
+        },
+        "size": {
+            "w": 65,
+            "h": 140
+        },
+        "publisher_name": "라이터 소울 태국, Silkwormbooks, 유기적 링크, 모카그룹, MITMAKME, Liatris, HAPPYME-D, Golden C, Glory Forever, Avocado Books, DEXPRESS, Combang, Channasoot, BANLUE, Amarin, 주한태국대사관 상무공사관실",
+        "category": "태국 기획관, 종합, 문학, 아동, 전자출판"
+    },
+    {
+        "id": "booth_A1203",
+        "booth_number": "A1203",
+        "gate": "A 출입구",
+        "location": {
+            "x": 1738,
+            "y": 1528
+        },
+        "size": {
+            "w": 33,
+            "h": 33
+        },
+        "publisher_name": "EC Publishing LLC",
+        "category": "총류, 종교, 문학, 아동"
+    },
+    {
+        "id": "booth_A1204",
+        "booth_number": "A1204",
+        "gate": "A 출입구",
+        "location": {
+            "x": 1738,
+            "y": 1494
+        },
+        "size": {
+            "w": 33,
+            "h": 33
+        },
+        "publisher_name": "Studio of Books LLC",
+        "category": "종합, 종교, 문학, 역사"
+    },
+    {
+        "id": "booth_A1205",
+        "booth_number": "A1205",
+        "gate": "A 출입구",
+        "location": {
+            "x": 1738,
+            "y": 1460
+        },
+        "size": {
+            "w": 33,
+            "h": 33
+        },
+        "publisher_name": "퀴퍼 프린츠",
+        "category": "종합출판"
+    },
+    {
+        "id": "booth_A1206",
+        "booth_number": "A1206",
+        "gate": "A 출입구",
+        "location": {
+            "x": 1738,
+            "y": 1426
+        },
+        "size": {
+            "w": 33,
+            "h": 35
+        },
+        "publisher_name": "Recrea Libros, VLP Agency, Calcetines Animados, 프로칠레",
+        "category": "칠레 기획관, 문학, 아동, 사회과학"
+    },
+    {
+        "id": "booth_A1207",
+        "booth_number": "A1207",
+        "gate": "A 출입구",
+        "location": {
+            "x": 1738,
+            "y": 1390
+        },
+        "size": {
+            "w": 33,
+            "h": 35
+        },
+        "publisher_name": "연변대학출판사, 연변인민출판사, 연변교육출판사",
+        "category": "중국 연변 연합관, 문학, 아동, 학습참고서"
+    },
+    {
+        "id": "booth_A1301",
+        "booth_number": "A1301",
+        "gate": "A 출입구",
+        "location": {
+            "x": 151,
+            "y": 1332
+        },
+        "size": {
+            "w": 34,
+            "h": 35
+        },
+        "publisher_name": "엣눈북스",
+        "category": "예술, 문학"
+    },
+    {
+        "id": "booth_A1302",
+        "booth_number": "A1302",
+        "gate": "A 출입구",
+        "location": {
+            "x": 151,
+            "y": 1297
+        },
+        "size": {
+            "w": 34,
+            "h": 34
+        },
+        "publisher_name": "서사원 주식회사",
+        "category": "사회과학, 기술과학, 문학"
+    },
+    {
+        "id": "booth_A1303",
+        "booth_number": "A1303",
+        "gate": "A 출입구",
+        "location": {
+            "x": 151,
+            "y": 1262
+        },
+        "size": {
+            "w": 34,
+            "h": 34
+        },
+        "publisher_name": "프란츠",
+        "category": "예술, 문학"
+    },
+    {
+        "id": "booth_A1304",
+        "booth_number": "A1304",
+        "gate": "A 출입구",
+        "location": {
+            "x": 151,
+            "y": 1227
+        },
+        "size": {
+            "w": 34,
+            "h": 34
+        },
+        "publisher_name": "귤프레스",
+        "category": "기타(만화)"
+    },
+    {
+        "id": "booth_A1305",
+        "booth_number": "A1305",
+        "gate": "A 출입구",
+        "location": {
+            "x": 230,
+            "y": 1333
+        },
+        "size": {
+            "w": 33,
+            "h": 34
+        },
+        "publisher_name": "고요한소리",
+        "category": "종교"
+    },
+    {
+        "id": "booth_A1306",
+        "booth_number": "A1306",
+        "gate": "A 출입구",
+        "location": {
+            "x": 230,
+            "y": 1298
+        },
+        "size": {
+            "w": 33,
+            "h": 34
+        },
+        "publisher_name": "쿵프레스",
+        "category": "아동"
+    },
+    {
+        "id": "booth_A1307",
+        "booth_number": "A1307",
+        "gate": "A 출입구",
+        "location": {
+            "x": 230,
+            "y": 1262
+        },
+        "size": {
+            "w": 33,
+            "h": 34
+        },
+        "publisher_name": "한림출판사",
+        "category": "아동"
+    },
+    {
+        "id": "booth_A1308",
+        "booth_number": "A1308",
+        "gate": "A 출입구",
+        "location": {
+            "x": 230,
+            "y": 1227
+        },
+        "size": {
+            "w": 33,
+            "h": 34
+        },
+        "publisher_name": "비플랫폼, 소장각",
+        "category": "예술, 총류, 역사"
+    },
+    {
+        "id": "booth_A1309",
+        "booth_number": "A1309",
+        "gate": "A 출입구",
+        "location": {
+            "x": 264,
+            "y": 1328
         },
         "size": {
             "w": 32,
-            "h": 32
+            "h": 45
         },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
+        "publisher_name": "(주)불광미디어",
+        "category": "철학, 종교, 아동"
     },
     {
-        "id": "b_003",
-        "booth_number": "B_003",
+        "id": "booth_A1310",
+        "booth_number": "A1310",
+        "gate": "A 출입구",
+        "location": {
+            "x": 264,
+            "y": 1280
+        },
+        "size": {
+            "w": 32,
+            "h": 48
+        },
+        "publisher_name": "라의눈주식회사",
+        "category": "총류, 사회과학, 예술"
+    },
+    {
+        "id": "booth_A1311",
+        "booth_number": "A1311",
+        "gate": "A 출입구",
+        "location": {
+            "x": 264,
+            "y": 1232
+        },
+        "size": {
+            "w": 32,
+            "h": 45
+        },
+        "publisher_name": "유어마인드",
+        "category": "예술"
+    },
+    {
+        "id": "booth_A1401",
+        "booth_number": "A1401",
+        "gate": "A 출입구",
+        "location": {
+            "x": 346,
+            "y": 1333
+        },
+        "size": {
+            "w": 33,
+            "h": 34
+        },
+        "publisher_name": "이룸아이",
+        "category": "아동"
+    },
+    {
+        "id": "booth_A1402",
+        "booth_number": "A1402",
+        "gate": "A 출입구",
+        "location": {
+            "x": 346,
+            "y": 1298
+        },
+        "size": {
+            "w": 33,
+            "h": 34
+        },
+        "publisher_name": "펜타클",
+        "category": "사회과학, 문학, 역사"
+    },
+    {
+        "id": "booth_A1403",
+        "booth_number": "A1403",
+        "gate": "A 출입구",
+        "location": {
+            "x": 346,
+            "y": 1262
+        },
+        "size": {
+            "w": 33,
+            "h": 34
+        },
+        "publisher_name": "마음모자",
+        "category": "아동"
+    },
+    {
+        "id": "booth_A1404",
+        "booth_number": "A1404",
+        "gate": "A 출입구",
+        "location": {
+            "x": 346,
+            "y": 1227
+        },
+        "size": {
+            "w": 33,
+            "h": 34
+        },
+        "publisher_name": "스토리보울",
+        "category": "아동"
+    },
+    {
+        "id": "booth_A1405",
+        "booth_number": "A1405",
+        "gate": "A 출입구",
+        "location": {
+            "x": 380,
+            "y": 1316
+        },
+        "size": {
+            "w": 33,
+            "h": 69
+        },
+        "publisher_name": "지우, 아르카, 소유, 뜰힘, 구름이머무는동안, 몽당연필",
+        "category": "기독교 종교 공동관"
+    },
+    {
+        "id": "booth_A1406",
+        "booth_number": "A1406",
+        "gate": "A 출입구",
+        "location": {
+            "x": 380,
+            "y": 1244
+        },
+        "size": {
+            "w": 33,
+            "h": 69
+        },
+        "publisher_name": "템북, 쿰란출판사, 블리스, 바이블네비게이션, 문광서원, 도서출판 동연, 도서출판 CUP, (사)한국기독교출판협회",
+        "category": "기독교 출판협회 공동관"
+    },
+    {
+        "id": "booth_A1407",
+        "booth_number": "A1407",
+        "gate": "A 출입구",
+        "location": {
+            "x": 460,
+            "y": 1316
+        },
+        "size": {
+            "w": 32,
+            "h": 69
+        },
+        "publisher_name": "아작",
+        "category": "문학(SF/장르)"
+    },
+    {
+        "id": "booth_A1408",
+        "booth_number": "A1408",
+        "gate": "A 출입구",
+        "location": {
+            "x": 460,
+            "y": 1245
+        },
+        "size": {
+            "w": 32,
+            "h": 70
+        },
+        "publisher_name": "(주)이퍼블릭 코리아",
+        "category": "문학, 아동"
+    },
+    {
+        "id": "booth_A1409",
+        "booth_number": "A1409",
+        "gate": "A 출입구",
+        "location": {
+            "x": 493,
+            "y": 1316
+        },
+        "size": {
+            "w": 32,
+            "h": 69
+        },
+        "publisher_name": "도서출판 키다리",
+        "category": "아동"
+    },
+    {
+        "id": "booth_A1410",
+        "booth_number": "A1410",
+        "gate": "A 출입구",
+        "location": {
+            "x": 493,
+            "y": 1245
+        },
+        "size": {
+            "w": 32,
+            "h": 70
+        },
+        "publisher_name": "혜화1117, 목수책방, 메멘토, 가지출판사, 에디토리얼",
+        "category": "인문교양·생태 연합관"
+    },
+    {
+        "id": "booth_A1501",
+        "booth_number": "A1501",
+        "gate": "A 출입구",
+        "location": {
+            "x": 596,
+            "y": 1316
+        },
+        "size": {
+            "w": 67,
+            "h": 69
+        },
+        "publisher_name": "시공사",
+        "category": "종합출판"
+    },
+    {
+        "id": "booth_A1502",
+        "booth_number": "A1502",
+        "gate": "A 출입구",
+        "location": {
+            "x": 596,
+            "y": 1245
+        },
+        "size": {
+            "w": 67,
+            "h": 70
+        },
+        "publisher_name": "전국동네책방네트워크",
+        "category": "독립서점 종합"
+    },
+    {
+        "id": "booth_A1503",
+        "booth_number": "A1503",
+        "gate": "A 출입구",
+        "location": {
+            "x": 708,
+            "y": 1280
+        },
+        "size": {
+            "w": 65,
+            "h": 140
+        },
+        "publisher_name": "허스트중앙유한회사",
+        "category": "기타(엘르 매거진)"
+    },
+    {
+        "id": "booth_A1601",
+        "booth_number": "A1601",
+        "gate": "A 출입구",
+        "location": {
+            "x": 828,
+            "y": 1280
+        },
+        "size": {
+            "w": 67,
+            "h": 140
+        },
+        "publisher_name": "(주)열린책들",
+        "category": "종합출판"
+    },
+    {
+        "id": "booth_A1602",
+        "booth_number": "A1602",
+        "gate": "A 출입구",
+        "location": {
+            "x": 940,
+            "y": 1280
+        },
+        "size": {
+            "w": 65,
+            "h": 140
+        },
+        "publisher_name": "(주)오팬하우스",
+        "category": "종합출판"
+    },
+    {
+        "id": "booth_A1701",
+        "booth_number": "A1701",
+        "gate": "A 출입구",
+        "location": {
+            "x": 1075,
+            "y": 1280
+        },
+        "size": {
+            "w": 98,
+            "h": 140
+        },
+        "publisher_name": "교보생명 서재, 교보문고",
+        "category": "사회과학, 문학, 전자출판"
+    },
+    {
+        "id": "booth_A1702",
+        "booth_number": "A1702",
+        "gate": "A 출입구",
+        "location": {
+            "x": 1220,
+            "y": 1280
+        },
+        "size": {
+            "w": 98,
+            "h": 140
+        },
+        "publisher_name": "주식회사 케이티밀리의서재",
+        "category": "전자출판, 독서 플랫폼"
+    },
+    {
+        "id": "booth_A1703",
+        "booth_number": "A1703",
+        "gate": "A 출입구",
+        "location": {
+            "x": 1365,
+            "y": 1280
+        },
+        "size": {
+            "w": 98,
+            "h": 140
+        },
+        "publisher_name": "예스24",
+        "category": "종합출판, 도서 유통"
+    },
+    {
+        "id": "booth_A1801",
+        "booth_number": "A1801",
+        "gate": "A 출입구",
+        "location": {
+            "x": 1530,
+            "y": 1316
+        },
+        "size": {
+            "w": 67,
+            "h": 67
+        },
+        "publisher_name": "University of Toronto Press, Orca Book, McGill-Queen's, Les Éditions les Malins, Firefly, Québec Amérique, Michel Quintin, Fonfon, Alto, Drawn & Quarterly, BookLand, Annick, Livres Canada Books",
+        "category": "캐나다 기획관, 종합"
+    },
+    {
+        "id": "booth_A1802",
+        "booth_number": "A1802",
+        "gate": "A 출입구",
+        "location": {
+            "x": 1530,
+            "y": 1246
+        },
+        "size": {
+            "w": 67,
+            "h": 72
+        },
+        "publisher_name": "펭귄랜덤하우스 UK",
+        "category": "영국 해외종합출판"
+    },
+    {
+        "id": "booth_A1803",
+        "booth_number": "A1803",
+        "gate": "A 출입구",
+        "location": {
+            "x": 1642,
+            "y": 1280
+        },
+        "size": {
+            "w": 65,
+            "h": 140
+        },
+        "publisher_name": "주한독일문화원, 독일 프랑크푸르트도서전, German Pavilion, Ullstein, Schweizerbart, Rowohlt, Palomaa, MuseARTa, 모어 지베크, Kiepenheuer & Witsch, Dunkcer, Droemer Knaur, Arbeitsgemeinschaft",
+        "category": "독일 기획관, 종합"
+    },
+    {
+        "id": "booth_A1804",
+        "booth_number": "A1804",
+        "gate": "A 출입구",
+        "location": {
+            "x": 1738,
+            "y": 1334
+        },
+        "size": {
+            "w": 33,
+            "h": 33
+        },
+        "publisher_name": "YUEWEN|WebNovel",
+        "category": "문학, 전자출판"
+    },
+    {
+        "id": "booth_A1805",
+        "booth_number": "A1805",
+        "gate": "A 출입구",
+        "location": {
+            "x": 1738,
+            "y": 1299
+        },
+        "size": {
+            "w": 33,
+            "h": 34
+        },
+        "publisher_name": "Beijiao Children Joy Education",
+        "category": "아동"
+    },
+    {
+        "id": "booth_A1806",
+        "booth_number": "A1806",
+        "gate": "A 출입구",
+        "location": {
+            "x": 1738,
+            "y": 1264
+        },
+        "size": {
+            "w": 33,
+            "h": 33
+        },
+        "publisher_name": "Wells Hamilton Literary Consultants",
+        "category": "종합, 에이전시"
+    },
+    {
+        "id": "booth_A1807",
+        "booth_number": "A1807",
+        "gate": "A 출입구",
+        "location": {
+            "x": 1738,
+            "y": 1210
+        },
+        "size": {
+            "w": 33,
+            "h": 65
+        },
+        "publisher_name": "미등록 부스",
+        "category": "일반"
+    },
+    {
+        "id": "booth_A1901",
+        "booth_number": "A1901",
+        "gate": "A 출입구",
+        "location": {
+            "x": 172,
+            "y": 1086
+        },
+        "size": {
+            "w": 74,
+            "h": 140
+        },
+        "publisher_name": "미등록 부스",
+        "category": "일반"
+    },
+    {
+        "id": "booth_A1902",
+        "booth_number": "A1902",
+        "gate": "A 출입구",
+        "location": {
+            "x": 265,
+            "y": 1108
+        },
+        "size": {
+            "w": 34,
+            "h": 102
+        },
+        "publisher_name": "미등록 부스",
+        "category": "일반"
+    },
+    {
+        "id": "booth_A1903",
+        "booth_number": "A1903",
+        "gate": "A 출입구",
+        "location": {
+            "x": 268,
+            "y": 1033
+        },
+        "size": {
+            "w": 33,
+            "h": 34
+        },
+        "publisher_name": "미등록 부스",
+        "category": "일반"
+    },
+    {
+        "id": "booth_A1904",
+        "booth_number": "A1904",
+        "gate": "A 출입구",
+        "location": {
+            "x": 304,
+            "y": 1140
+        },
+        "size": {
+            "w": 33,
+            "h": 33
+        },
+        "publisher_name": "갈라파고스",
+        "category": "철학, 사회과학, 역사"
+    },
+    {
+        "id": "booth_A1905",
+        "booth_number": "A1905",
+        "gate": "A 출입구",
+        "location": {
+            "x": 304,
+            "y": 1104
+        },
+        "size": {
+            "w": 33,
+            "h": 34
+        },
+        "publisher_name": "도서출판 들녘",
+        "category": "종합출판"
+    },
+    {
+        "id": "booth_A1906",
+        "booth_number": "A1906",
+        "gate": "A 출입구",
+        "location": {
+            "x": 304,
+            "y": 1069
+        },
+        "size": {
+            "w": 33,
+            "h": 34
+        },
+        "publisher_name": "원더박스",
+        "category": "사회과학, 역사, 아동"
+    },
+    {
+        "id": "booth_A1907",
+        "booth_number": "A1907",
+        "gate": "A 출입구",
+        "location": {
+            "x": 304,
+            "y": 1033
+        },
+        "size": {
+            "w": 33,
+            "h": 34
+        },
+        "publisher_name": "(주)크레용하우스",
+        "category": "종합출판"
+    },
+    {
+        "id": "booth_A2001",
+        "booth_number": "A2001",
+        "gate": "A 출입구",
+        "location": {
+            "x": 386,
+            "y": 1140
+        },
+        "size": {
+            "w": 33,
+            "h": 33
+        },
+        "publisher_name": "생명의말씀사",
+        "category": "철학, 종교, 전자출판"
+    },
+    {
+        "id": "booth_A2002",
+        "booth_number": "A2002",
+        "gate": "A 출입구",
+        "location": {
+            "x": 386,
+            "y": 1104
+        },
+        "size": {
+            "w": 33,
+            "h": 34
+        },
+        "publisher_name": "성서유니온",
+        "category": "종교"
+    },
+    {
+        "id": "booth_A2003",
+        "booth_number": "A2003",
+        "gate": "A 출입구",
+        "location": {
+            "x": 386,
+            "y": 1069
+        },
+        "size": {
+            "w": 33,
+            "h": 34
+        },
+        "publisher_name": "도서출판 다독다독, 도서출판 폭스코너",
+        "category": "문학, 자녀교육, 인문교양"
+    },
+    {
+        "id": "booth_A2004",
+        "booth_number": "A2004",
+        "gate": "A 출입구",
+        "location": {
+            "x": 386,
+            "y": 1033
+        },
+        "size": {
+            "w": 33,
+            "h": 34
+        },
+        "publisher_name": "안온북스",
+        "category": "예술, 문학"
+    },
+    {
+        "id": "booth_A2005",
+        "booth_number": "A2005",
+        "gate": "A 출입구",
+        "location": {
+            "x": 420,
+            "y": 1140
+        },
+        "size": {
+            "w": 33,
+            "h": 33
+        },
+        "publisher_name": "청미출판사",
+        "category": "철학, 사회과학, 문학"
+    },
+    {
+        "id": "booth_A2006",
+        "booth_number": "A2006",
+        "gate": "A 출입구",
+        "location": {
+            "x": 420,
+            "y": 1104
+        },
+        "size": {
+            "w": 33,
+            "h": 34
+        },
+        "publisher_name": "캠퍼스북",
+        "category": "사회과학, 전자출판"
+    },
+    {
+        "id": "booth_A2007",
+        "booth_number": "A2007",
+        "gate": "A 출입구",
+        "location": {
+            "x": 420,
+            "y": 1069
+        },
+        "size": {
+            "w": 33,
+            "h": 34
+        },
+        "publisher_name": "잉글리시에그",
+        "category": "아동"
+    },
+    {
+        "id": "booth_A2008",
+        "booth_number": "A2008",
+        "gate": "A 출입구",
+        "location": {
+            "x": 420,
+            "y": 1033
+        },
+        "size": {
+            "w": 33,
+            "h": 34
+        },
+        "publisher_name": "우리나비",
+        "category": "문학, 아동, 그래픽노블"
+    },
+    {
+        "id": "booth_A2009",
+        "booth_number": "A2009",
+        "gate": "A 출입구",
+        "location": {
+            "x": 516,
+            "y": 1122
+        },
+        "size": {
+            "w": 65,
+            "h": 69
+        },
+        "publisher_name": "한국출판문화산업진흥원, 호손재, 호랑이꿈, 허밍북스, 한밤의빛, 책과바람, 쥬쥬베북스, 좋은습관연구소, 아트레이크, 스타라잇, 빅퀘스천, 문학정원, 어웨이크, 11%, 다정한시민, 나무의말, 그리모어",
+        "category": "진흥원 독립 마켓 공동관"
+    },
+    {
+        "id": "booth_A201",
+        "booth_number": "A201",
+        "gate": "A 출입구",
+        "location": {
+            "x": 346,
+            "y": 1721
+        },
+        "size": {
+            "w": 33,
+            "h": 34
+        },
+        "publisher_name": "안그라픽스",
+        "category": "총류, 예술, 학습참고서"
+    },
+    {
+        "id": "booth_A2010",
+        "booth_number": "A2010",
+        "gate": "A 출입구",
+        "location": {
+            "x": 516,
+            "y": 1051
+        },
+        "size": {
+            "w": 65,
+            "h": 70
+        },
+        "publisher_name": "주식회사 난다",
+        "category": "철학, 예술, 문학"
+    },
+    {
+        "id": "booth_A202",
+        "booth_number": "A202",
+        "gate": "A 출입구",
+        "location": {
+            "x": 346,
+            "y": 1686
+        },
+        "size": {
+            "w": 33,
+            "h": 34
+        },
+        "publisher_name": "프로파간다, 사월의눈, 미디어버스",
+        "category": "예술전문"
+    },
+    {
+        "id": "booth_A203",
+        "booth_number": "A203",
+        "gate": "A 출입구",
+        "location": {
+            "x": 346,
+            "y": 1650
+        },
+        "size": {
+            "w": 33,
+            "h": 34
+        },
+        "publisher_name": "인북",
+        "category": "예술, 문학, 아동"
+    },
+    {
+        "id": "booth_A204",
+        "booth_number": "A204",
+        "gate": "A 출입구",
+        "location": {
+            "x": 346,
+            "y": 1615
+        },
+        "size": {
+            "w": 33,
+            "h": 34
+        },
+        "publisher_name": "안녕로빈",
+        "category": "문학, 아동"
+    },
+    {
+        "id": "booth_A205",
+        "booth_number": "A205",
+        "gate": "A 출입구",
+        "location": {
+            "x": 380,
+            "y": 1704
+        },
+        "size": {
+            "w": 33,
+            "h": 69
+        },
+        "publisher_name": "킨더랜드",
+        "category": "문학, 아동"
+    },
+    {
+        "id": "booth_A206",
+        "booth_number": "A206",
+        "gate": "A 출입구",
+        "location": {
+            "x": 380,
+            "y": 1632
+        },
+        "size": {
+            "w": 33,
+            "h": 69
+        },
+        "publisher_name": "(주)학토재",
+        "category": "사회과학, 언어, 학습참고서"
+    },
+    {
+        "id": "booth_A207",
+        "booth_number": "A207",
+        "gate": "A 출입구",
+        "location": {
+            "x": 461,
+            "y": 1704
+        },
+        "size": {
+            "w": 32,
+            "h": 69
+        },
+        "publisher_name": "노란상상",
+        "category": "아동"
+    },
+    {
+        "id": "booth_A208",
+        "booth_number": "A208",
+        "gate": "A 출입구",
+        "location": {
+            "x": 461,
+            "y": 1633
+        },
+        "size": {
+            "w": 32,
+            "h": 70
+        },
+        "publisher_name": "(주)도서출판보리",
+        "category": "순수과학, 아동, 학습참고서"
+    },
+    {
+        "id": "booth_A209",
+        "booth_number": "A209",
+        "gate": "A 출입구",
+        "location": {
+            "x": 494,
+            "y": 1704
+        },
+        "size": {
+            "w": 32,
+            "h": 69
+        },
+        "publisher_name": "페이퍼스토리, 목요일출판사, 니케북스",
+        "category": "문학, 아동, 사회과학"
+    },
+    {
+        "id": "booth_A210",
+        "booth_number": "A210",
+        "gate": "A 출입구",
+        "location": {
+            "x": 494,
+            "y": 1633
+        },
+        "size": {
+            "w": 32,
+            "h": 70
+        },
+        "publisher_name": "거북이북스",
+        "category": "문학, 아동"
+    },
+    {
+        "id": "booth_A2101",
+        "booth_number": "A2101",
+        "gate": "A 출입구",
+        "location": {
+            "x": 634,
+            "y": 1122
+        },
+        "size": {
+            "w": 67,
+            "h": 69
+        },
+        "publisher_name": "사회평론",
+        "category": "사회과학, 예술, 학습참고서"
+    },
+    {
+        "id": "booth_A2102",
+        "booth_number": "A2102",
+        "gate": "A 출입구",
+        "location": {
+            "x": 634,
+            "y": 1051
+        },
+        "size": {
+            "w": 67,
+            "h": 70
+        },
+        "publisher_name": "오이뮤",
+        "category": "예술, 문학"
+    },
+    {
+        "id": "booth_A2103",
+        "booth_number": "A2103",
+        "gate": "A 출입구",
+        "location": {
+            "x": 747,
+            "y": 1086
+        },
+        "size": {
+            "w": 64,
+            "h": 140
+        },
+        "publisher_name": "(주)휴머니스트 출판그룹, 은행나무",
+        "category": "사회과학, 역사, 예술, 문학"
+    },
+    {
+        "id": "booth_A2201",
+        "booth_number": "A2201",
+        "gate": "A 출입구",
+        "location": {
+            "x": 864,
+            "y": 1086
+        },
+        "size": {
+            "w": 67,
+            "h": 140
+        },
+        "publisher_name": "길벗어린이",
+        "category": "예술, 문학, 아동"
+    },
+    {
+        "id": "booth_A2202",
+        "booth_number": "A2202",
+        "gate": "A 출입구",
+        "location": {
+            "x": 977,
+            "y": 1086
+        },
+        "size": {
+            "w": 64,
+            "h": 140
+        },
+        "publisher_name": "문학과지성사",
+        "category": "종합출판"
+    },
+    {
+        "id": "booth_A2203",
+        "booth_number": "A2203",
+        "gate": "A 출입구",
+        "location": {
+            "x": 1090,
+            "y": 1086
+        },
+        "size": {
+            "w": 67,
+            "h": 140
+        },
+        "publisher_name": "소전문화재단",
+        "category": "문학"
+    },
+    {
+        "id": "booth_A2301",
+        "booth_number": "A2301",
+        "gate": "A 출입구",
+        "location": {
+            "x": 1208,
+            "y": 1086
+        },
+        "size": {
+            "w": 67,
+            "h": 140
+        },
+        "publisher_name": "서울특별시교육청",
+        "category": "공공기관, 교육총류"
+    },
+    {
+        "id": "booth_A2302",
+        "booth_number": "A2302",
+        "gate": "A 출입구",
+        "location": {
+            "x": 1321,
+            "y": 1086
+        },
+        "size": {
+            "w": 64,
+            "h": 140
+        },
+        "publisher_name": "사계절출판사, 마음산책",
+        "category": "사회과학, 문학, 예술, 그림책"
+    },
+    {
+        "id": "booth_A2303",
+        "booth_number": "A2303",
+        "gate": "A 출입구",
+        "location": {
+            "x": 1434,
+            "y": 1086
+        },
+        "size": {
+            "w": 67,
+            "h": 140
+        },
+        "publisher_name": "주식회사 오뚜기, 디자인하우스",
+        "category": "예술, 브랜드 잡지"
+    },
+    {
+        "id": "booth_A2401",
+        "booth_number": "A2401",
+        "gate": "A 출입구",
+        "location": {
+            "x": 1552,
+            "y": 1086
+        },
+        "size": {
+            "w": 67,
+            "h": 140
+        },
+        "publisher_name": "타이베이도서전재단, Psygarden, NTU Press, Locus, Indie Publishers, Heryin, Chang-Tang, Academia Sinica",
+        "category": "대만 타이베이 국가관"
+    },
+    {
+        "id": "booth_A2402",
+        "booth_number": "A2402",
+        "gate": "A 출입구",
+        "location": {
+            "x": 1696,
+            "y": 1086
+        },
+        "size": {
+            "w": 125,
+            "h": 140
+        },
+        "publisher_name": "미등록 부스",
+        "category": "일반"
+    },
+    {
+        "id": "booth_A301",
+        "booth_number": "A301",
+        "gate": "A 출입구",
+        "location": {
+            "x": 578,
+            "y": 1704
+        },
+        "size": {
+            "w": 32,
+            "h": 69
+        },
+        "publisher_name": "워크룸 프레스",
+        "category": "예술, 문학, 디자인"
+    },
+    {
+        "id": "booth_A302",
+        "booth_number": "A302",
+        "gate": "A 출입구",
+        "location": {
+            "x": 578,
+            "y": 1633
+        },
+        "size": {
+            "w": 32,
+            "h": 70
+        },
+        "publisher_name": "산지니",
+        "category": "사회과학, 문학, 아동"
+    },
+    {
+        "id": "booth_A303",
+        "booth_number": "A303",
+        "gate": "A 출입구",
+        "location": {
+            "x": 611,
+            "y": 1704
+        },
+        "size": {
+            "w": 32,
+            "h": 69
+        },
+        "publisher_name": "까치글방",
+        "category": "종합출판"
+    },
+    {
+        "id": "booth_A304",
+        "booth_number": "A304",
+        "gate": "A 출입구",
+        "location": {
+            "x": 611,
+            "y": 1633
+        },
+        "size": {
+            "w": 32,
+            "h": 70
+        },
+        "publisher_name": "글항아리",
+        "category": "철학, 사회과학, 역사"
+    },
+    {
+        "id": "booth_A305",
+        "booth_number": "A305",
+        "gate": "A 출입구",
+        "location": {
+            "x": 692,
+            "y": 1704
+        },
+        "size": {
+            "w": 32,
+            "h": 69
+        },
+        "publisher_name": "청아출판사, 봄마중",
+        "category": "종합출판"
+    },
+    {
+        "id": "booth_A306",
+        "booth_number": "A306",
+        "gate": "A 출입구",
+        "location": {
+            "x": 692,
+            "y": 1633
+        },
+        "size": {
+            "w": 32,
+            "h": 70
+        },
+        "publisher_name": "도서출판 풀빛",
+        "category": "총류, 사회과학, 아동"
+    },
+    {
+        "id": "booth_A307",
+        "booth_number": "A307",
+        "gate": "A 출입구",
+        "location": {
+            "x": 725,
+            "y": 1704
+        },
+        "size": {
+            "w": 32,
+            "h": 69
+        },
+        "publisher_name": "도서출판 푸른숲",
+        "category": "사회과학, 문학, 아동"
+    },
+    {
+        "id": "booth_A308",
+        "booth_number": "A308",
+        "gate": "A 출입구",
+        "location": {
+            "x": 725,
+            "y": 1633
+        },
+        "size": {
+            "w": 32,
+            "h": 70
+        },
+        "publisher_name": "군자출판사, (사)한국과학기술출판협회",
+        "category": "기술과학, 과학기술전문"
+    },
+    {
+        "id": "booth_A401",
+        "booth_number": "A401",
+        "gate": "A 출입구",
+        "location": {
+            "x": 828,
+            "y": 1704
+        },
+        "size": {
+            "w": 67,
+            "h": 69
+        },
+        "publisher_name": "보림출판사",
+        "category": "아동"
+    },
+    {
+        "id": "booth_A402",
+        "booth_number": "A402",
+        "gate": "A 출입구",
+        "location": {
+            "x": 828,
+            "y": 1633
+        },
+        "size": {
+            "w": 67,
+            "h": 70
+        },
+        "publisher_name": "네이버웹툰",
+        "category": "문학, 전자출판"
+    },
+    {
+        "id": "booth_A403",
+        "booth_number": "A403",
+        "gate": "A 출입구",
+        "location": {
+            "x": 940,
+            "y": 1668
+        },
+        "size": {
+            "w": 65,
+            "h": 140
+        },
+        "publisher_name": "(주)위즈덤하우스",
+        "category": "종합출판"
+    },
+    {
+        "id": "booth_A501",
+        "booth_number": "A501",
+        "gate": "A 출입구",
+        "location": {
+            "x": 1075,
+            "y": 1668
+        },
+        "size": {
+            "w": 98,
+            "h": 140
+        },
+        "publisher_name": "솔테라이브러리, 이야기장수",
+        "category": "문학"
+    },
+    {
+        "id": "booth_A502",
+        "booth_number": "A502",
+        "gate": "A 출입구",
+        "location": {
+            "x": 1220,
+            "y": 1668
+        },
+        "size": {
+            "w": 98,
+            "h": 140
+        },
+        "publisher_name": "(주)김영사",
+        "category": "종합출판"
+    },
+    {
+        "id": "booth_A503",
+        "booth_number": "A503",
+        "gate": "A 출입구",
+        "location": {
+            "x": 1365,
+            "y": 1668
+        },
+        "size": {
+            "w": 98,
+            "h": 140
+        },
+        "publisher_name": "(주)문학수첩",
+        "category": "순수과학, 예술, 문학"
+    },
+    {
+        "id": "booth_A601",
+        "booth_number": "A601",
+        "gate": "A 출입구",
+        "location": {
+            "x": 1554,
+            "y": 1668
+        },
+        "size": {
+            "w": 174,
+            "h": 140
+        },
+        "publisher_name": "프랑스 출판네트워크, 주한프랑스대사관 문화과",
+        "category": "국제종합, 프랑스관"
+    },
+    {
+        "id": "booth_A602",
+        "booth_number": "A602",
+        "gate": "A 출입구",
+        "location": {
+            "x": 1721,
+            "y": 1668
+        },
+        "size": {
+            "w": 68,
+            "h": 140
+        },
+        "publisher_name": "(주)쌤앤파커스",
+        "category": "문학, 아동, 자기계발, 경제경영"
+    },
+    {
+        "id": "booth_A701",
+        "booth_number": "A701",
+        "gate": "A 출입구",
+        "location": {
+            "x": 151,
+            "y": 1526
+        },
+        "size": {
+            "w": 34,
+            "h": 35
+        },
+        "publisher_name": "봄알람",
+        "category": "철학, 사회과학, 문학"
+    },
+    {
+        "id": "booth_A702",
+        "booth_number": "A702",
+        "gate": "A 출입구",
+        "location": {
+            "x": 151,
+            "y": 1491
+        },
+        "size": {
+            "w": 34,
+            "h": 34
+        },
+        "publisher_name": "타이피스트",
+        "category": "예술, 문학"
+    },
+    {
+        "id": "booth_A703",
+        "booth_number": "A703",
+        "gate": "A 출입구",
+        "location": {
+            "x": 151,
+            "y": 1456
+        },
+        "size": {
+            "w": 34,
+            "h": 34
+        },
+        "publisher_name": "사단법인 한국대학출판협회",
+        "category": "총류, 사회과학, 언어"
+    },
+    {
+        "id": "booth_A704",
+        "booth_number": "A704",
+        "gate": "A 출입구",
+        "location": {
+            "x": 151,
+            "y": 1421
+        },
+        "size": {
+            "w": 34,
+            "h": 34
+        },
+        "publisher_name": "도서출판 북극곰",
+        "category": "총류, 문학, 아동"
+    },
+    {
+        "id": "booth_A705",
+        "booth_number": "A705",
+        "gate": "A 출입구",
+        "location": {
+            "x": 230,
+            "y": 1520
+        },
+        "size": {
+            "w": 33,
+            "h": 45
+        },
+        "publisher_name": "국민서관",
+        "category": "아동"
+    },
+    {
+        "id": "booth_A706",
+        "booth_number": "A706",
+        "gate": "A 출입구",
+        "location": {
+            "x": 230,
+            "y": 1474
+        },
+        "size": {
+            "w": 33,
+            "h": 47
+        },
+        "publisher_name": "주식회사 성안당",
+        "category": "종합출판"
+    },
+    {
+        "id": "booth_A707",
+        "booth_number": "A707",
+        "gate": "A 출입구",
+        "location": {
+            "x": 230,
+            "y": 1426
+        },
+        "size": {
+            "w": 33,
+            "h": 46
+        },
+        "publisher_name": "책읽는고양이",
+        "category": "문학, 역사, 인문"
+    },
+    {
+        "id": "booth_A708",
+        "booth_number": "A708",
+        "gate": "A 출입구",
+        "location": {
+            "x": 264,
+            "y": 1509
+        },
+        "size": {
+            "w": 33,
+            "h": 68
+        },
+        "publisher_name": "소미미디어",
+        "category": "문학, 전자출판, 웹툰, 만화"
+    },
+    {
+        "id": "booth_A709",
+        "booth_number": "A709",
+        "gate": "A 출입구",
+        "location": {
+            "x": 264,
+            "y": 1438
+        },
+        "size": {
+            "w": 33,
+            "h": 71
+        },
+        "publisher_name": "키큰도토리, 고래인",
+        "category": "총류, 문학, 아동"
+    },
+    {
+        "id": "booth_A801",
+        "booth_number": "A801",
+        "gate": "A 출입구",
+        "location": {
+            "x": 347,
+            "y": 1510
+        },
+        "size": {
+            "w": 32,
+            "h": 69
+        },
+        "publisher_name": "해피북미디어, 씨엘미디어, 뮤트스튜디오, 냥이의야옹, 공공북스, 고양이함수, 부산출판문화산업협회",
+        "category": "예술, 문학, 아동, 부산 공동관"
+    },
+    {
+        "id": "booth_A802",
+        "booth_number": "A802",
+        "gate": "A 출입구",
+        "location": {
+            "x": 347,
+            "y": 1439
+        },
+        "size": {
+            "w": 32,
+            "h": 70
+        },
+        "publisher_name": "주식회사 소원나무",
+        "category": "예술, 문학, 아동"
+    },
+    {
+        "id": "booth_A803",
+        "booth_number": "A803",
+        "gate": "A 출입구",
+        "location": {
+            "x": 380,
+            "y": 1510
+        },
+        "size": {
+            "w": 32,
+            "h": 69
+        },
+        "publisher_name": "뜨인돌출판",
+        "category": "종합출판"
+    },
+    {
+        "id": "booth_A804",
+        "booth_number": "A804",
+        "gate": "A 출입구",
+        "location": {
+            "x": 380,
+            "y": 1439
+        },
+        "size": {
+            "w": 32,
+            "h": 70
+        },
+        "publisher_name": "밝은미래",
+        "category": "아동"
+    },
+    {
+        "id": "booth_A805",
+        "booth_number": "A805",
+        "gate": "A 출입구",
+        "location": {
+            "x": 460,
+            "y": 1510
+        },
+        "size": {
+            "w": 32,
+            "h": 69
+        },
+        "publisher_name": "도서출판 동녘",
+        "category": "철학, 사회과학, 아동"
+    },
+    {
+        "id": "booth_A806",
+        "booth_number": "A806",
+        "gate": "A 출입구",
+        "location": {
+            "x": 460,
+            "y": 1439
+        },
+        "size": {
+            "w": 32,
+            "h": 70
+        },
+        "publisher_name": "클레이하우스 주식회사",
+        "category": "종합출판"
+    },
+    {
+        "id": "booth_A807",
+        "booth_number": "A807",
+        "gate": "A 출입구",
+        "location": {
+            "x": 493,
+            "y": 1510
+        },
+        "size": {
+            "w": 32,
+            "h": 69
+        },
+        "publisher_name": "프리즘오브, 보스토크 프레스",
+        "category": "사회과학, 예술, 문학"
+    },
+    {
+        "id": "booth_A808",
+        "booth_number": "A808",
+        "gate": "A 출입구",
+        "location": {
+            "x": 493,
+            "y": 1439
+        },
+        "size": {
+            "w": 32,
+            "h": 70
+        },
+        "publisher_name": "진선출판사",
+        "category": "종합출판"
+    },
+    {
+        "id": "booth_A901",
+        "booth_number": "A901",
+        "gate": "A 출입구",
+        "location": {
+            "x": 596,
+            "y": 1510
+        },
+        "size": {
+            "w": 67,
+            "h": 69
+        },
+        "publisher_name": "윌북",
+        "category": "종합출판"
+    },
+    {
+        "id": "booth_A902",
+        "booth_number": "A902",
+        "gate": "A 출입구",
+        "location": {
+            "x": 596,
+            "y": 1439
+        },
+        "size": {
+            "w": 67,
+            "h": 70
+        },
+        "publisher_name": "더중앙플러스",
+        "category": "종합출판, 미디어"
+    },
+    {
+        "id": "booth_A903",
+        "booth_number": "A903",
+        "gate": "A 출입구",
+        "location": {
+            "x": 708,
+            "y": 1474
+        },
+        "size": {
+            "w": 65,
+            "h": 140
+        },
+        "publisher_name": "동아시아·허블",
+        "category": "사회과학, 순수과학, 문학"
+    },
+    {
+        "id": "booth_B101",
+        "booth_number": "B101",
+        "gate": "B1 출입구",
+        "location": {
+            "x": 1062,
+            "y": 812
+        },
+        "size": {
+            "w": 34,
+            "h": 57
+        },
+        "publisher_name": "어크로스",
+        "category": "종합출판"
+    },
+    {
+        "id": "booth_B102",
+        "booth_number": "B102",
+        "gate": "B1 출입구",
+        "location": {
+            "x": 1062,
+            "y": 751
+        },
+        "size": {
+            "w": 34,
+            "h": 60
+        },
+        "publisher_name": "오리집, 움직씨 출판사",
+        "category": "예술, 문학, 사회과학"
+    },
+    {
+        "id": "booth_B103",
+        "booth_number": "B103",
+        "gate": "B1 출입구",
+        "location": {
+            "x": 1062,
+            "y": 693
+        },
+        "size": {
+            "w": 34,
+            "h": 52
+        },
+        "publisher_name": "(주)책읽는곰",
+        "category": "아동"
+    },
+    {
+        "id": "booth_B104",
+        "booth_number": "B104",
+        "gate": "B1 출입구",
+        "location": {
+            "x": 1140,
+            "y": 812
+        },
+        "size": {
+            "w": 32,
+            "h": 58
+        },
+        "publisher_name": "토끼섬, 페이퍼독",
+        "category": "문학, 아동"
+    },
+    {
+        "id": "booth_B105",
+        "booth_number": "B105",
+        "gate": "B1 출입구",
+        "location": {
+            "x": 1140,
+            "y": 751
+        },
+        "size": {
+            "w": 32,
+            "h": 60
+        },
+        "publisher_name": "송송책방",
+        "category": "예술, 문학, 아동"
+    },
+    {
+        "id": "booth_B106",
+        "booth_number": "B106",
+        "gate": "B1 출입구",
+        "location": {
+            "x": 1140,
+            "y": 693
+        },
+        "size": {
+            "w": 32,
+            "h": 52
+        },
+        "publisher_name": "꿈공장플러스",
+        "category": "문학"
+    },
+    {
+        "id": "booth_B107",
+        "booth_number": "B107",
+        "gate": "B1 출입구",
+        "location": {
+            "x": 1175,
+            "y": 812
+        },
+        "size": {
+            "w": 32,
+            "h": 58
+        },
+        "publisher_name": "아카넷",
+        "category": "총류, 철학, 역사"
+    },
+    {
+        "id": "booth_B108",
+        "booth_number": "B108",
+        "gate": "B1 출입구",
+        "location": {
+            "x": 1175,
+            "y": 751
+        },
+        "size": {
+            "w": 32,
+            "h": 60
+        },
+        "publisher_name": "디자인이음",
+        "category": "예술, 문학"
+    },
+    {
+        "id": "booth_B109",
+        "booth_number": "B109",
+        "gate": "B1 출입구",
+        "location": {
+            "x": 1175,
+            "y": 693
+        },
+        "size": {
+            "w": 32,
+            "h": 52
+        },
+        "publisher_name": "코쿤북스, 컬처룩",
+        "category": "사회과학, 순수과학, 예술"
+    },
+    {
+        "id": "booth_B201",
+        "booth_number": "B201",
+        "gate": "B1 출입구",
+        "location": {
+            "x": 1252,
+            "y": 812
+        },
+        "size": {
+            "w": 32,
+            "h": 58
+        },
+        "publisher_name": "유유출판사",
+        "category": "총류, 사회과학, 언어"
+    },
+    {
+        "id": "booth_B202",
+        "booth_number": "B202",
+        "gate": "B1 출입구",
+        "location": {
+            "x": 1252,
+            "y": 751
+        },
+        "size": {
+            "w": 32,
+            "h": 60
+        },
+        "publisher_name": "바람북스",
+        "category": "예술, 문학"
+    },
+    {
+        "id": "booth_B203",
+        "booth_number": "B203",
+        "gate": "B1 출입구",
+        "location": {
+            "x": 1252,
+            "y": 693
+        },
+        "size": {
+            "w": 32,
+            "h": 52
+        },
+        "publisher_name": "스위밍꿀, 레모 출판사",
+        "category": "철학, 예술, 문학"
+    },
+    {
+        "id": "booth_B204",
+        "booth_number": "B204",
+        "gate": "B1 출입구",
+        "location": {
+            "x": 1286,
+            "y": 812
+        },
+        "size": {
+            "w": 33,
+            "h": 58
+        },
+        "publisher_name": "주식회사 도서출판점자",
+        "category": "특수도서, 문학, 아동"
+    },
+    {
+        "id": "booth_B205",
+        "booth_number": "B205",
+        "gate": "B1 출입구",
+        "location": {
+            "x": 1286,
+            "y": 751
+        },
+        "size": {
+            "w": 33,
+            "h": 60
+        },
+        "publisher_name": "후즈갓마이테일",
+        "category": "예술, 문학, 아동"
+    },
+    {
+        "id": "booth_B206",
+        "booth_number": "B206",
+        "gate": "B1 출입구",
+        "location": {
+            "x": 1286,
+            "y": 693
+        },
+        "size": {
+            "w": 33,
+            "h": 52
+        },
+        "publisher_name": "흰토끼프레스(바캉스프로젝트)",
+        "category": "예술, 문학, 아동"
+    },
+    {
+        "id": "booth_B301",
+        "booth_number": "B301",
+        "gate": "B1 출입구",
+        "location": {
+            "x": 1364,
+            "y": 812
+        },
+        "size": {
+            "w": 33,
+            "h": 58
+        },
+        "publisher_name": "도서출판 노란돼지",
+        "category": "종합출판"
+    },
+    {
+        "id": "booth_B302",
+        "booth_number": "B302",
+        "gate": "B1 출입구",
+        "location": {
+            "x": 1364,
+            "y": 751
+        },
+        "size": {
+            "w": 33,
+            "h": 60
+        },
+        "publisher_name": "늘보의 섬",
+        "category": "아동"
+    },
+    {
+        "id": "booth_B303",
+        "booth_number": "B303",
+        "gate": "B1 출입구",
+        "location": {
+            "x": 1364,
+            "y": 693
+        },
+        "size": {
+            "w": 33,
+            "h": 52
+        },
+        "publisher_name": "(주)창비교육",
+        "category": "문학, 역사, 아동"
+    },
+    {
+        "id": "booth_B304",
+        "booth_number": "B304",
+        "gate": "B1 출입구",
+        "location": {
+            "x": 1398,
+            "y": 812
+        },
+        "size": {
+            "w": 33,
+            "h": 58
+        },
+        "publisher_name": "서해문집",
+        "category": "사회과학, 문학, 역사"
+    },
+    {
+        "id": "booth_B305",
+        "booth_number": "B305",
+        "gate": "B1 출입구",
+        "location": {
+            "x": 1398,
+            "y": 751
+        },
+        "size": {
+            "w": 33,
+            "h": 60
+        },
+        "publisher_name": "한림사",
+        "category": "예술"
+    },
+    {
+        "id": "booth_B306",
+        "booth_number": "B306",
+        "gate": "B1 출입구",
+        "location": {
+            "x": 1398,
+            "y": 693
+        },
+        "size": {
+            "w": 33,
+            "h": 52
+        },
+        "publisher_name": "나비클럽",
+        "category": "문학, 인문"
+    },
+    {
+        "id": "booth_B307",
+        "booth_number": "B307",
+        "gate": "B1 출입구",
+        "location": {
+            "x": 1476,
+            "y": 812
+        },
+        "size": {
+            "w": 34,
+            "h": 58
+        },
+        "publisher_name": "국립생태원",
+        "category": "아동, 자연과학"
+    },
+    {
+        "id": "booth_B308",
+        "booth_number": "B308",
+        "gate": "B1 출입구",
+        "location": {
+            "x": 1476,
+            "y": 751
+        },
+        "size": {
+            "w": 34,
+            "h": 60
+        },
+        "publisher_name": "퍼머넌트북스",
+        "category": "예술, 문학, 아동"
+    },
+    {
+        "id": "booth_B309",
+        "booth_number": "B309",
+        "gate": "B1 출입구",
+        "location": {
+            "x": 1476,
+            "y": 693
+        },
+        "size": {
+            "w": 34,
+            "h": 52
+        },
+        "publisher_name": "주식회사 한겨레엔",
+        "category": "사회과학, 예술, 문학"
+    },
+    {
+        "id": "booth_B400",
+        "booth_number": "B400",
+        "gate": "B1 출입구",
+        "location": {
+            "x": 944,
+            "y": 486
+        },
+        "size": {
+            "w": 255,
+            "h": 249
+        },
+        "publisher_name": "독립출판 마켓 공동관",
+        "category": "독립출판",
+        "tenants": [
+            {
+                "booth_number": "B401",
+                "publisher_name": "누땡스",
+                "category": "총류, 예술, 잡지"
+            },
+            {
+                "booth_number": "B402",
+                "publisher_name": "텍스트 프레스",
+                "category": "철학, 예술, 문학"
+            },
+            {
+                "booth_number": "B403",
+                "publisher_name": "프레스탁!",
+                "category": "철학, 사회과학"
+            },
+            {
+                "booth_number": "B404",
+                "publisher_name": "225호",
+                "category": "예술"
+            },
+            {
+                "booth_number": "B405",
+                "publisher_name": "라마북스",
+                "category": "예술, 만화"
+            },
+            {
+                "booth_number": "B406",
+                "publisher_name": "비바 헤리티지 시리즈",
+                "category": "예술"
+            },
+            {
+                "booth_number": "B407",
+                "publisher_name": "라우더북스",
+                "category": "사회과학, 예술, 문학"
+            },
+            {
+                "booth_number": "B408",
+                "publisher_name": "Fidèle éditions",
+                "category": "해외 예술"
+            },
+            {
+                "booth_number": "B409",
+                "publisher_name": "Owl & Dog Playbooks",
+                "category": "아동"
+            },
+            {
+                "booth_number": "B410",
+                "publisher_name": "프레스룸",
+                "category": "예술, 디자인"
+            },
+            {
+                "booth_number": "B411",
+                "publisher_name": "히스테리안",
+                "category": "사회과학, 예술"
+            },
+            {
+                "booth_number": "B412",
+                "publisher_name": "행복한 재수가 있는",
+                "category": "종교, 예술, 그래픽노블"
+            },
+            {
+                "booth_number": "B413",
+                "publisher_name": "두낫프레스?프레스!",
+                "category": "예술"
+            },
+            {
+                "booth_number": "B414",
+                "publisher_name": "자인운트",
+                "category": "예술"
+            },
+            {
+                "booth_number": "B415",
+                "publisher_name": "유연성클럽",
+                "category": "예술"
+            },
+            {
+                "booth_number": "B416",
+                "publisher_name": "메이커메이커",
+                "category": "예술"
+            },
+            {
+                "booth_number": "B417",
+                "publisher_name": "0.1",
+                "category": "예술"
+            },
+            {
+                "booth_number": "B418",
+                "publisher_name": "검정프레스",
+                "category": "예술, 여행"
+            },
+            {
+                "booth_number": "B419",
+                "publisher_name": "써니라운드",
+                "category": "예술, 쿡북"
+            },
+            {
+                "booth_number": "B420",
+                "publisher_name": "픽션들",
+                "category": "예술, 문학"
+            },
+            {
+                "booth_number": "B421",
+                "publisher_name": "남섬책방",
+                "category": "예술, 만화에세이"
+            },
+            {
+                "booth_number": "B422",
+                "publisher_name": "시네필 책방 코프키노",
+                "category": "예술"
+            },
+            {
+                "booth_number": "B423",
+                "publisher_name": "요호이",
+                "category": "예술, 문학"
+            },
+            {
+                "booth_number": "B424",
+                "publisher_name": "스튜디오604",
+                "category": "예술, 문학"
+            },
+            {
+                "booth_number": "B425",
+                "publisher_name": "돛과닻",
+                "category": "예술, 문학"
+            },
+            {
+                "booth_number": "B426",
+                "publisher_name": "스크립토",
+                "category": "종교, 역사"
+            },
+            {
+                "booth_number": "B427",
+                "publisher_name": "타바코북스",
+                "category": "예술"
+            },
+            {
+                "booth_number": "B428",
+                "publisher_name": "머쉬룸",
+                "category": "예술, 문학"
+            },
+            {
+                "booth_number": "B429",
+                "publisher_name": "소환사",
+                "category": "예술, 문학"
+            },
+            {
+                "booth_number": "B430",
+                "publisher_name": "마그네틱 파이브",
+                "category": "예술"
+            },
+            {
+                "booth_number": "B431",
+                "publisher_name": "하호하호",
+                "category": "예술"
+            },
+            {
+                "booth_number": "B432",
+                "publisher_name": "1도씨와 온도들",
+                "category": "예술"
+            },
+            {
+                "booth_number": "B433",
+                "publisher_name": "후루룩",
+                "category": "문학"
+            },
+            {
+                "booth_number": "B434",
+                "publisher_name": "유일무이(누구나)",
+                "category": "예술, 문학"
+            },
+            {
+                "booth_number": "B435",
+                "publisher_name": "코스모 프레스",
+                "category": "예술"
+            },
+            {
+                "booth_number": "B436",
+                "publisher_name": "아뜰리에아쉬",
+                "category": "철학, 예술"
+            },
+            {
+                "booth_number": "B437",
+                "publisher_name": "라우트 프레스",
+                "category": "예술, 문학"
+            },
+            {
+                "booth_number": "B438",
+                "publisher_name": "오큐파이 더 시티",
+                "category": "예술"
+            },
+            {
+                "booth_number": "B439",
+                "publisher_name": "길고도 짧은 이야기",
+                "category": "예술"
+            },
+            {
+                "booth_number": "B440",
+                "publisher_name": "무주산골영화제",
+                "category": "예술"
+            },
+            {
+                "booth_number": "B441",
+                "publisher_name": "미스테리어스플랜트",
+                "category": "과학, 문학"
+            },
+            {
+                "booth_number": "B442",
+                "publisher_name": "소화당",
+                "category": "예술"
+            },
+            {
+                "booth_number": "B443",
+                "publisher_name": "김주영",
+                "category": "예술"
+            },
+            {
+                "booth_number": "B444",
+                "publisher_name": "삐약삐약북스",
+                "category": "만화"
+            },
+            {
+                "booth_number": "B445",
+                "publisher_name": "카인드오브썸머",
+                "category": "예술"
+            },
+            {
+                "booth_number": "B446",
+                "publisher_name": "마블로켓",
+                "category": "예술, 매거진"
+            },
+            {
+                "booth_number": "B447",
+                "publisher_name": "블루토마토즈",
+                "category": "예술"
+            },
+            {
+                "booth_number": "B448",
+                "publisher_name": "노말에이",
+                "category": "예술, 문학"
+            },
+            {
+                "booth_number": "B449",
+                "publisher_name": "연필과머그",
+                "category": "사회과학, 취미"
+            },
+            {
+                "booth_number": "B450",
+                "publisher_name": "까막북",
+                "category": "만화"
+            },
+            {
+                "booth_number": "B451",
+                "publisher_name": "에트르",
+                "category": "철학, 예술"
+            },
+            {
+                "booth_number": "B452",
+                "publisher_name": "책덕",
+                "category": "예술, 문학"
+            },
+            {
+                "booth_number": "B453",
+                "publisher_name": "디 오브젝트",
+                "category": "예술"
+            },
+            {
+                "booth_number": "B454",
+                "publisher_name": "TEMPORARY BOOKSHOP | C시지G",
+                "category": "예술"
+            },
+            {
+                "booth_number": "B455",
+                "publisher_name": "파도",
+                "category": "문학"
+            },
+            {
+                "booth_number": "B456",
+                "publisher_name": "선과 결",
+                "category": "예술"
+            },
+            {
+                "booth_number": "B457",
+                "publisher_name": "탱크 프레스",
+                "category": "예술"
+            },
+            {
+                "booth_number": "B458",
+                "publisher_name": "바이블랭크",
+                "category": "예술"
+            },
+            {
+                "booth_number": "B459",
+                "publisher_name": "te editions",
+                "category": "예술"
+            },
+            {
+                "booth_number": "B460",
+                "publisher_name": "One Stroke",
+                "category": "예술, 아동"
+            },
+            {
+                "booth_number": "B461",
+                "publisher_name": "마테리알",
+                "category": "사회과학, 예술"
+            },
+            {
+                "booth_number": "B462",
+                "publisher_name": "소시민워크",
+                "category": "예술"
+            },
+            {
+                "booth_number": "B463",
+                "publisher_name": "그래픽하",
+                "category": "예술"
+            },
+            {
+                "booth_number": "B464",
+                "publisher_name": "인공위성+82",
+                "category": "종합, 예술, 아동"
+            },
+            {
+                "booth_number": "B465",
+                "publisher_name": "수목요일(모눈지)",
+                "category": "예술, 문학"
+            },
+            {
+                "booth_number": "B466",
+                "publisher_name": "하이오 웍스",
+                "category": "예술, 문학, 아동"
+            },
+            {
+                "booth_number": "B467",
+                "publisher_name": "미씽아카이브",
+                "category": "문학"
+            },
+            {
+                "booth_number": "B468",
+                "publisher_name": "Image 3",
+                "category": "예술, 아동"
+            },
+            {
+                "booth_number": "B469",
+                "publisher_name": "Homeward",
+                "category": "종합역사, 전자출판"
+            },
+            {
+                "booth_number": "B470",
+                "publisher_name": "Rusuban Studio",
+                "category": "문학"
+            },
+            {
+                "booth_number": "B471",
+                "publisher_name": "타이완 독립출판협회, commabooks, Guerrilla Publishing, Halftone Press, Kuroshio Culture, LA VIE CINE studio, Monsoon Zone, MULU OFFICE, SiLoo, Slowork Publishing, TOKHIU BOOKS",
+                "category": "대만 독립출판 공동관"
+            },
+            {
+                "booth_number": "B472",
+                "publisher_name": "일본 독립출판 엑스포, Blue Sheep, ELVIS PRESS, LLC INSECTS, Manazuru Publishing, Million Years Bookstore, Nanarokusha Publishing, rn press INC., Seki Shobo, Shinyodo, Shoshikankanbou, Tababooks, The Editorial Department, Troublemakers Publishing, Tsumujikaze-sha",
+                "category": "일본 독립서점 연합관"
+            },
+            {
+                "booth_number": "B473",
+                "publisher_name": "싱가포르 아트북페어, Thing Books, THEBOOKSHOW, Thumb Books",
+                "category": "싱가포르 기획 공동관"
+            }
+        ],
+        "is_zone": true
+    },
+    {
+        "id": "booth_B501",
+        "booth_number": "B501",
+        "gate": "B1 출입구",
+        "location": {
+            "x": 1158,
+            "y": 541
+        },
+        "size": {
+            "w": 67,
+            "h": 138
+        },
+        "publisher_name": "한솔제지(주)",
+        "category": "제지 원자재"
+    },
+    {
+        "id": "booth_B502",
+        "booth_number": "B502",
+        "gate": "B1 출입구",
+        "location": {
+            "x": 1140,
+            "y": 396
+        },
+        "size": {
+            "w": 32,
+            "h": 67
+        },
+        "publisher_name": "윤에디션",
+        "category": "문학, 아동"
+    },
+    {
+        "id": "booth_B503",
+        "booth_number": "B503",
+        "gate": "B1 출입구",
+        "location": {
+            "x": 1174,
+            "y": 396
+        },
+        "size": {
+            "w": 33,
+            "h": 67
+        },
+        "publisher_name": "초록비책공방, 롤러코스터",
+        "category": "사회과학, 예술"
+    },
+    {
+        "id": "booth_B504",
+        "booth_number": "B504",
+        "gate": "B1 출입구",
+        "location": {
+            "x": 1270,
+            "y": 541
+        },
+        "size": {
+            "w": 67,
+            "h": 138
+        },
+        "publisher_name": "혼혼, 해파리, 페이지미디어브릿지, 톰톰프레스, 테일브릿지, 출판사 이베르, 정재이프레스, 인생책방, 마이북하우스, 유유히, 여름의서재, 여가도시, 쓰는사람, 스튜디오블랑, 스튜디오 에디트, 선홍빛, 생각하는 달팽이, 빛틈, 붉은사슴, 북스토어블, 밤두, 물숨, 무중력프레스, 무블출판사, 머핀북, 마리유니버스, 리케의 디자인랩, 두유라이크, 두두플래닛, 도깨비사, 니라이카나이, 내로라 출판사, 경옥초이, 마포출판문화진흥센터(Platform-P)",
+        "category": "독립출판 마켓 공동관"
+    },
+    {
+        "id": "booth_B505",
+        "booth_number": "B505",
+        "gate": "B1 출입구",
+        "location": {
+            "x": 1252,
+            "y": 396
+        },
+        "size": {
+            "w": 32,
+            "h": 67
+        },
+        "publisher_name": "쪽프레스",
+        "category": "총류, 예술, 문학"
+    },
+    {
+        "id": "booth_B506",
+        "booth_number": "B506",
+        "gate": "B1 출입구",
+        "location": {
+            "x": 1286,
+            "y": 396
+        },
+        "size": {
+            "w": 33,
+            "h": 67
+        },
+        "publisher_name": "도서출판도반",
+        "category": "철학, 종교, 문학"
+    },
+    {
+        "id": "booth_B601",
+        "booth_number": "B601",
+        "gate": "B1 출입구",
+        "location": {
+            "x": 1427,
+            "y": 560
+        },
+        "size": {
+            "w": 146,
+            "h": 101
+        },
+        "publisher_name": "안전가옥",
+        "category": "문학(장르 스튜디오)"
+    },
+    {
+        "id": "booth_B602",
+        "booth_number": "B602",
+        "gate": "B1 출입구",
+        "location": {
+            "x": 1427,
+            "y": 412
+        },
+        "size": {
+            "w": 146,
+            "h": 101
+        },
+        "publisher_name": "문학동네, (주)나무의마음",
+        "category": "종합출판 대형관"
+    },
+    {
+        "id": "booth_B603",
+        "booth_number": "B603",
+        "gate": "B1 출입구",
+        "location": {
+            "x": 1616,
+            "y": 560
+        },
+        "size": {
+            "w": 146,
+            "h": 101
+        },
+        "publisher_name": "창비",
+        "category": "종합출판 대형관"
+    },
+    {
+        "id": "booth_B604",
+        "booth_number": "B604",
+        "gate": "B1 출입구",
+        "location": {
+            "x": 1560,
+            "y": 438
+        },
+        "size": {
+            "w": 34,
+            "h": 50
+        },
+        "publisher_name": "아침달",
+        "category": "문학"
+    },
+    {
+        "id": "booth_B605",
+        "booth_number": "B605",
+        "gate": "B1 출입구",
+        "location": {
+            "x": 1560,
+            "y": 386
+        },
+        "size": {
+            "w": 34,
+            "h": 49
+        },
+        "publisher_name": "다람출판사",
+        "category": "사회과학, 역사"
+    },
+    {
+        "id": "booth_B606",
+        "booth_number": "B606",
+        "gate": "B1 출입구",
+        "location": {
+            "x": 1596,
+            "y": 448
+        },
+        "size": {
+            "w": 34,
+            "h": 31
+        },
+        "publisher_name": "주식회사 휴먼밸류, 더클래스",
+        "category": "총류, 문학"
+    },
+    {
+        "id": "booth_B607",
+        "booth_number": "B607",
+        "gate": "B1 출입구",
+        "location": {
+            "x": 1596,
+            "y": 414
+        },
+        "size": {
+            "w": 34,
+            "h": 33
+        },
+        "publisher_name": "북챗",
+        "category": "언어, 아동"
+    },
+    {
+        "id": "booth_B608",
+        "booth_number": "B608",
+        "gate": "B1 출입구",
+        "location": {
+            "x": 1596,
+            "y": 378
+        },
+        "size": {
+            "w": 34,
+            "h": 33
+        },
+        "publisher_name": "썸북스",
+        "category": "예술, 문학, 그림책"
+    },
+    {
+        "id": "booth_B609",
+        "booth_number": "B609",
+        "gate": "B1 출입구",
+        "location": {
+            "x": 1674,
+            "y": 412
+        },
+        "size": {
+            "w": 31,
+            "h": 101
+        },
+        "publisher_name": "국가보훈부",
+        "category": "공공기관"
+    },
+    {
+        "id": "booth_B701",
+        "booth_number": "B701",
         "gate": "B1 출입구",
         "location": {
             "x": 930,
-            "y": 223
+            "y": 224
         },
         "size": {
             "w": 227,
             "h": 163
         },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
+        "publisher_name": "[F&B] (주)커피 리브레",
+        "category": "식음료, 종합 푸드 코트"
     },
     {
-        "id": "b_004",
-        "booth_number": "B_004",
+        "id": "booth_B702",
+        "booth_number": "B702",
         "gate": "B1 출입구",
         "location": {
-            "x": 1131,
-            "y": 223
+            "x": 1132,
+            "y": 224
         },
         "size": {
             "w": 89,
             "h": 163
         },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
+        "publisher_name": "미등록 부스",
+        "category": "일반"
     },
     {
-        "id": "b_005",
-        "booth_number": "B_005",
+        "id": "booth_B703",
+        "booth_number": "B703",
         "gate": "B1 출입구",
         "location": {
-            "x": 1263,
-            "y": 223
+            "x": 1264,
+            "y": 224
         },
         "size": {
             "w": 89,
             "h": 163
         },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
+        "publisher_name": "미등록 부스",
+        "category": "일반"
     },
     {
-        "id": "b_006",
-        "booth_number": "B_006",
+        "id": "booth_B704",
+        "booth_number": "B704",
         "gate": "B1 출입구",
         "location": {
-            "x": 1467,
-            "y": 223
+            "x": 1468,
+            "y": 224
         },
         "size": {
             "w": 233,
             "h": 163
         },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
+        "publisher_name": "미등록 부스",
+        "category": "일반"
     },
     {
-        "id": "b_007",
-        "booth_number": "B_007",
-        "gate": "B1 출입구",
-        "location": {
-            "x": 1658,
-            "y": 224
-        },
-        "size": {
-            "w": 61,
-            "h": 52
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_008",
-        "booth_number": "B_008",
+        "id": "booth_B705",
+        "booth_number": "B705",
         "gate": "B1 출입구",
         "location": {
             "x": 1658,
@@ -116,1312 +3064,37 @@
             "w": 61,
             "h": 52
         },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
+        "publisher_name": "미등록 부스",
+        "category": "일반"
     },
     {
-        "id": "b_009",
-        "booth_number": "B_009",
+        "id": "booth_B706",
+        "booth_number": "B706",
         "gate": "B1 출입구",
         "location": {
-            "x": 1157,
-            "y": 395
+            "x": 1658,
+            "y": 224
         },
         "size": {
-            "w": 67,
-            "h": 67
+            "w": 61,
+            "h": 52
         },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
+        "publisher_name": "미등록 부스",
+        "category": "일반"
     },
     {
-        "id": "b_010",
-        "booth_number": "B_010",
+        "id": "booth_B707",
+        "booth_number": "B707",
         "gate": "B1 출입구",
         "location": {
-            "x": 1269,
-            "y": 395
+            "x": 1658,
+            "y": 168
         },
         "size": {
-            "w": 67,
-            "h": 67
+            "w": 61,
+            "h": 52
         },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_011",
-        "booth_number": "B_011",
-        "gate": "B1 출입구",
-        "location": {
-            "x": 1427,
-            "y": 412
-        },
-        "size": {
-            "w": 146,
-            "h": 101
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_012",
-        "booth_number": "B_012",
-        "gate": "B1 출입구",
-        "location": {
-            "x": 1577,
-            "y": 412
-        },
-        "size": {
-            "w": 68,
-            "h": 101
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_013",
-        "booth_number": "B_013",
-        "gate": "B1 출입구",
-        "location": {
-            "x": 1673,
-            "y": 412
-        },
-        "size": {
-            "w": 31,
-            "h": 101
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_014",
-        "booth_number": "B_014",
-        "gate": "B1 출입구",
-        "location": {
-            "x": 1836,
-            "y": 422
-        },
-        "size": {
-            "w": 159,
-            "h": 71
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_015",
-        "booth_number": "B_015",
-        "gate": "B1 출입구",
-        "location": {
-            "x": 944,
-            "y": 485
-        },
-        "size": {
-            "w": 255,
-            "h": 249
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_016",
-        "booth_number": "B_016",
-        "gate": "B1 출입구",
-        "location": {
-            "x": 1157,
-            "y": 541
-        },
-        "size": {
-            "w": 67,
-            "h": 138
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_017",
-        "booth_number": "B_017",
-        "gate": "B1 출입구",
-        "location": {
-            "x": 1269,
-            "y": 541
-        },
-        "size": {
-            "w": 67,
-            "h": 138
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_018",
-        "booth_number": "B_018",
-        "gate": "B1 출입구",
-        "location": {
-            "x": 1427,
-            "y": 559
-        },
-        "size": {
-            "w": 146,
-            "h": 101
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_019",
-        "booth_number": "B_019",
-        "gate": "B1 출입구",
-        "location": {
-            "x": 1616,
-            "y": 559
-        },
-        "size": {
-            "w": 146,
-            "h": 101
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_020",
-        "booth_number": "B_020",
-        "gate": "B1 출입구",
-        "location": {
-            "x": 1821,
-            "y": 594
-        },
-        "size": {
-            "w": 32,
-            "h": 32
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_021",
-        "booth_number": "B_021",
-        "gate": "B1 출입구",
-        "location": {
-            "x": 1897,
-            "y": 584
-        },
-        "size": {
-            "w": 68,
-            "h": 163
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_022",
-        "booth_number": "B_022",
-        "gate": "B1 출입구",
-        "location": {
-            "x": 1062,
-            "y": 754
-        },
-        "size": {
-            "w": 34,
-            "h": 174
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_023",
-        "booth_number": "B_023",
-        "gate": "B1 출입구",
-        "location": {
-            "x": 1157,
-            "y": 754
-        },
-        "size": {
-            "w": 67,
-            "h": 174
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_024",
-        "booth_number": "B_024",
-        "gate": "B1 출입구",
-        "location": {
-            "x": 1269,
-            "y": 754
-        },
-        "size": {
-            "w": 67,
-            "h": 174
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_025",
-        "booth_number": "B_025",
-        "gate": "B1 출입구",
-        "location": {
-            "x": 1380,
-            "y": 754
-        },
-        "size": {
-            "w": 67,
-            "h": 174
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_026",
-        "booth_number": "B_026",
-        "gate": "B1 출입구",
-        "location": {
-            "x": 1476,
-            "y": 754
-        },
-        "size": {
-            "w": 34,
-            "h": 174
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_027",
-        "booth_number": "A_001",
-        "gate": "A 출입구",
-        "location": {
-            "x": 1251,
-            "y": 941
-        },
-        "size": {
-            "w": 161,
-            "h": 64
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_028",
-        "booth_number": "A_002",
-        "gate": "A 출입구",
-        "location": {
-            "x": 335,
-            "y": 958
-        },
-        "size": {
-            "w": 32,
-            "h": 32
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_029",
-        "booth_number": "A_003",
-        "gate": "A 출입구",
-        "location": {
-            "x": 1345,
-            "y": 961
-        },
-        "size": {
-            "w": 25,
-            "h": 163
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_030",
-        "booth_number": "A_004",
-        "gate": "A 출입구",
-        "location": {
-            "x": 1345,
-            "y": 961
-        },
-        "size": {
-            "w": 25,
-            "h": 163
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_031",
-        "booth_number": "A_005",
-        "gate": "A 출입구",
-        "location": {
-            "x": 1612,
-            "y": 958
-        },
-        "size": {
-            "w": 32,
-            "h": 32
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_032",
-        "booth_number": "A_006",
-        "gate": "A 출입구",
-        "location": {
-            "x": 267,
-            "y": 1035
-        },
-        "size": {
-            "w": 33,
-            "h": 34
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_033",
-        "booth_number": "A_007",
-        "gate": "A 출입구",
-        "location": {
-            "x": 171,
-            "y": 1088
-        },
-        "size": {
-            "w": 74,
-            "h": 140
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_034",
-        "booth_number": "A_008",
-        "gate": "A 출입구",
-        "location": {
-            "x": 303,
-            "y": 1088
-        },
-        "size": {
-            "w": 34,
-            "h": 140
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_035",
-        "booth_number": "A_009",
-        "gate": "A 출입구",
-        "location": {
-            "x": 402,
-            "y": 1088
-        },
-        "size": {
-            "w": 67,
-            "h": 140
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_036",
-        "booth_number": "A_010",
-        "gate": "A 출입구",
-        "location": {
-            "x": 515,
-            "y": 1088
-        },
-        "size": {
-            "w": 65,
-            "h": 140
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_037",
-        "booth_number": "A_011",
-        "gate": "A 출입구",
-        "location": {
-            "x": 633,
-            "y": 1088
-        },
-        "size": {
-            "w": 67,
-            "h": 140
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_038",
-        "booth_number": "A_012",
-        "gate": "A 출입구",
-        "location": {
-            "x": 746,
-            "y": 1088
-        },
-        "size": {
-            "w": 64,
-            "h": 140
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_039",
-        "booth_number": "A_013",
-        "gate": "A 출입구",
-        "location": {
-            "x": 863,
-            "y": 1088
-        },
-        "size": {
-            "w": 67,
-            "h": 140
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_040",
-        "booth_number": "A_014",
-        "gate": "A 출입구",
-        "location": {
-            "x": 976,
-            "y": 1088
-        },
-        "size": {
-            "w": 64,
-            "h": 140
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_041",
-        "booth_number": "A_015",
-        "gate": "A 출입구",
-        "location": {
-            "x": 1088,
-            "y": 1088
-        },
-        "size": {
-            "w": 67,
-            "h": 140
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_042",
-        "booth_number": "A_016",
-        "gate": "A 출입구",
-        "location": {
-            "x": 1207,
-            "y": 1088
-        },
-        "size": {
-            "w": 67,
-            "h": 140
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_043",
-        "booth_number": "A_017",
-        "gate": "A 출입구",
-        "location": {
-            "x": 1320,
-            "y": 1088
-        },
-        "size": {
-            "w": 64,
-            "h": 140
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_044",
-        "booth_number": "A_018",
-        "gate": "A 출입구",
-        "location": {
-            "x": 1432,
-            "y": 1088
-        },
-        "size": {
-            "w": 67,
-            "h": 140
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_045",
-        "booth_number": "A_019",
-        "gate": "A 출입구",
-        "location": {
-            "x": 1551,
-            "y": 1088
-        },
-        "size": {
-            "w": 67,
-            "h": 140
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_046",
-        "booth_number": "A_020",
-        "gate": "A 출입구",
-        "location": {
-            "x": 1694,
-            "y": 1088
-        },
-        "size": {
-            "w": 125,
-            "h": 140
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_047",
-        "booth_number": "A_021",
-        "gate": "A 출입구",
-        "location": {
-            "x": 264,
-            "y": 1110
-        },
-        "size": {
-            "w": 34,
-            "h": 102
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_048",
-        "booth_number": "A_022",
-        "gate": "A 출입구",
-        "location": {
-            "x": 1737,
-            "y": 1212
-        },
-        "size": {
-            "w": 33,
-            "h": 65
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_049",
-        "booth_number": "A_023",
-        "gate": "A 출입구",
-        "location": {
-            "x": 150,
-            "y": 1282
-        },
-        "size": {
-            "w": 34,
-            "h": 140
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_050",
-        "booth_number": "A_024",
-        "gate": "A 출입구",
-        "location": {
-            "x": 245,
-            "y": 1282
-        },
-        "size": {
-            "w": 67,
-            "h": 140
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_051",
-        "booth_number": "A_025",
-        "gate": "A 출입구",
-        "location": {
-            "x": 362,
-            "y": 1282
-        },
-        "size": {
-            "w": 67,
-            "h": 140
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_052",
-        "booth_number": "A_026",
-        "gate": "A 출입구",
-        "location": {
-            "x": 475,
-            "y": 1282
-        },
-        "size": {
-            "w": 65,
-            "h": 140
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_053",
-        "booth_number": "A_027",
-        "gate": "A 출입구",
-        "location": {
-            "x": 594,
-            "y": 1282
-        },
-        "size": {
-            "w": 67,
-            "h": 140
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_054",
-        "booth_number": "A_028",
-        "gate": "A 출입구",
-        "location": {
-            "x": 707,
-            "y": 1282
-        },
-        "size": {
-            "w": 65,
-            "h": 140
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_055",
-        "booth_number": "A_029",
-        "gate": "A 출입구",
-        "location": {
-            "x": 826,
-            "y": 1282
-        },
-        "size": {
-            "w": 67,
-            "h": 140
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_056",
-        "booth_number": "A_030",
-        "gate": "A 출입구",
-        "location": {
-            "x": 939,
-            "y": 1282
-        },
-        "size": {
-            "w": 65,
-            "h": 140
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_057",
-        "booth_number": "A_031",
-        "gate": "A 출입구",
-        "location": {
-            "x": 1074,
-            "y": 1282
-        },
-        "size": {
-            "w": 98,
-            "h": 140
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_058",
-        "booth_number": "A_032",
-        "gate": "A 출입구",
-        "location": {
-            "x": 1219,
-            "y": 1282
-        },
-        "size": {
-            "w": 98,
-            "h": 140
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_059",
-        "booth_number": "A_033",
-        "gate": "A 출입구",
-        "location": {
-            "x": 1364,
-            "y": 1282
-        },
-        "size": {
-            "w": 98,
-            "h": 140
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_060",
-        "booth_number": "A_034",
-        "gate": "A 출입구",
-        "location": {
-            "x": 1529,
-            "y": 1282
-        },
-        "size": {
-            "w": 67,
-            "h": 140
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_061",
-        "booth_number": "A_035",
-        "gate": "A 출입구",
-        "location": {
-            "x": 1641,
-            "y": 1282
-        },
-        "size": {
-            "w": 65,
-            "h": 140
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_062",
-        "booth_number": "A_036",
-        "gate": "A 출입구",
-        "location": {
-            "x": 1737,
-            "y": 1301
-        },
-        "size": {
-            "w": 33,
-            "h": 102
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_063",
-        "booth_number": "A_037",
-        "gate": "A 출입구",
-        "location": {
-            "x": 150,
-            "y": 1476
-        },
-        "size": {
-            "w": 34,
-            "h": 140
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_064",
-        "booth_number": "A_038",
-        "gate": "A 출입구",
-        "location": {
-            "x": 245,
-            "y": 1475
-        },
-        "size": {
-            "w": 67,
-            "h": 140
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_065",
-        "booth_number": "A_039",
-        "gate": "A 출입구",
-        "location": {
-            "x": 362,
-            "y": 1476
-        },
-        "size": {
-            "w": 67,
-            "h": 140
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_066",
-        "booth_number": "A_040",
-        "gate": "A 출입구",
-        "location": {
-            "x": 475,
-            "y": 1476
-        },
-        "size": {
-            "w": 65,
-            "h": 140
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_067",
-        "booth_number": "A_041",
-        "gate": "A 출입구",
-        "location": {
-            "x": 594,
-            "y": 1476
-        },
-        "size": {
-            "w": 67,
-            "h": 140
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_068",
-        "booth_number": "A_042",
-        "gate": "A 출입구",
-        "location": {
-            "x": 707,
-            "y": 1476
-        },
-        "size": {
-            "w": 65,
-            "h": 140
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_069",
-        "booth_number": "A_043",
-        "gate": "A 출입구",
-        "location": {
-            "x": 826,
-            "y": 1476
-        },
-        "size": {
-            "w": 67,
-            "h": 140
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_070",
-        "booth_number": "A_044",
-        "gate": "A 출입구",
-        "location": {
-            "x": 939,
-            "y": 1476
-        },
-        "size": {
-            "w": 65,
-            "h": 140
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_071",
-        "booth_number": "A_045",
-        "gate": "A 출입구",
-        "location": {
-            "x": 1074,
-            "y": 1476
-        },
-        "size": {
-            "w": 98,
-            "h": 140
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_072",
-        "booth_number": "A_046",
-        "gate": "A 출입구",
-        "location": {
-            "x": 1219,
-            "y": 1476
-        },
-        "size": {
-            "w": 98,
-            "h": 140
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_073",
-        "booth_number": "A_047",
-        "gate": "A 출입구",
-        "location": {
-            "x": 1364,
-            "y": 1476
-        },
-        "size": {
-            "w": 98,
-            "h": 140
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_074",
-        "booth_number": "A_048",
-        "gate": "A 출입구",
-        "location": {
-            "x": 1514,
-            "y": 1476
-        },
-        "size": {
-            "w": 96,
-            "h": 140
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_075",
-        "booth_number": "A_049",
-        "gate": "A 출입구",
-        "location": {
-            "x": 1641,
-            "y": 1476
-        },
-        "size": {
-            "w": 65,
-            "h": 140
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_076",
-        "booth_number": "A_050",
-        "gate": "A 출입구",
-        "location": {
-            "x": 1737,
-            "y": 1460
-        },
-        "size": {
-            "w": 33,
-            "h": 172
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_077",
-        "booth_number": "A_051",
-        "gate": "A 출입구",
-        "location": {
-            "x": 150,
-            "y": 1670
-        },
-        "size": {
-            "w": 34,
-            "h": 140
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_078",
-        "booth_number": "A_052",
-        "gate": "A 출입구",
-        "location": {
-            "x": 245,
-            "y": 1670
-        },
-        "size": {
-            "w": 67,
-            "h": 140
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_079",
-        "booth_number": "A_053",
-        "gate": "A 출입구",
-        "location": {
-            "x": 362,
-            "y": 1670
-        },
-        "size": {
-            "w": 67,
-            "h": 140
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_080",
-        "booth_number": "A_054",
-        "gate": "A 출입구",
-        "location": {
-            "x": 476,
-            "y": 1670
-        },
-        "size": {
-            "w": 65,
-            "h": 140
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_081",
-        "booth_number": "A_055",
-        "gate": "A 출입구",
-        "location": {
-            "x": 594,
-            "y": 1670
-        },
-        "size": {
-            "w": 67,
-            "h": 140
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_082",
-        "booth_number": "A_056",
-        "gate": "A 출입구",
-        "location": {
-            "x": 707,
-            "y": 1670
-        },
-        "size": {
-            "w": 65,
-            "h": 140
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_083",
-        "booth_number": "A_057",
-        "gate": "A 출입구",
-        "location": {
-            "x": 826,
-            "y": 1670
-        },
-        "size": {
-            "w": 67,
-            "h": 140
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_084",
-        "booth_number": "A_058",
-        "gate": "A 출입구",
-        "location": {
-            "x": 939,
-            "y": 1670
-        },
-        "size": {
-            "w": 65,
-            "h": 140
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_085",
-        "booth_number": "A_059",
-        "gate": "A 출입구",
-        "location": {
-            "x": 1074,
-            "y": 1670
-        },
-        "size": {
-            "w": 98,
-            "h": 140
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_086",
-        "booth_number": "A_060",
-        "gate": "A 출입구",
-        "location": {
-            "x": 1219,
-            "y": 1670
-        },
-        "size": {
-            "w": 98,
-            "h": 140
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_087",
-        "booth_number": "A_061",
-        "gate": "A 출입구",
-        "location": {
-            "x": 1364,
-            "y": 1670
-        },
-        "size": {
-            "w": 98,
-            "h": 140
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_088",
-        "booth_number": "A_062",
-        "gate": "A 출입구",
-        "location": {
-            "x": 1553,
-            "y": 1670
-        },
-        "size": {
-            "w": 174,
-            "h": 140
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_089",
-        "booth_number": "A_063",
-        "gate": "A 출입구",
-        "location": {
-            "x": 1720,
-            "y": 1670
-        },
-        "size": {
-            "w": 68,
-            "h": 140
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_090",
-        "booth_number": "A_064",
-        "gate": "A 출입구",
-        "location": {
-            "x": 206,
-            "y": 1774
-        },
-        "size": {
-            "w": 145,
-            "h": 18
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_091",
-        "booth_number": "A_065",
-        "gate": "A 출입구",
-        "location": {
-            "x": 809,
-            "y": 1811
-        },
-        "size": {
-            "w": 32,
-            "h": 32
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_092",
-        "booth_number": "A_066",
-        "gate": "A 출입구",
-        "location": {
-            "x": 1126,
-            "y": 1811
-        },
-        "size": {
-            "w": 32,
-            "h": 32
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_093",
-        "booth_number": "A_067",
-        "gate": "A 출입구",
-        "location": {
-            "x": 1723,
-            "y": 1887
-        },
-        "size": {
-            "w": 164,
-            "h": 68
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_094",
-        "booth_number": "A_068",
-        "gate": "A 출입구",
-        "location": {
-            "x": 492,
-            "y": 1911
-        },
-        "size": {
-            "w": 109,
-            "h": 45
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
-    },
-    {
-        "id": "b_095",
-        "booth_number": "A_069",
-        "gate": "A 출입구",
-        "location": {
-            "x": 1404,
-            "y": 1911
-        },
-        "size": {
-            "w": 160,
-            "h": 45
-        },
-        "publisher_name": "엑셀 매칭 대기 중",
-        "category": "일반 부스"
+        "publisher_name": "미등록 부스",
+        "category": "일반"
     }
 ]
