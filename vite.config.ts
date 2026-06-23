@@ -33,5 +33,8 @@ export default defineConfig({
         maximumFileSizeToCacheInBytes: 10 * 1024 * 1024, 
       }
     })
-  ]
+  ],
+  server: {
+    host: true,
+  }
 });
