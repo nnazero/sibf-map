@@ -1,382 +1,260 @@
-/* 독립된 컴포넌트 래퍼: 부모가 채워준 영역 안에서만 작동하도록 잡습니다 */
+/* ── 래퍼 ───────────────────────────────────────────────── */
 .mapComponentWrapper {
-  position: relative;
-  width: 100%;
-  height: 100%; /* 부모 뷰포트 높이에 그대로 스며듦 */
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
+  position: relative; width: 100%; height: 100%;
+  overflow: hidden; display: flex; flex-direction: column;
 }
 
-/* 🗺️ 지도가 들어가는 스크롤 박스 */
+/* ── 지도 ───────────────────────────────────────────────── */
 .mapWrapper {
-  flex: 1;
-  width: 100%;
-  overflow: auto; /* 전방향 자유 스크롤 활성화 */
-  background-color: #f0f0f0;
-  position: relative;
+  flex: 1; width: 100%; overflow: auto;
+  background-color: #f0f0f0; position: relative;
 }
+.mapContainer { position: relative; display: inline-block; transform-origin: top left; }
+.mapImage { display: block; max-width: none; height: auto; }
 
-.mapContainer {
-  position: relative;
-  display: inline-block;
-}
-
-.mapImage {
-  display: block;
-  max-width: none;
-  height: auto;
-}
-
-/* 🎯 화면 중앙 정렬 팝업 모달 스타일 */
-.modalOverlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.4); /* 지도를 어둡게 만드는 딤드 처리 */
-  backdrop-filter: blur(4px); /* 뒷배경 블러 처리로 고집약 집중도 선사 */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
-  z-index: 300; /* 바텀시트(50)보다 훨씬 높게 설정해서 최상단 선점 */
-  animation: fadeInOverlay 0.2s ease-out;
-}
-
-.modalBox {
-  width: 100%;
-  max-width: 340px;
-  background-color: white;
-  border-radius: 16px;
-  padding: 20px;
-  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.25);
-  animation: scaleUpModal 0.22s cubic-bezier(0.175, 0.885, 0.32, 1.2);
-}
-
-.modalHeader {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 12px;
-}
-
-.modalBadge {
-  background-color: #ff7832;
-  color: white;
-  font-size: 11px;
-  font-weight: bold;
-  padding: 3px 8px;
-  border-radius: 6px;
-}
-
-.modalCloseBtn {
-  background: none;
-  border: none;
-  font-size: 18px;
-  color: #aaa;
-  cursor: pointer;
-  transition: color 0.2s;
-}
-
-.modalCloseBtn:hover {
-  color: #333;
-}
-
-.modalTitle {
-  font-size: 20px;
-  font-weight: bold;
-  color: #111;
-  margin: 0 0 12px 0;
-}
-
-.modalDivider {
-  height: 1px;
-  background-color: #eee;
-  margin-bottom: 12px;
-}
-
-.modalMeta {
-  font-size: 14px;
-  color: #444;
-  margin: 6px 0;
-}
-
-.modalDesc {
-  font-size: 13px;
-  color: #777;
-  line-height: 1.5;
-  margin: 14px 0 0 0;
-  background-color: #f8f9fa;
-  padding: 10px;
-  border-radius: 8px;
-}
-
-/* 애니메이션 키프레임 */
-@keyframes fadeInOverlay {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes scaleUpModal {
-  from { transform: scale(0.92); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-8px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.popupHeader {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 6px;
-}
-
-.popupBadge {
-  background-color: #ff7832;
-  color: white;
-  font-size: 11px;
-  font-weight: bold;
-  padding: 2px 6px;
-  border-radius: 4px;
-}
-
-.popupCloseBtn {
-  background: none;
-  border: none;
-  font-size: 16px;
-  color: #999;
-  cursor: pointer;
-}
-
-.popupTitle {
-  font-size: 16px;
-  font-weight: bold;
-  color: #111;
-  margin: 0 0 4px 0;
-}
-
-.popupMeta {
-  font-size: 13px;
-  color: #666;
-  margin: 0;
-}
-
-.popupCategory {
-  font-size: 12px;
-  color: #007bff;
-  margin: 4px 0 0 0;
-}
-
-/* 부스 격자 블록 */
+/* ── 부스 블록 ──────────────────────────────────────────── */
 .boothBlock {
   position: absolute;
-  border: 1px solid rgba(0, 123, 255, 0.35);
-  background-color: rgba(0, 123, 255, 0.05);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
+  border: 1px solid rgba(0,123,255,0.35);
+  background-color: rgba(0,123,255,0.05);
+  cursor: pointer; display: flex; align-items: center;
+  justify-content: center; box-sizing: border-box;
 }
-
 .activeBlock {
-  background-color: rgba(255, 120, 50, 0.35) !important;
-  border: 2px solid #FF7832 !important;
-  z-index: 10;
+  background-color: rgba(255,120,50,0.35) !important;
+  border: 2px solid #FF7832 !important; z-index: 10;
+}
+.zoneBlock {
+  border: 1.5px dashed rgba(0,123,255,0.6);
+  background-color: rgba(0,123,255,0.08);
+}
+.blockLabel { font-size: 8px; font-weight: bold; color: #555; pointer-events: none; }
+
+/* ── 핀들 ───────────────────────────────────────────────── */
+.selectionPin {
+  position: absolute; width: 16px; height: 16px;
+  margin-left: -8px; margin-top: -8px;
+  border-radius: 50%; background-color: #ff7832;
+  border: 3px solid #fff; box-shadow: 0 2px 6px rgba(0,0,0,0.35);
+  z-index: 20; pointer-events: none; animation: pinPop 0.18s ease-out;
+}
+.routePinStart, .routePinEnd {
+  position: absolute; width: 18px; height: 18px;
+  margin-left: -9px; margin-top: -9px;
+  border-radius: 50%; border: 3px solid #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.35);
+  z-index: 21; pointer-events: none; animation: pinPop 0.18s ease-out;
+}
+.routePinStart { background-color: #2ecc71; }
+.routePinEnd   { background-color: #ff3b30; }
+
+/* 루트정하기 번호 핀 */
+.multiRoutePinNum {
+  position: absolute; width: 22px; height: 22px;
+  margin-left: -11px; margin-top: -11px;
+  border-radius: 50%; background-color: #6c35de;
+  border: 2px solid #fff; color: #fff;
+  font-size: 11px; font-weight: bold;
+  display: flex; align-items: center; justify-content: center;
+  z-index: 21; pointer-events: none;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.35); animation: pinPop 0.18s ease-out;
 }
 
-.blockLabel {
-  font-size: 8px;
-  font-weight: bold;
-  color: #555;
+@keyframes pinPop {
+  from { transform: scale(0.4); opacity: 0; }
+  to   { transform: scale(1);   opacity: 1; }
 }
 
-/* 🛑 모바일 스와이프 바텀 시트 (중복 정리 및 애니메이션 최적화) */
+/* ── 경로 선분 ──────────────────────────────────────────── */
+.routeLine, .routeLineCrossFloor, .routeLineMulti {
+  position: absolute; height: 3px; margin-top: -1.5px;
+  transform-origin: 0 50%; z-index: 15; pointer-events: none;
+}
+.routeLine           { background-color: #007bff; }   /* 길찾기: 파란 실선 */
+.routeLineCrossFloor { background-color: #ff9500; }   /* 층 다름: 주황 실선 */
+.routeLineMulti      { background-color: #6c35de; }   /* 루트정하기: 보라 실선 */
+
+/* 층 이동 배지 */
+.floorBadge {
+  position: absolute; transform: translate(-50%, -50%);
+  background-color: #1c1c1e; color: #fff;
+  font-size: 11px; font-weight: bold;
+  padding: 4px 8px; border-radius: 12px;
+  white-space: nowrap; z-index: 22; pointer-events: none;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+/* ── 바텀 시트 ──────────────────────────────────────────── */
 .bottomSheet {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: white;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  box-shadow: 0 -3px 12px rgba(0, 0, 0, 0.12);
-  display: flex;
-  flex-direction: column;
-  z-index: 50;
-  /* 드래그를 놓았을 때 위아래 2단계로 착 붙는 부드러운 가속도 설정 */
-  transition: height 0.22s cubic-bezier(0.175, 0.885, 0.32, 1.1); 
-}
-
-.sheetHandleWrapper {
-  width: 100%;
-  height: 20px;
-  cursor: ns-resize;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.sheetHandle {
-  width: 36px;
-  height: 4px;
-  background-color: #dbdbdb;
-  border-radius: 2px;
-}
-
-.sheetContent {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  padding: 0 16px 16px 16px;
-  overflow: hidden;
-}
-
-.sheetTitle {
-  margin: 0 0 10px 0;
-  font-size: 15px;
-}
-
-/* 🔍 [추가] 바텀 시트 실시간 검색 바 디자인 */
-.searchBarWrapper {
-  position: relative;
-  width: 100%;
-  margin-bottom: 12px;
-}
-
-.searchInput {
-  width: 100%;
-  padding: 10px 36px 10px 12px;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  font-size: 14px;
-  background-color: #f5f5f7;
-  outline: none;
-  box-sizing: border-box;
-  transition: all 0.2s;
-}
-
-.searchInput:focus {
-  border-color: #007bff;
+  position: absolute; bottom: 0; left: 0; right: 0;
   background-color: #fff;
-  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+  border-top-left-radius: 20px; border-top-right-radius: 20px;
+  box-shadow: 0 -3px 12px rgba(0,0,0,0.12);
+  display: flex; flex-direction: column; z-index: 50;
+  transition: height 0.22s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+}
+.sheetHandleWrapper {
+  width: 100%; height: 20px; cursor: ns-resize;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.sheetHandle { width: 36px; height: 4px; background-color: #dbdbdb; border-radius: 2px; }
+.sheetContent {
+  flex: 1; display: flex; flex-direction: column;
+  padding: 0 16px 16px; overflow: hidden; min-height: 0;
+}
+.sheetTitle { margin: 0 0 10px; font-size: 15px; flex-shrink: 0; }
+
+/* ── 모드 전환 ──────────────────────────────────────────── */
+.modeToggleWrapper { display: flex; gap: 6px; margin-bottom: 10px; flex-shrink: 0; }
+.modeBtn {
+  flex: 1; padding: 8px; border: 1px solid #e0e0e0;
+  background-color: #fafafa; border-radius: 6px;
+  font-size: 12px; font-weight: bold; cursor: pointer;
+}
+.modeBtnActive { background-color: #1c1c1e; color: #fff; border-color: #1c1c1e; }
+
+/* ── 길찾기 슬롯 ────────────────────────────────────────── */
+.routeSlots { display: flex; flex-direction: column; gap: 8px; margin-bottom: 10px; flex-shrink: 0; }
+.routeSlot {
+  display: flex; align-items: center; gap: 8px;
+  padding: 10px 12px; border: 1.5px solid #e0e0e0;
+  border-radius: 10px; cursor: pointer; background-color: #fafafa;
+}
+.routeSlotActive { border-color: #007bff; background-color: rgba(0,123,255,0.06); }
+.routeSlotDot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+.routeSlotLabel { font-size: 11px; color: #999; font-weight: bold; width: 28px; flex-shrink: 0; }
+.routeSlotValue { font-size: 13px; color: #222; font-weight: 600; flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.routeSlotPlaceholder { font-size: 12px; color: #aaa; }
+
+/* ── 루트정하기 선택 목록 ───────────────────────────────── */
+.routeBoothsList {
+  display: flex; flex-direction: column; gap: 4px;
+  background-color: #f8f9fa; border-radius: 10px; padding: 10px;
+}
+.routeBoothItem {
+  display: flex; align-items: center; gap: 8px;
+  padding: 6px 4px; border-bottom: 1px solid #eee;
+}
+.routeBoothItem:last-of-type { border-bottom: none; }
+.routeBoothIdx {
+  width: 20px; height: 20px; border-radius: 50%;
+  background-color: #6c35de; color: #fff;
+  font-size: 11px; font-weight: bold;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.routeBoothName { flex: 1; font-size: 13px; color: #222; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.routeBoothRemoveBtn {
+  background: none; border: none; color: #aaa;
+  font-size: 13px; cursor: pointer; padding: 2px 4px; flex-shrink: 0;
+}
+.routeClearBtn {
+  margin-top: 6px; padding: 6px; background: none;
+  border: 1px solid #e0e0e0; border-radius: 6px;
+  font-size: 12px; color: #888; cursor: pointer; text-align: center;
+}
+.routeBoothsHint { font-size: 12px; color: #aaa; text-align: center; margin: 4px 0; }
+
+/* ── 경로 보기 버튼 / 요약 ──────────────────────────────── */
+.routeSearchBtn {
+  width: 100%; padding: 11px; background-color: #007bff;
+  color: #fff; border: none; border-radius: 10px;
+  font-size: 14px; font-weight: bold; cursor: pointer;
+}
+.routeSearchBtn:active { background-color: #0056d6; }
+.routeSummary {
+  background-color: #f8f9fa; border-radius: 10px;
+  padding: 10px 12px; font-size: 13px; color: #444; line-height: 1.6;
+}
+.routeFloorWarning {
+  margin-top: 6px; padding: 7px 10px;
+  background-color: #fff4e5; border: 1px solid #ffd9a0;
+  border-radius: 8px; color: #b25e00; font-size: 12px; font-weight: 600;
 }
 
+/* ── 검색 바 ────────────────────────────────────────────── */
+.searchBarWrapper { position: relative; width: 100%; margin-bottom: 10px; flex-shrink: 0; }
+.searchInput {
+  width: 100%; padding: 10px 36px 10px 12px;
+  border: 1px solid #e0e0e0; border-radius: 8px;
+  font-size: 14px; background-color: #f5f5f7;
+  outline: none; box-sizing: border-box; transition: all 0.2s;
+}
+.searchInput:focus { border-color: #007bff; background-color: #fff; box-shadow: 0 0 0 3px rgba(0,123,255,0.1); }
 .searchClearBtn {
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  background: none;
-  border: none;
-  color: #ccc;
-  font-size: 14px;
-  cursor: pointer;
+  position: absolute; right: 10px; top: 50%; transform: translateY(-50%);
+  background: none; border: none; color: #ccc; font-size: 14px; cursor: pointer;
 }
 
-/* 탭 메뉴 */
-.tabWrapper {
-  display: flex;
-  gap: 6px;
-  margin-bottom: 10px;
-}
-
+/* ── 탭 ─────────────────────────────────────────────────── */
+.tabWrapper { display: flex; gap: 6px; margin-bottom: 10px; flex-shrink: 0; }
 .tabBtn {
-  flex: 1;
-  padding: 8px;
-  border: 1px solid #e0e0e0;
-  background-color: #fafafa;
-  border-radius: 6px;
-  font-size: 13px;
-  font-weight: bold;
-  cursor: pointer;
+  flex: 1; padding: 8px; border: 1px solid #e0e0e0;
+  background-color: #fafafa; border-radius: 6px;
+  font-size: 12px; font-weight: bold; cursor: pointer;
 }
+.activeTab { background-color: #007bff; color: #fff; border-color: #007bff; }
 
-.activeTab {
-  background-color: #007bff;
-  color: white;
-  border-color: #007bff;
-}
-
-/* 카드 리스트 및 노데이터 가이드 */
-.boothList {
-  flex: 1;
-  overflow-y: auto;
-}
-
+/* ── 카드 리스트 ────────────────────────────────────────── */
+.boothList { flex: 1; overflow-y: auto; min-height: 0; }
 .boothCard {
-  padding: 10px;
-  border: 1px solid #f0f0f0;
-  border-radius: 6px;
-  margin-bottom: 6px;
-  cursor: pointer;
+  padding: 10px; border: 1px solid #f0f0f0;
+  border-radius: 6px; margin-bottom: 6px; cursor: pointer;
 }
+.selectedCard { border-color: #FF7832; background-color: rgba(255,120,50,0.04); }
+.cardRow { display: flex; align-items: center; gap: 8px; }
+.cardMain { flex: 1; min-width: 0; }
+.cardMain h4 { margin: 0 0 2px; font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.cardMain p  { margin: 0; font-size: 12px; color: #666; }
+.cardActions { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
 
-.selectedCard {
-  border-color: #FF7832;
-  background-color: rgba(255, 120, 50, 0.04);
+/* + 루트 추가 버튼 */
+.addRouteBtn {
+  width: 28px; height: 28px; border-radius: 50%;
+  border: 1.5px solid #6c35de; background: none;
+  color: #6c35de; font-size: 16px; font-weight: bold;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
 }
+.addRouteBtnActive { background-color: #6c35de; color: #fff; }
 
-.noResult {
-  text-align: center;
-  font-size: 14px;
-  color: #888;
-  margin-top: 24px;
+/* ⭐ 즐겨찾기 버튼 */
+.favBtn {
+  background: none; border: none;
+  font-size: 18px; cursor: pointer; padding: 0; line-height: 1;
+  color: #ccc; transition: color 0.15s;
 }
+.favBtnActive { color: #f5a623; }
 
-/* 선택된 부스 정보 배너 디자인 (바텀 시트 내부 백업용) */
-.selectedBoothBanner {
-  background-color: #f0f7ff;
-  border: 1px solid #d0e4ff;
-  border-radius: 12px;
-  padding: 16px;
-  margin-bottom: 16px;
-}
+.noResult { text-align: center; font-size: 14px; color: #888; margin-top: 24px; }
 
-.bannerHeader {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 8px;
+/* ── 모달 ───────────────────────────────────────────────── */
+.modalOverlay {
+  position: absolute; inset: 0;
+  background-color: rgba(0,0,0,0.4); backdrop-filter: blur(4px);
+  display: flex; align-items: center; justify-content: center;
+  padding: 24px; z-index: 300; animation: fadeInOverlay 0.2s ease-out;
 }
-
-.boothBadge {
-  background-color: #007aff;
-  color: #fff;
-  font-size: 11px;
-  font-weight: bold;
-  padding: 3px 8px;
-  border-radius: 20px;
+.modalBox {
+  width: 100%; max-width: 340px; background-color: #fff;
+  border-radius: 16px; padding: 20px;
+  box-shadow: 0 12px 36px rgba(0,0,0,0.25);
+  animation: scaleUpModal 0.22s cubic-bezier(0.175, 0.885, 0.32, 1.2);
 }
-
-.closeBannerBtn {
-  background: none;
-  border: none;
-  font-size: 16px;
-  color: #8e8e93;
-  cursor: pointer;
+.modalHeader { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+.modalBadge { background-color: #ff7832; color: #fff; font-size: 11px; font-weight: bold; padding: 3px 8px; border-radius: 6px; }
+.modalHeaderActions { display: flex; align-items: center; gap: 8px; }
+.modalFavBtn {
+  padding: 4px 10px; border-radius: 16px;
+  border: 1.5px solid #e0e0e0; background: none;
+  font-size: 12px; color: #666; cursor: pointer; white-space: nowrap;
 }
-
-.bannerTitle {
-  font-size: 18px;
-  font-weight: bold;
-  color: #1c1c1e;
-  margin: 0 0 6px 0;
+.modalFavBtnActive { border-color: #f5a623; color: #f5a623; background-color: rgba(245,166,35,0.08); }
+.modalCloseBtn { background: none; border: none; font-size: 18px; color: #aaa; cursor: pointer; }
+.modalTitle { font-size: 20px; font-weight: bold; color: #111; margin: 0 0 12px; }
+.modalDivider { height: 1px; background-color: #eee; margin-bottom: 12px; }
+.modalMeta { font-size: 14px; color: #444; margin: 6px 0; }
+.modalDesc {
+  font-size: 13px; color: #777; line-height: 1.5; margin: 14px 0 0;
+  background-color: #f8f9fa; padding: 10px; border-radius: 8px;
 }
-
-.bannerInfo {
-  font-size: 14px;
-  color: #48484a;
-  margin: 0;
-}
-
-.bannerCategory {
-  font-size: 13px;
-  color: #8e8e93;
-  margin: 4px 0 0 0;
-}
+@keyframes fadeInOverlay { from { opacity: 0; } to { opacity: 1; } }
+@keyframes scaleUpModal  { from { transform: scale(0.92); opacity: 0; } to { transform: scale(1); opacity: 1; } }
