@@ -1,0 +1,135 @@
+/* 풀스크린 오버레이 */
+.overlay {
+  position: fixed; inset: 0;
+  background: linear-gradient(135deg, #f5f7ff 0%, #eef2ff 100%);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 9999; padding: 24px;
+}
+.card {
+  width: 100%; max-width: 360px;
+  background: #fff; 
+  border-radius: 24px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #d9d9d9;
+  padding: 32px 24px; 
+  animation: cardIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.2);
+}
+@keyframes cardIn {
+  from { transform: scale(0.9) translateY(20px); opacity: 0; }
+  to   { transform: scale(1) translateY(0); opacity: 1; }
+}
+.logo { 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 120px;
+  margin-bottom: 5px; 
+}
+
+.logoImg {
+  width: 120px;
+  height: 120px;
+}
+.title {
+  font-size: 22px; font-weight: 800; color: #111;
+  text-align: center; margin: 0 0 8px;
+}
+.subtitle {
+  font-size: 13px; color: #888; text-align: center;
+  line-height: 1.6; margin: 0 0 24px;
+}
+.gateList { display: flex; flex-direction: column; gap: 10px; }
+.gateBtn {
+  display: flex; align-items: center; gap: 12px;
+  padding: 14px 16px; border-radius: 14px;
+  border: 1.5px solid #e8e8e8; background: #fafafa;
+  cursor: pointer; text-align: left; transition: all 0.15s;
+}
+.gateBtn:active { background: #f0f0f0; transform: scale(0.98); }
+.gateEmoji { font-size: 24px; flex-shrink: 0; }
+.gateText { flex: 1; display: flex; flex-direction: column; gap: 2px; }
+.gateLabel { font-size: 15px; font-weight: 700; color: #111; }
+.gateSub { font-size: 12px; color: #999; }
+.gateBadge {
+  font-size: 11px; font-weight: 700;
+  background: #007bff; color: #fff;
+  padding: 3px 8px; border-radius: 8px; flex-shrink: 0;
+}
+
+/* 인라인 버튼 (지도 위 좌상단) */
+.inlineWrapper { 
+  position: relative; 
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  background-color: transparent;
+}
+.inlineBtn {
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  min-width: 105px;
+  height: 35px;
+  gap: 4px;
+  padding: 7px 12px; 
+  border-radius: 20px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #d9d9d9;
+  background-color: rgba(255,255,255,0.92);
+  font-size: 12px; 
+  font-weight: 700; 
+  color: #222;
+  cursor: pointer; 
+  margin: 10px;
+  white-space: nowrap;
+}
+
+.inlineBtnDownIcon{
+  text-align: center;
+  padding: 0; 
+  margin: 0 0 0 1px;
+  font-size: 13px; 
+  font-weight: 700; 
+  color: #737373;
+  cursor: pointer; 
+  white-space: nowrap;
+}
+
+.popover {
+  position: absolute; 
+  top: 100%; 
+  left: 10px;
+  background: #fff; 
+  border-radius: 20px;
+  border: 1px solid #d9d9d9; 
+  width: 150px; 
+  z-index: 200;
+  overflow: hidden; 
+  animation: popIn 0.18s ease-out;
+}
+@keyframes popIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.popoverTitle {
+  font-size: 12px; font-weight: 700; color: #999;
+  padding: 12px 14px 6px;
+}
+.popoverItem {
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 14px; border: none; background: none;
+  width: 100%; text-align: left; cursor: pointer; transition: background 0.1s;
+}
+.popoverItem:hover { background: #f5f5f5; }
+.popoverItemActive { background: rgba(0,123,255,0.06); }
+.popoverEmoji { font-size: 18px; }
+.popoverLabel { font-size: 13px; font-weight: 600; color: #111; }
+.popoverSub { font-size: 11px; color: #999; margin-top: 1px; }
+.popoverClose {
+  width: 100%; padding: 10px; border: none;
+  border-top: 1px solid #f0f0f0; background: none;
+  font-size: 13px; color: #999; cursor: pointer;
+}
