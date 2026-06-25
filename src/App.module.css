@@ -25,10 +25,23 @@
   z-index: 100;
 }
 
-.nickname {
-  font-size: 14px;
+.appTitle{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+}
+
+.logoImg{
+  width: 30px;
+  height: 30px;
+}
+
+.appName{
+  font-size: 13px;
   font-weight: 600;
   color: #333;
+  margin: 0;
 }
 
 .resetButton {

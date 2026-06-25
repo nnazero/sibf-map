@@ -1,8 +1,7 @@
-//App.tsx
-import { useState, useEffect } from 'react';
-import Login from './components/Login';
+import { useState } from 'react';
 import MapArea from './components/MapArea';
 import styles from './App.module.css';
+import logoSvg from './assets/logo.svg';
 
 interface Booth {
   id: string;
@@ -15,49 +14,32 @@ interface Booth {
 }
 
 export default function App() {
-  const [nickname, setNickname] = useState<string | null>(null);
   const [selectedBooth, setSelectedBooth] = useState<Booth | null>(null);
 
-  useEffect(() => {
-    const savedNickname = sessionStorage.getItem('nickname');
-    if (savedNickname) setNickname(savedNickname);
-  }, []);
-
-  const handleLoginSuccess = (name: string) => setNickname(name);
-
   const handleResetData = () => {
-    if (!nickname) return;
-    if (confirm('모든 데이터를 초기화하시겠습니까?')) {
-      sessionStorage.clear();
-      setNickname(null);
+    if (confirm('즐겨찾기와 출입구 설정을 초기화하시겠습니까?')) {
+      localStorage.removeItem('sibf_favorites');
+      localStorage.removeItem('sibf_gate');
       setSelectedBooth(null);
+      window.location.reload();
     }
   };
-
-  const handleBoothSelect = (booth: Booth | null) => {
-    setSelectedBooth(booth);
-  };
-
- if (!nickname) {
-  return (
-    <div className={styles.appContainer}>
-      <Login onLoginSuccess={handleLoginSuccess} />
-    </div>
-  );
-}
 
   return (
     <div className={styles.appContainer}>
       <header className={styles.header}>
-        <span className={styles.nickname}>👤 {nickname}</span>
+        <div className={styles.appTitle}>
+          <img src={logoSvg} alt="도서전 로고" className={styles.logoImg} />
+          <p className={styles.appName}>서울국제도서전</p>
+        </div>
         <button onClick={handleResetData} className={styles.resetButton}>초기화 🗑️</button>
       </header>
 
       <div className={styles.mainLayout}>
         <main style={{ width: '100%', height: '100%', position: 'relative' }}>
-          <MapArea 
-            selectedBooth={selectedBooth} 
-            onBoothSelect={handleBoothSelect} /* 👈 에러 해결의 핵심 자석 연결! */
+          <MapArea
+            selectedBooth={selectedBooth}
+            onBoothSelect={setSelectedBooth}
           />
         </main>
       </div>

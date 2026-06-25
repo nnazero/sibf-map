@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import boothsData from '../data/booths.json';
 import styles from './Sidebar.module.css';
 
