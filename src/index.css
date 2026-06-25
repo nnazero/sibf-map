@@ -42,19 +42,19 @@ button {
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
-  -webkit-tap-highlight-color: transparent;
- }
+  -webkit-tap-highlight-color: transparent !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
  
- button:focus,
- button:focus-visible,
- button:active {
-  outline: none;
-  border: none;
-  box-shadow: none;
- }
- 
+button:focus,
+button:focus-visible,
+button:active,
 button:hover {
- border-color: #646cff;
+  outline: none !important;
+  box-shadow: none !important;
+  -webkit-tap-highlight-color: transparent !important;
 }
 
 
