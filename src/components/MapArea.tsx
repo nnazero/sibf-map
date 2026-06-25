@@ -130,7 +130,6 @@ function astar(wg: WalkGridData, from: PathPoint, to: PathPoint): PathPoint[] {
 
   type Node = { c: number; r: number; g: number; f: number; pk: number };
   const nodeMap = new Map<number, Node>();
-  const parentMap = new Map<number, number>();
   const open  = new Set<number>();
   const closed = new Set<number>();
 
