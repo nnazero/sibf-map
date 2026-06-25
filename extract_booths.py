@@ -57,10 +57,8 @@ def load_companies_map(txt_path):
 
 import re
 
-# 개별 좌표 없이 한 구역(zone) 안에 여러 출판사가 같이 입주한 "공동관".
-# key: 묶일 zone의 실제 SVG 부스 번호, value: 이 zone에 속한 booth_number 패턴(정규식)
 ZONE_GROUPS = {
-    "B400": re.compile(r"^B4\d{2}$"),  # B401~B499 -> 전부 B400 구역 입주사로 취급 (B400 자신은 제외)
+    "B400": re.compile(r"^B4\d{2}$"), 
 }
 
 
@@ -72,8 +70,7 @@ def parse_svg_by_id(svg_path, txt_path, out_path):
     final_booths = []
     matched_booth_nums = set()
     unmatched_svg_rects = []
-    zone_tenant_nums = set()  # zone에 흡수된 booth_number들 (missing_in_svg 경고에서 제외하기 위함)
-
+    zone_tenant_nums = set() 
     for rect in soup.find_all('rect'):
         booth_id = rect.get('id', '')
         if not booth_id:
@@ -83,8 +80,9 @@ def parse_svg_by_id(svg_path, txt_path, out_path):
 
         if not (booth_num.startswith('A') or booth_num.startswith('B')):
             continue
-        # "Rectangle 4987" 같은 장식용 사각형 걸러내기 (글자+숫자 패턴만 허용)
         if not booth_num[1:].isdigit():
+            continue
+        if booth_id_upper.startswith('BLOCKED'):
             continue
 
         x = float(rect.get('x', 0))
@@ -106,15 +104,12 @@ def parse_svg_by_id(svg_path, txt_path, out_path):
             "id": f"booth_{booth_num}",
             "booth_number": booth_num,
             "gate": "A 출입구" if booth_num.startswith('A') else "B1 출입구",
-            # 중심 좌표로 저장 (SVG rect의 x,y는 좌상단이므로 변환 필요)
             "location": {"x": round(x + w / 2), "y": round(y + h / 2)},
             "size": {"w": round(w), "h": round(h)},
             "publisher_name": data["name"],
             "category": data["cat"]
         }
 
-        # 이 부스가 zone(공동관)이면, 같은 패턴에 속하면서 SVG엔 좌표가 없는
-        # 입주사들을 tenants 목록으로 묶어서 함께 저장한다.
         if booth_num in ZONE_GROUPS:
             pattern = ZONE_GROUPS[booth_num]
             tenants = []
@@ -137,7 +132,6 @@ def parse_svg_by_id(svg_path, txt_path, out_path):
 
     final_booths.sort(key=lambda b: b["booth_number"])
 
-    # zone에 흡수된 입주사들은 "SVG에 좌표 없음" 경고에서 제외
     missing_in_svg = sorted(set(companies.keys()) - matched_booth_nums - zone_tenant_nums)
 
     os.makedirs(os.path.dirname(out_path), exist_ok=True)
