@@ -76,6 +76,18 @@ const MapCanvas: React.FC<Props> = ({
             (mode === 'navigate'   && (navStart?.id === booth.id || navEnd?.id === booth.id)) ||
             inRoute;
           const { w, h } = booth.size;
+          const hiddenLabels = new Set([
+            "B701",
+            "B702",
+            "B703",
+            "B704",
+            "B400",
+            "B207",
+            "A1901",
+            "A1902",
+            "A113",
+            "A2402",
+          ]);
           return (
             <div
               key={booth.id}
@@ -83,11 +95,27 @@ const MapCanvas: React.FC<Props> = ({
               style={{ left: booth.location.x - w/2, top: booth.location.y - h/2, width: w, height: h }}
               onClick={e => { e.stopPropagation(); onBoothClick(booth); }}
             >
-              {w > 35 && (
-                <span className={styles.blockLabel}>
-                  {booth.is_zone ? `${booth.booth_number} 공동관` : booth.booth_number}
-                </span>
-              )}
+                {!hiddenLabels.has(booth.booth_number) && (
+                    <span
+                    className={styles.blockLabel}
+                    style={{
+                        fontSize: w <= 35 ? '6px' : '8px',
+                    }}
+                    >
+                        <span>{booth.is_zone ? `${booth.booth_number} 공동관` : booth.booth_number}</span>
+
+                        {zoom >= 0.5 && !booth.is_zone && booth.publisher_name && (
+                            <span
+                            className={styles.publisherLabel}
+                            style={{
+                                fontSize: w <= 35 ? '5px' : '7px',
+                            }}
+                            >
+                            {booth.publisher_name}
+                            </span>
+                        )}
+                    </span>
+                )}
             </div>
           );
         })}
