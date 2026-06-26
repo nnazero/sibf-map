@@ -1,0 +1,18 @@
+.list { flex: 1; overflow-y: auto; min-height: 0; }
+
+.card { padding: 10px; border: 1px solid #f0f0f0; border-radius: 15px; margin-bottom: 12px; cursor: pointer; }
+.selectedCard { border-color: #FF7832; background: rgba(255,120,50,0.04); }
+
+.cardRow    { display: flex; align-items: center; gap: 8px; }
+.cardMain   { flex: 1; min-width: 0; }
+.cardMain h4 { margin: 0 0 2px; font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.cardMain p  { margin: 0; font-size: 12px; color: #666; }
+.cardActions { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+
+.addRouteBtn       { width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid #6c35de; background: none; color: #6c35de; font-size: 14px; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+.addRouteBtnActive { background: #6c35de; color: #fff; }
+
+.favBtn       { background: none; border: none; font-size: 18px; cursor: pointer; padding: 0; line-height: 1; color: #ccc; transition: color 0.15s; }
+.favBtnActive { color: #f5a623; }
+
+.noResult { text-align: center; font-size: 14px; color: #888; margin-top: 24px; }

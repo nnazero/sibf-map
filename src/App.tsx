@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import MapArea from './components/MapArea';
+import MapArea from './MapArea';
 import styles from './App.module.css';
 import logoSvg from './assets/logo.svg';
 

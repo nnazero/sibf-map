@@ -1,213 +1,153 @@
-// 부스(장애물)를 피해 통로로만 이동하는 실제 보행 경로를 계산하는 모듈.
-// build_walk_grid.py 가 만든 walk_grid.json(점유 격자)을 바탕으로
-// A* 탐색 + 직선 단순화(string-pulling)를 수행한다.
-
-export interface WalkGrid {
-  cellSize: number;
-  originX: number;
-  originY: number;
-  cols: number;
-  rows: number;
-  grid: string[]; // 각 행 문자열, '0'=통행가능 '1'=막힘
+// ── 타입 ────────────────────────────────────────────────────
+export interface PathPoint { x: number; y: number; }
+export interface WalkGridData {
+  originX: number; originY: number; cellSize: number;
+  cols: number; rows: number; grid: number[][];
 }
+export interface RouteSegment { path: PathPoint[]; crossFloor: boolean; escPt?: PathPoint; }
 
-type Cell = [number, number]; // [col, row]
-
-const isFree = (g: WalkGrid, c: number, r: number): boolean => {
-  if (c < 0 || r < 0 || r >= g.rows || c >= g.cols) return false;
-  return g.grid[r][c] === '0';
-};
-
-const toCell = (g: WalkGrid, x: number, y: number): Cell => [
-  Math.floor((x - g.originX) / g.cellSize),
-  Math.floor((y - g.originY) / g.cellSize),
+// ── 에스컬레이터 연결점 ──────────────────────────────────────
+export const ESC_LINKS = [
+  { id: 1, worldPos: { x: 1084, y: 925 }, bExit: { x: 1081, y: 658 }, aEntry: { x: 1129, y: 974 } },
+  { id: 2, worldPos: { x: 1396, y: 925 }, bExit: { x: 1391, y: 658 }, aEntry: { x: 1389, y: 974 } },
 ];
 
-const cellCenter = (g: WalkGrid, c: number, r: number): { x: number; y: number } => ({
-  x: g.originX + c * g.cellSize + g.cellSize / 2,
-  y: g.originY + r * g.cellSize + g.cellSize / 2,
-});
-
-// 부스 한가운데(=장애물 칸)에서 시작하므로, 가장 가까운 통행 가능한 칸을 BFS로 찾는다.
-const nearestFree = (g: WalkGrid, c: number, r: number): Cell | null => {
-  if (isFree(g, c, r)) return [c, r];
-  const seen = new Set<string>([`${c},${r}`]);
-  const queue: Cell[] = [[c, r]];
-  let head = 0;
-  while (head < queue.length) {
-    const [cc, rr] = queue[head++];
-    const neighbors: Cell[] = [[cc - 1, rr], [cc + 1, rr], [cc, rr - 1], [cc, rr + 1]];
-    for (const [nc, nr] of neighbors) {
-      const key = `${nc},${nr}`;
-      if (seen.has(key)) continue;
-      seen.add(key);
-      if (isFree(g, nc, nr)) return [nc, nr];
-      queue.push([nc, nr]);
-    }
-    if (queue.length > 20000) break; // 안전장치
-  }
-  return null;
-};
-
-// 최소 힙 (A* 우선순위 큐)
-class MinHeap<T> {
-  private items: { priority: number; value: T }[] = [];
-  push(priority: number, value: T) {
-    this.items.push({ priority, value });
-    let i = this.items.length - 1;
-    while (i > 0) {
-      const parent = (i - 1) >> 1;
-      if (this.items[parent].priority <= this.items[i].priority) break;
-      [this.items[parent], this.items[i]] = [this.items[i], this.items[parent]];
-      i = parent;
-    }
-  }
-  pop(): T | undefined {
-    if (this.items.length === 0) return undefined;
-    const top = this.items[0];
-    const last = this.items.pop()!;
-    if (this.items.length > 0) {
-      this.items[0] = last;
-      let i = 0;
-      const n = this.items.length;
-      while (true) {
-        const l = 2 * i + 1;
-        const r = 2 * i + 2;
-        let smallest = i;
-        if (l < n && this.items[l].priority < this.items[smallest].priority) smallest = l;
-        if (r < n && this.items[r].priority < this.items[smallest].priority) smallest = r;
-        if (smallest === i) break;
-        [this.items[smallest], this.items[i]] = [this.items[i], this.items[smallest]];
-        i = smallest;
-      }
-    }
-    return top.value;
-  }
-  get size() {
-    return this.items.length;
-  }
+export function pickEsc(from: PathPoint) {
+  return ESC_LINKS.reduce((best, esc) => {
+    const dB = Math.hypot(best.worldPos.x - from.x, best.worldPos.y - from.y);
+    const dC = Math.hypot(esc.worldPos.x  - from.x, esc.worldPos.y  - from.y);
+    return dC < dB ? esc : best;
+  });
 }
 
-const DIRS: [number, number, number][] = [
-  [-1, 0, 1], [1, 0, 1], [0, -1, 1], [0, 1, 1],
-  [-1, -1, Math.SQRT2], [1, -1, Math.SQRT2], [-1, 1, Math.SQRT2], [1, 1, Math.SQRT2],
-];
-
-const aStar = (g: WalkGrid, start: Cell, goal: Cell): Cell[] | null => {
-  const key = (c: Cell) => `${c[0]},${c[1]}`;
-  const gScore = new Map<string, number>([[key(start), 0]]);
-  const cameFrom = new Map<string, Cell | null>([[key(start), null]]);
-  const heap = new MinHeap<Cell>();
-  const h = (a: Cell, b: Cell) => Math.hypot(a[0] - b[0], a[1] - b[1]);
-  heap.push(h(start, goal), start);
-  const visited = new Set<string>();
-
-  let iterations = 0;
-  while (heap.size > 0) {
-    iterations++;
-    if (iterations > 200000) return null; // 안전장치
-    const cur = heap.pop()!;
-    const ck = key(cur);
-    if (visited.has(ck)) continue;
-    visited.add(ck);
-
-    if (cur[0] === goal[0] && cur[1] === goal[1]) {
-      const path: Cell[] = [];
-      let node: Cell | null = cur;
-      while (node) {
-        path.push(node);
-        node = cameFrom.get(key(node)) ?? null;
+// ── A* 내부 함수 ─────────────────────────────────────────────
+function wToG(wg: WalkGridData, p: PathPoint) {
+  return { c: Math.round((p.x - wg.originX) / wg.cellSize), r: Math.round((p.y - wg.originY) / wg.cellSize) };
+}
+function gToW(wg: WalkGridData, c: number, r: number): PathPoint {
+  return { x: wg.originX + c * wg.cellSize, y: wg.originY + r * wg.cellSize };
+}
+function walkable(wg: WalkGridData, c: number, r: number) {
+  if (r < 0 || r >= wg.rows || c < 0 || c >= wg.cols) return false;
+  return wg.grid[r][c] === 1;
+}
+function nearestWalkable(wg: WalkGridData, c: number, r: number) {
+  if (walkable(wg, c, r)) return { c, r };
+  for (let rad = 1; rad <= 15; rad++)
+    for (let dc = -rad; dc <= rad; dc++)
+      for (let dr = -rad; dr <= rad; dr++) {
+        if (Math.abs(dc) !== rad && Math.abs(dr) !== rad) continue;
+        if (walkable(wg, c + dc, r + dr)) return { c: c + dc, r: r + dr };
       }
-      return path.reverse();
-    }
-
-    for (const [dc, dr, cost] of DIRS) {
-      const nc = cur[0] + dc;
-      const nr = cur[1] + dr;
-      if (!isFree(g, nc, nr)) continue;
-      // 대각선 이동 시 양 옆 칸도 뚫려 있어야 벽 모서리를 가로지르지 않음
-      if (dc !== 0 && dr !== 0) {
-        if (!isFree(g, cur[0] + dc, cur[1]) || !isFree(g, cur[0], cur[1] + dr)) continue;
-      }
-      const ng = (gScore.get(ck) ?? 0) + cost;
-      const nk = `${nc},${nr}`;
-      if (!gScore.has(nk) || ng < gScore.get(nk)!) {
-        gScore.set(nk, ng);
-        cameFrom.set(nk, cur);
-        heap.push(ng + h([nc, nr], goal), [nc, nr]);
-      }
-    }
-  }
   return null;
-};
-
-// 두 칸 사이를 일직선으로 가도 장애물에 막히지 않는지 (Bresenham)
-const lineClear = (g: WalkGrid, c1: number, r1: number, c2: number, r2: number): boolean => {
-  let c = c1;
-  let r = r1;
-  const dx = Math.abs(c2 - c1);
-  const dy = Math.abs(r2 - r1);
-  const sx = c1 < c2 ? 1 : -1;
-  const sy = r1 < r2 ? 1 : -1;
-  let err = dx - dy;
-  while (true) {
-    if (!isFree(g, c, r)) return false;
-    if (c === c2 && r === r2) break;
-    const e2 = 2 * err;
-    if (e2 > -dy) {
-      err -= dy;
-      c += sx;
-    }
-    if (e2 < dx) {
-      err += dx;
-      r += sy;
-    }
+}
+function simplify(pts: PathPoint[], tol = 2): PathPoint[] {
+  if (pts.length <= 2) return pts;
+  const out = [pts[0]];
+  for (let i = 1; i < pts.length - 1; i++) {
+    const a = out[out.length - 1], b = pts[i], c = pts[i + 1];
+    if (Math.abs((b.x - a.x) * (c.y - a.y) - (b.y - a.y) * (c.x - a.x)) > tol) out.push(b);
   }
-  return true;
-};
-
-// 불필요한 중간 waypoint를 직선으로 건너뛸 수 있으면 합쳐서 경로를 단순화 (string-pulling)
-const simplifyPath = (g: WalkGrid, path: Cell[]): Cell[] => {
-  if (path.length <= 2) return path;
-  const result: Cell[] = [path[0]];
-  let i = 0;
-  while (i < path.length - 1) {
-    let j = path.length - 1;
-    while (j > i + 1 && !lineClear(g, path[i][0], path[i][1], path[j][0], path[j][1])) {
-      j--;
-    }
-    result.push(path[j]);
-    i = j;
-  }
-  return result;
-};
-
-export interface PathPoint {
-  x: number;
-  y: number;
+  out.push(pts[pts.length - 1]);
+  return out;
 }
 
-/**
- * 두 좌표(부스 중심점) 사이의, 부스/장애물을 피해가는 실제 보행 경로를 계산한다.
- * 같은 hall(같은 격자)에 속한 두 점 사이에서만 호출해야 한다.
- */
-export const findWalkingPath = (
-  grid: WalkGrid,
-  start: PathPoint,
-  end: PathPoint
-): PathPoint[] | null => {
-  const startCellRaw = toCell(grid, start.x, start.y);
-  const endCellRaw = toCell(grid, end.x, end.y);
-  const startCell = nearestFree(grid, startCellRaw[0], startCellRaw[1]);
-  const endCell = nearestFree(grid, endCellRaw[0], endCellRaw[1]);
-  if (!startCell || !endCell) return null;
+const DIRS4 = [[0,1],[0,-1],[1,0],[-1,0]] as const;
 
-  const rawPath = aStar(grid, startCell, endCell);
-  if (!rawPath) return null;
+export function astar(wg: WalkGridData, from: PathPoint, to: PathPoint): PathPoint[] {
+  const sg = wToG(wg, from), eg = wToG(wg, to);
+  const sn = nearestWalkable(wg, sg.c, sg.r), en = nearestWalkable(wg, eg.c, eg.r);
+  if (!sn || !en) return [from, to];
 
-  const simplified = simplifyPath(grid, rawPath);
+  const key = (c: number, r: number) => r * 2048 + c;
+  const h   = (c: number, r: number) => Math.abs(c - en.c) + Math.abs(r - en.r);
+  type Node = { c: number; r: number; g: number; f: number; pk: number };
+  const nodeMap = new Map<number, Node>();
+  const open = new Set<number>(), closed = new Set<number>();
+  const sk = key(sn.c, sn.r), ek = key(en.c, en.r);
+  nodeMap.set(sk, { c: sn.c, r: sn.r, g: 0, f: h(sn.c, sn.r), pk: -1 });
+  open.add(sk);
 
-  // 실제 출발/도착 좌표를 양 끝에 붙여서 부스 중심까지 자연스럽게 이어지게 함
-  const points: PathPoint[] = [start, ...simplified.map(([c, r]) => cellCenter(grid, c, r)), end];
-  return points;
-};
+  let found = false, iters = 0;
+  while (open.size > 0 && iters++ < 100000) {
+    let bestK = -1, bestF = Infinity;
+    for (const k of open) { const n = nodeMap.get(k)!; if (n.f < bestF) { bestF = n.f; bestK = k; } }
+    if (bestK === -1) break;
+    if (bestK === ek) { found = true; break; }
+    const cur = nodeMap.get(bestK)!;
+    open.delete(bestK); closed.add(bestK);
+    for (const [dc, dr] of DIRS4) {
+      const nc = cur.c + dc, nr = cur.r + dr;
+      if (!walkable(wg, nc, nr)) continue;
+      const nk = key(nc, nr); if (closed.has(nk)) continue;
+      const ng = cur.g + 1, existing = nodeMap.get(nk);
+      if (!existing || ng < existing.g) {
+        nodeMap.set(nk, { c: nc, r: nr, g: ng, f: ng + h(nc, nr), pk: bestK });
+        open.add(nk);
+      }
+    }
+  }
+  if (!found) return [from, to];
+
+  const raw: PathPoint[] = [];
+  let k = ek;
+  while (k !== -1) {
+    const n = nodeMap.get(k)!; raw.unshift(gToW(wg, n.c, n.r)); k = n.pk;
+    if (k === sk) { raw.unshift(gToW(wg, sn.c, sn.r)); break; }
+  }
+  if (raw.length > 0) { raw[0] = from; raw[raw.length - 1] = to; }
+  return simplify(raw);
+}
+
+// ── 세그먼트 / TSP ───────────────────────────────────────────
+import walkGridsData from '../data/walk_grid.json';
+const walkGrids = walkGridsData as Record<string, WalkGridData>;
+
+export interface Booth {
+  id: string; booth_number: string; gate: string;
+  location: { x: number; y: number }; size: { w: number; h: number };
+  publisher_name: string; category: string;
+  tenants?: { booth_number: string; publisher_name: string; category: string; }[];
+  is_zone?: boolean;
+}
+
+export const hallKey = (b: Booth): 'A' | 'B' => b.booth_number.startsWith('A') ? 'A' : 'B';
+
+export function computeSegment(from: Booth, to: Booth): RouteSegment {
+  if (!from.location || !to.location) return { path: [], crossFloor: false };
+  const fh = hallKey(from), th = hallKey(to);
+  if (fh === th) {
+    const wg = walkGrids[fh];
+    return { path: wg ? astar(wg, from.location, to.location) : [from.location, to.location], crossFloor: false };
+  }
+  const esc = pickEsc(from.location);
+  const escExitFrom = fh === 'A' ? esc.aEntry : esc.bExit;
+  const escEntryTo  = fh === 'A' ? esc.bExit  : esc.aEntry;
+  const wgFrom = walkGrids[fh], wgTo = walkGrids[th];
+  const seg1 = wgFrom ? astar(wgFrom, from.location, escExitFrom) : [from.location, escExitFrom];
+  const seg2 = wgTo   ? astar(wgTo, escEntryTo, to.location)     : [escEntryTo, to.location];
+  return { path: simplify([...seg1, esc.worldPos, ...seg2]), crossFloor: true, escPt: esc.worldPos };
+}
+
+export function computeChained(ordered: Booth[]): RouteSegment[] {
+  return ordered.slice(0, -1).map((b, i) => computeSegment(b, ordered[i + 1]));
+}
+
+export function solveTSP(booths: Booth[]): Booth[] {
+  if (booths.length <= 1) return booths;
+  const d = (a: Booth, b: Booth) => Math.hypot(a.location.x - b.location.x, a.location.y - b.location.y);
+  let best: Booth[] = [], bestDist = Infinity;
+  for (let si = 0; si < booths.length; si++) {
+    const rem = [...booths], route: Booth[] = [rem.splice(si, 1)[0]];
+    while (rem.length) {
+      const cur = route[route.length - 1];
+      let ni = 0, nd = d(cur, rem[0]);
+      for (let i = 1; i < rem.length; i++) { const di = d(cur, rem[i]); if (di < nd) { nd = di; ni = i; } }
+      route.push(rem.splice(ni, 1)[0]);
+    }
+    let total = 0;
+    for (let i = 1; i < route.length; i++) total += d(route[i - 1], route[i]);
+    if (total < bestDist) { bestDist = total; best = route; }
+  }
+  return best;
+}
