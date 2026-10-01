@@ -4,7 +4,7 @@
   overflow: hidden;
   background-color: #f0f0f0;
   position: relative;
-  margin-bottom: 85px;
+  margin-bottom: 0;
   touch-action: none;
   user-select: none;
   -webkit-user-select: none;
@@ -21,8 +21,6 @@
 /* 부스 블록 */
 .boothBlock {
   position: absolute;
-  border: 1px solid rgba(0,123,255,0.35);
-  background: rgba(0,123,255,0.05);
   cursor: pointer;
   display: flex; align-items: center; justify-content: center;
   box-sizing: border-box;
@@ -33,8 +31,6 @@
   z-index: 10;
 }
 .zoneBlock {
-  border: 1.5px dashed rgba(0,123,255,0.6);
-  background: rgba(0,123,255,0.08);
 }
 .blockLabel {
   width: 100%;

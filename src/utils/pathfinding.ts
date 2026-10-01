@@ -59,7 +59,7 @@ export function astar(wg: WalkGridData, from: PathPoint, to: PathPoint): PathPoi
   const sn = nearestWalkable(wg, sg.c, sg.r), en = nearestWalkable(wg, eg.c, eg.r);
   if (!sn || !en) return [from, to];
 
-  const key = (c: number, r: number) => r * 2048 + c;
+  const key = (c: number, r: number) => r * wg.cols + c;
   const h   = (c: number, r: number) => Math.abs(c - en.c) + Math.abs(r - en.r);
   type Node = { c: number; r: number; g: number; f: number; pk: number };
   const nodeMap = new Map<number, Node>();
@@ -113,20 +113,80 @@ export interface Booth {
 
 export const hallKey = (b: Booth): 'A' | 'B' => b.booth_number.startsWith('A') ? 'A' : 'B';
 
+function pathDistance(path: PathPoint[]) {
+  let total = 0;
+
+  for (let i = 1; i < path.length; i++) {
+    total += Math.hypot(
+      path[i].x - path[i - 1].x,
+      path[i].y - path[i - 1].y
+    );
+  }
+
+  return total;
+}
+
 export function computeSegment(from: Booth, to: Booth): RouteSegment {
-  if (!from.location || !to.location) return { path: [], crossFloor: false };
-  const fh = hallKey(from), th = hallKey(to);
+  if (!from.location || !to.location) {
+    return {
+      path: [],
+      crossFloor: false,
+    };
+  }
+
+  const fh = hallKey(from);
+  const th = hallKey(to);
+
+  // 같은 층
   if (fh === th) {
     const wg = walkGrids[fh];
-    return { path: wg ? astar(wg, from.location, to.location) : [from.location, to.location], crossFloor: false };
+
+    return {
+      path: wg
+        ? astar(wg, from.location, to.location)
+        : [from.location, to.location],
+      crossFloor: false,
+    };
   }
-  const esc = pickEsc(from.location);
-  const escExitFrom = fh === 'A' ? esc.aEntry : esc.bExit;
-  const escEntryTo  = fh === 'A' ? esc.bExit  : esc.aEntry;
-  const wgFrom = walkGrids[fh], wgTo = walkGrids[th];
-  const seg1 = wgFrom ? astar(wgFrom, from.location, escExitFrom) : [from.location, escExitFrom];
-  const seg2 = wgTo   ? astar(wgTo, escEntryTo, to.location)     : [escEntryTo, to.location];
-  return { path: simplify([...seg1, esc.worldPos, ...seg2]), crossFloor: true, escPt: esc.worldPos };
+
+  // 다른 층 → 모든 에스컬레이터 후보 계산
+  const wgFrom = walkGrids[fh];
+  const wgTo = walkGrids[th];
+
+  let bestRoute: RouteSegment | null = null;
+  let bestDistance = Infinity;
+
+  for (const esc of ESC_LINKS) {
+    const escExitFrom = fh === "A" ? esc.aEntry : esc.bExit;
+    const escEntryTo = fh === "A" ? esc.bExit : esc.aEntry;
+
+    const seg1 = wgFrom
+      ? astar(wgFrom, from.location, escExitFrom)
+      : [from.location, escExitFrom];
+
+    const seg2 = wgTo
+      ? astar(wgTo, escEntryTo, to.location)
+      : [escEntryTo, to.location];
+
+    const path = simplify([
+      ...seg1,
+      esc.worldPos,
+      ...seg2,
+    ]);
+
+    const dist = pathDistance(path);
+
+    if (dist < bestDistance) {
+      bestDistance = dist;
+      bestRoute = {
+        path,
+        crossFloor: true,
+        escPt: esc.worldPos,
+      };
+    }
+  }
+
+  return bestRoute!;
 }
 
 export function computeChained(ordered: Booth[]): RouteSegment[] {
@@ -135,19 +195,47 @@ export function computeChained(ordered: Booth[]): RouteSegment[] {
 
 export function solveTSP(booths: Booth[]): Booth[] {
   if (booths.length <= 1) return booths;
-  const d = (a: Booth, b: Booth) => Math.hypot(a.location.x - b.location.x, a.location.y - b.location.y);
-  let best: Booth[] = [], bestDist = Infinity;
-  for (let si = 0; si < booths.length; si++) {
-    const rem = [...booths], route: Booth[] = [rem.splice(si, 1)[0]];
-    while (rem.length) {
-      const cur = route[route.length - 1];
-      let ni = 0, nd = d(cur, rem[0]);
-      for (let i = 1; i < rem.length; i++) { const di = d(cur, rem[i]); if (di < nd) { nd = di; ni = i; } }
-      route.push(rem.splice(ni, 1)[0]);
+
+  const realDistance = (a: Booth, b: Booth) => {
+    return pathDistance(computeSegment(a, b).path);
+  };
+
+  let bestRoute: Booth[] = [];
+  let bestTotal = Infinity;
+
+  for (let start = 0; start < booths.length; start++) {
+    const remain = [...booths];
+    const route = [remain.splice(start, 1)[0]];
+
+    while (remain.length) {
+      const current = route[route.length - 1];
+
+      let bestIndex = 0;
+      let bestDist = realDistance(current, remain[0]);
+
+      for (let i = 1; i < remain.length; i++) {
+        const d = realDistance(current, remain[i]);
+
+        if (d < bestDist) {
+          bestDist = d;
+          bestIndex = i;
+        }
+      }
+
+      route.push(remain.splice(bestIndex, 1)[0]);
     }
+
     let total = 0;
-    for (let i = 1; i < route.length; i++) total += d(route[i - 1], route[i]);
-    if (total < bestDist) { bestDist = total; best = route; }
+
+    for (let i = 1; i < route.length; i++) {
+      total += realDistance(route[i - 1], route[i]);
+    }
+
+    if (total < bestTotal) {
+      bestTotal = total;
+      bestRoute = route;
+    }
   }
-  return best;
+
+  return bestRoute;
 }

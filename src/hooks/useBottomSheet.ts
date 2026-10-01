@@ -1,6 +1,6 @@
 import { useState, useRef, useCallback, useEffect } from 'react';
 
-export const SHEET_MIN = 100;
+export const SHEET_MIN = 108;
 
 export function useBottomSheet() {
   const [sheetHeight, setSheetHeight] = useState(SHEET_MIN);
@@ -20,7 +20,11 @@ export function useBottomSheet() {
   const handleDragMove = useCallback((e: MouseEvent | TouchEvent) => {
     if (!isDragging) return;
     const y = 'touches' in e ? e.touches[0].clientY : e.clientY;
-    setSheetHeight(Math.max(SHEET_MIN, Math.min(window.innerHeight - 150, dragStartH.current + dragStartY.current - y)));
+    const DRAG_SENSITIVITY = 1.25;
+    const maxH = window.innerHeight - 150;
+    const nextHeight = dragStartH.current + (dragStartY.current - y) * DRAG_SENSITIVITY;
+
+    setSheetHeight(Math.max(SHEET_MIN, Math.min(maxH, nextHeight)));
   }, [isDragging]);
 
   const handleDragEnd = useCallback((e: MouseEvent | TouchEvent) => {

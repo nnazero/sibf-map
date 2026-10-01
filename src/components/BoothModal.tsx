@@ -23,6 +23,35 @@ const BoothModal: React.FC<Props> = ({
       t.publisher_name.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
+const renderTitleText = (text: string) => {
+    if (!text) return null;
+
+    const items = text.split(',').map(item => item.trim()).filter(Boolean);
+    
+    const hasMore = items.length > 8;
+    const displayItems = hasMore ? items.slice(0, 8) : items;
+
+    return (
+      <div className={styles.titleContainer}>
+        {displayItems.map((item, index) => {
+            const showComma = index < displayItems.length - 1 || hasMore;
+            
+            return (
+                <div key={index} className={styles.titleLine}>
+                {item}{showComma ? ',' : ''}
+                </div>
+            );
+        })}
+        {hasMore && <div className={styles.titleMore}>...</div>}
+      </div>
+    );
+  };
+
+  // 노출할 제목 원본 텍스트 결정
+  const rawTitle = booth.is_zone
+    ? `책마당`
+    : (booth.publisher_name || `${booth.booth_number} 구역`);
+
   return (
     <div className={styles.overlay} onClick={onClose}>
       <div className={styles.box} onClick={e => e.stopPropagation()}>
@@ -41,11 +70,9 @@ const BoothModal: React.FC<Props> = ({
           </div>
         </div>
 
-        {/* 제목 */}
+        {/* 제목 (수정된 부분) */}
         <h2 className={styles.title}>
-          {booth.is_zone
-            ? `${booth.booth_number} 독립출판 마켓 공동관`
-            : (booth.publisher_name || `${booth.booth_number} 구역`)}
+          {renderTitleText(rawTitle)}
         </h2>
         <div className={styles.divider} />
 

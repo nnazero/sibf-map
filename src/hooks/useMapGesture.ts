@@ -10,11 +10,15 @@ interface UseMapGestureProps {
   onZoomChange: (z: number) => void;
   onOffsetChange: (o: Offset) => void;
   onAnimatingChange: (a: boolean) => void;
+  onGestureStart?: () => void;
+  onMapMoveStart?: () => void;
 }
 
 export function useMapGesture({
   zoom, offset, sheetHeight,
   onZoomChange, onOffsetChange, onAnimatingChange,
+  onGestureStart,
+  onMapMoveStart,
 }: UseMapGestureProps) {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const animTimerRef = useRef<ReturnType<typeof setTimeout>>();
@@ -52,6 +56,7 @@ export function useMapGesture({
 
   // ── 터치 ──────────────────────────────────────────────────
   const handleTouchStart = useCallback((e: React.TouchEvent<HTMLDivElement>) => {
+    onGestureStart?.();
     if (e.touches.length === 1) {
       panStartRef.current = { x: e.touches[0].clientX, y: e.touches[0].clientY, ox: offset.x, oy: offset.y };
       pinchRef.current = null;
@@ -81,14 +86,15 @@ export function useMapGesture({
       const rect = w.getBoundingClientRect();
       pinchRef.current = { dist, zoom, ox: offset.x, oy: offset.y, cx: cx - rect.left, cy: cy - rect.top };
     }
-  }, [zoom, offset, applyZoom]);
+  }, [zoom, offset, applyZoom, onGestureStart]);
 
   const handleTouchMove = useCallback((e: React.TouchEvent<HTMLDivElement>) => {
-    e.preventDefault();
     const w = wrapperRef.current; if (!w) return;
     const vw = w.clientWidth, vh = w.clientHeight - sheetHeight;
 
     if (e.touches.length === 2 && pinchRef.current) {
+      onMapMoveStart?.();
+
       const t0 = e.touches[0], t1 = e.touches[1];
       const dist = Math.hypot(t1.clientX - t0.clientX, t1.clientY - t0.clientY);
       const scale = dist / pinchRef.current.dist;
@@ -102,10 +108,15 @@ export function useMapGesture({
     } else if (e.touches.length === 1 && panStartRef.current) {
       const dx = e.touches[0].clientX - panStartRef.current.x;
       const dy = e.touches[0].clientY - panStartRef.current.y;
+
+      if (Math.hypot(dx, dy) > 5) {
+        onMapMoveStart?.();
+      }
+
       const clamped = clampOffset(panStartRef.current.ox + dx, panStartRef.current.oy + dy, zoom, vw, vh);
       onOffsetChange(clamped);
     }
-  }, [zoom, sheetHeight, onZoomChange, onOffsetChange]);
+  }, [zoom, sheetHeight, onZoomChange, onOffsetChange, onMapMoveStart]);
 
   const handleTouchEnd = useCallback((e: React.TouchEvent) => {
     if (e.touches.length < 2) pinchRef.current = null;
@@ -115,22 +126,38 @@ export function useMapGesture({
   // ── 마우스 (데스크탑) ─────────────────────────────────────
   const handleMouseDown = useCallback((e: React.MouseEvent) => {
     if (e.button !== 0) return;
-    mouseDownRef.current = { x: e.clientX, y: e.clientY, ox: offset.x, oy: offset.y };
-  }, [offset]);
+
+    onGestureStart?.();
+
+    mouseDownRef.current = {
+      x: e.clientX,
+      y: e.clientY,
+      ox: offset.x,
+      oy: offset.y
+    };
+  }, [offset, onGestureStart]);
 
   const handleMouseMove = useCallback((e: React.MouseEvent) => {
     if (!mouseDownRef.current) return;
     const w = wrapperRef.current; if (!w) return;
+
     const vw = w.clientWidth, vh = w.clientHeight - sheetHeight;
-    const dx = e.clientX - mouseDownRef.current.x, dy = e.clientY - mouseDownRef.current.y;
+    const dx = e.clientX - mouseDownRef.current.x;
+    const dy = e.clientY - mouseDownRef.current.y;
+
+    if (Math.hypot(dx, dy) > 5) {
+      onMapMoveStart?.();
+    }
+
     const clamped = clampOffset(mouseDownRef.current.ox + dx, mouseDownRef.current.oy + dy, zoom, vw, vh);
     onOffsetChange(clamped);
-  }, [zoom, sheetHeight, onOffsetChange]);
+  }, [zoom, sheetHeight, onOffsetChange, onMapMoveStart]);
 
   const handleMouseUp = useCallback(() => { mouseDownRef.current = null; }, []);
 
   const handleWheel = useCallback((e: React.WheelEvent) => {
-    e.preventDefault();
+    onMapMoveStart?.();
+
     const w = wrapperRef.current; if (!w) return;
     const rect = w.getBoundingClientRect();
     const vx = e.clientX - rect.left, vy = e.clientY - rect.top;
@@ -138,7 +165,7 @@ export function useMapGesture({
     const newZoom = Math.min(MAX_ZOOM, Math.max(MIN_ZOOM, zoom * factor));
     applyZoom(newZoom, vx, vy, false);
     triggerAnim(120);
-  }, [zoom, applyZoom, triggerAnim]);
+  }, [zoom, applyZoom, triggerAnim, onMapMoveStart]);
 
   return {
     wrapperRef,

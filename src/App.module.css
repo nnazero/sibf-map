@@ -4,7 +4,7 @@
   min-width: 300px; /* 아이폰 14/16 프로 가로 폭 감안 */
   min-height: 100%;
   width: 100%;
-  height: 100vh;
+  height: 100dvh;
   margin: 0 0;
   padding: 0;
   background-color: #fff;

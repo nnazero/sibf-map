@@ -1,6 +1,6 @@
 export const MAP_W = 2000;
 export const MAP_H = 2000;
-export const MIN_ZOOM = 0.25;
+export const MIN_ZOOM = 0.344;
 export const MAX_ZOOM = 4.0;
 
 /** 뷰포트 좌표 → 맵 SVG 좌표 */

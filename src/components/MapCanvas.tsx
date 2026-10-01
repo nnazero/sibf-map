@@ -1,6 +1,6 @@
 import React from 'react';
 import { Booth, RouteSegment, PathPoint } from '../utils/pathfinding';
-import styles from './MapCanvas.module.css';
+import styles from './Mapcanvas.module.css';
 
 const MAP_W = 2000;
 const MAP_H = 2000;

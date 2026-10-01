@@ -93,7 +93,7 @@ def parse_svg_by_id(svg_path, txt_path, out_path):
         data = companies.get(booth_num)
         if data is None:
             if booth_num in ZONE_GROUPS:
-                data = {"name": "독립출판 마켓 공동관", "cat": "독립출판"}
+                data = {"name": "책마을", "cat": "독립출판"}
             else:
                 unmatched_svg_rects.append(booth_num)
                 data = {"name": "미등록 부스", "cat": "일반"}

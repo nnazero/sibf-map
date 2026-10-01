@@ -1,9 +1,9 @@
-import React, { useState, useRef, useCallback, useMemo } from 'react';
+import React, { useState, useRef, useCallback, useMemo, useEffect } from 'react';
 import boothsData from './data/auto_booths.json';
 
 import { Booth, RouteSegment, computeSegment, computeChained, solveTSP, hallKey } from './utils/pathfinding';
 import { FACILITIES, facilityToBooth }   from './utils/facilities';
-import { MAP_W, MAP_H, MIN_ZOOM, clampOffset, mapToView } from './utils/zoom';
+import { MIN_ZOOM, clampOffset, mapToView } from './utils/zoom';
 import { useMapGesture }   from './hooks/useMapGesture';
 import { useBottomSheet, SHEET_MIN } from './hooks/useBottomSheet';
 import { useFavorites }    from './hooks/useFavorites';
@@ -29,6 +29,11 @@ const MapArea: React.FC<MapAreaProps> = ({ selectedBooth, onBoothSelect }) => {
   const [zoom,      setZoom]      = useState(0.45);
   const [offset,    setOffset]    = useState({ x: 0, y: 0 });
   const [animating, setAnimating] = useState(false);
+  const closeFloatingUi = useCallback(() => {
+    setModalOpen(false);
+    setModalBooth(null);
+    setMiniTooltip(null);
+  }, []);
 
   // ── 바텀시트 ──────────────────────────────────────────────
   const { sheetHeight, setSheetHeight, handleDragStart } = useBottomSheet();
@@ -38,10 +43,13 @@ const MapArea: React.FC<MapAreaProps> = ({ selectedBooth, onBoothSelect }) => {
 
   // ── 제스처 훅 ─────────────────────────────────────────────
   const { wrapperRef, zoomAt, handlers } = useMapGesture({
-    zoom, offset, sheetHeight,
+    zoom,
+    offset,
+    sheetHeight,
     onZoomChange: setZoom,
     onOffsetChange: setOffset,
     onAnimatingChange: setAnimating,
+    onMapMoveStart: closeFloatingUi,
   });
 
   // ── 출입구 ────────────────────────────────────────────────
@@ -85,22 +93,54 @@ const MapArea: React.FC<MapAreaProps> = ({ selectedBooth, onBoothSelect }) => {
   // ── 루트 ──────────────────────────────────────────────────
   const [routeBooths, setRouteBooths] = useState<Booth[]>([]);
   const [multiResult, setMultiResult] = useState<{ ordered: Booth[]; segs: RouteSegment[] } | null>(null);
+  const [routeCollapsed, setRouteCollapsed] = useState(false);
 
   // ── zoomToFit ─────────────────────────────────────────────
   const zoomToFit = useCallback((pts: { x: number; y: number }[]) => {
-    const w = wrapperRef.current; if (!w || !pts.length) return;
-    const vw = w.clientWidth, vh = w.clientHeight - sheetHeight - 8;
-    const xs = pts.map(p => p.x), ys = pts.map(p => p.y);
-    const [mnX, mxX, mnY, mxY] = [Math.min(...xs), Math.max(...xs), Math.min(...ys), Math.max(...ys)];
+    const w = wrapperRef.current; 
+    if (!w || !pts.length) return;
+
+    const targetSheetHeight = SHEET_MIN;
+    const vw = w.clientWidth;
+    const vh = w.clientHeight - targetSheetHeight - 8;
+
+    const xs = pts.map(p => p.x);
+    const ys = pts.map(p => p.y);
+
+    const [mnX, mxX, mnY, mxY] = [
+      Math.min(...xs),
+      Math.max(...xs),
+      Math.min(...ys),
+      Math.max(...ys)
+    ];
+
     const PAD = 80;
-    const newZoom = Math.max(MIN_ZOOM, Math.min(4.0, vw / (mxX - mnX + PAD * 2), vh / (mxY - mnY + PAD * 2)));
-    const cx = (mnX + mxX) / 2, cy = (mnY + mxY) / 2;
+
+    const newZoom = Math.max(
+      MIN_ZOOM,
+      Math.min(
+        4.0,
+        vw / (mxX - mnX + PAD * 2),
+        vh / (mxY - mnY + PAD * 2)
+      )
+    );
+
+    const cx = (mnX + mxX) / 2;
+    const cy = (mnY + mxY) / 2;
+
     setZoom(newZoom);
     setSheetHeight(SHEET_MIN);
     setAnimating(true);
     setTimeout(() => setAnimating(false), 260);
-    setOffset(clampOffset(vw / 2 - cx * newZoom, vh / 2 - cy * newZoom, newZoom, vw, vh));
-  }, [sheetHeight, wrapperRef, setSheetHeight]);
+
+    setOffset(clampOffset(
+      vw / 2 - cx * newZoom,
+      vh / 2 - cy * newZoom,
+      newZoom,
+      vw,
+      vh
+    ));
+  }, [wrapperRef, setSheetHeight]);
 
   // ── 길찾기 로직 ───────────────────────────────────────────
   const runNavSearch = useCallback((from: Booth, to: Booth) => {
@@ -108,36 +148,84 @@ const MapArea: React.FC<MapAreaProps> = ({ selectedBooth, onBoothSelect }) => {
     setNavResult(seg); setNavCollapsed(false); zoomToFit(seg.path);
   }, [zoomToFit]);
 
-  const assignNavPoint = useCallback((booth: Booth) => {
-    if (!navSlot) return;
-    setNavResult(null); setNavCollapsed(false);
-    if (navSlot === 'start') {
-      navStartRef.current = booth; setNavStartS(booth);
-      setNavSlot(navEndRef.current ? null : 'end');
-      if (navEndRef.current) setTimeout(() => runNavSearch(booth, navEndRef.current!), 0);
-    } else {
-      navEndRef.current = booth; setNavEndS(booth);
-      setNavSlot(navStartRef.current ? null : 'start');
-      if (navStartRef.current) setTimeout(() => runNavSearch(navStartRef.current!, booth), 0);
+  const assignNavPoint = useCallback((booth: Booth, forcedSlot?: 'start' | 'end') => {
+    const slot = forcedSlot ?? navSlot;
+    if (!slot) return;
+
+    setNavResult(null);
+    setNavCollapsed(false);
+
+    if (slot === 'start') {
+      // 새 출발지를 선택하면 기존 도착지는 초기화
+      navStartRef.current = booth;
+      navEndRef.current = null;
+
+      setNavStartS(booth);
+      setNavEndS(null);
+      setNavSlot('end');
+
+      return;
     }
-  }, [navSlot, runNavSearch]);
+
+    if (slot === 'end') {
+      const currentStart = navStartRef.current ?? navStartS;
+
+      navEndRef.current = booth;
+      setNavEndS(booth);
+
+      if (currentStart) {
+        setNavSlot(null);
+        setTimeout(() => runNavSearch(currentStart, booth), 0);
+      } else {
+        setNavSlot('start');
+      }
+    }
+  }, [navSlot, navStartS, runNavSearch]);
 
   // ── 루트 로직 ─────────────────────────────────────────────
   const toggleRouteBooth = useCallback((booth: Booth) => {
-    setMultiResult(null);
-    setRouteBooths(prev => prev.some(b => b.id === booth.id) ? prev.filter(b => b.id !== booth.id) : [...prev, booth]);
+    setRouteBooths(prev => {
+      const exists = prev.some(b => b.id === booth.id);
+
+      if (exists) {
+        return prev.filter(b => b.id !== booth.id);
+      }
+
+      return [...prev, booth];
+    });
   }, []);
 
   const handleMultiSearch = useCallback(() => {
-    if (routeBooths.length < 2) return;
-    const ordered = solveTSP(routeBooths);
-    const segs = computeChained(ordered);
-    setMultiResult({ ordered, segs });
+    const targetBooths = multiResult ? multiResult.ordered : routeBooths;
+    if (targetBooths.length < 2) return;
+
+    const segs = multiResult
+      ? multiResult.segs
+      : computeChained(targetBooths);
+
     zoomToFit(segs.flatMap(s => s.path));
-  }, [routeBooths, zoomToFit]);
+  }, [routeBooths, multiResult, zoomToFit]);
 
   const displayRouteBooths = multiResult ? multiResult.ordered : routeBooths;
-  const getRouteOrder = (id: string) => displayRouteBooths.findIndex(b => b.id === id) + 1;
+
+  useEffect(() => {
+  if (mode !== 'multiroute') return;
+
+  if (routeBooths.length < 2) {
+    setMultiResult(null);
+    return;
+  }
+
+  const ordered = solveTSP(routeBooths);
+  const segs = computeChained(ordered);
+
+  setMultiResult({ ordered, segs });
+}, [mode, routeBooths]);
+
+  const getRouteOrder = useCallback(
+    (id: string) => displayRouteBooths.findIndex(b => b.id === id) + 1,
+    [displayRouteBooths]
+  );
 
   const multiDist = useMemo(() => {
     if (!multiResult) return null;
@@ -154,6 +242,7 @@ const MapArea: React.FC<MapAreaProps> = ({ selectedBooth, onBoothSelect }) => {
     if (m !== 'search')     { onBoothSelect(null); setModalOpen(false); setModalBooth(null); }
     if (m === 'navigate')   setNavSlot(navStartRef.current ? (navEndRef.current ? null : 'end') : 'start');
     setNavCollapsed(false);
+    setRouteCollapsed(false);
   }, [onBoothSelect]);
 
   // ── 부스 클릭 ─────────────────────────────────────────────
@@ -180,9 +269,21 @@ const MapArea: React.FC<MapAreaProps> = ({ selectedBooth, onBoothSelect }) => {
     onBoothSelect(booth); setModalBooth(booth); setSheetHeight(SHEET_MIN); setModalOpen(false);
     // 카드 클릭 시 지도 이동
     const w = wrapperRef.current; if (!w || !booth.location) return;
-    const vw = w.clientWidth, vh = w.clientHeight - sheetHeight;
-    applyOffset(vw / 2 - booth.location.x * zoom, vh / 2 - booth.location.y * zoom);
-  }, [mode, selectedBooth, assignNavPoint, onBoothSelect, setSheetHeight, zoom, sheetHeight, wrapperRef, applyOffset]);
+    const TARGET_ZOOM = Math.max(zoom, 1.5);
+    const vw = w.clientWidth;
+    const vh = w.clientHeight - SHEET_MIN; // 바텀시트 접힌 상태 기준
+    setSheetHeight(SHEET_MIN);
+    setZoom(TARGET_ZOOM);
+    setAnimating(true);
+    setTimeout(() => setAnimating(false), 260);
+    setOffset(clampOffset(
+      vw / 2 - booth.location.x * TARGET_ZOOM,
+      vh / 2 - booth.location.y * TARGET_ZOOM,
+      TARGET_ZOOM,
+      vw,
+      vh
+    ));
+  }, [mode, selectedBooth, assignNavPoint, onBoothSelect, setSheetHeight, zoom, wrapperRef]);
 
   const handleFacilityClick = useCallback((fac: typeof FACILITIES[0]) => {
     const fb = facilityToBooth(fac);
@@ -198,13 +299,30 @@ const MapArea: React.FC<MapAreaProps> = ({ selectedBooth, onBoothSelect }) => {
   // 리스트 스크롤로 NavPanel 접기
   const boothListRef = useRef<HTMLDivElement>(null);
   const lastListScrollTop = useRef(0);
+  const routeCount = displayRouteBooths.length;
+
   const handleListScroll = useCallback((e: React.UIEvent<HTMLDivElement>) => {
-    if (mode !== 'navigate' || !navResult) return;
     const top = e.currentTarget.scrollTop;
-    if (top > 10 && top > lastListScrollTop.current) setNavCollapsed(true);
-    else if (top < lastListScrollTop.current - 5 || top <= 0) setNavCollapsed(false);
+    const scrollingDown = top > 10 && top > lastListScrollTop.current;
+
+    if (mode === 'navigate' && navResult) {
+      if (scrollingDown && !navCollapsed) {
+        setNavCollapsed(true);
+      } else if ((top < lastListScrollTop.current - 5 || top <= 0) && navCollapsed) {
+        setNavCollapsed(false);
+      }
+    }
+
+    if (mode === 'multiroute' && routeCount > 0) {
+      if (scrollingDown && !routeCollapsed) {
+        setRouteCollapsed(true);
+      } else if ((top < lastListScrollTop.current - 5 || top <= 0) && routeCollapsed) {
+        setRouteCollapsed(false);
+      }
+    }
+
     lastListScrollTop.current = top;
-  }, [mode, navResult]);
+  }, [mode, navResult, navCollapsed, routeCollapsed, routeCount]);
 
   const getFloor = (b: Booth) => hallKey(b) === 'A' ? '1층' : 'B1층';
   const getHall  = (b: Booth) => hallKey(b) === 'A' ? 'A홀' : 'B홀';
@@ -212,16 +330,15 @@ const MapArea: React.FC<MapAreaProps> = ({ selectedBooth, onBoothSelect }) => {
   // ── 렌더 ─────────────────────────────────────────────────
   return (
     <div className={styles.wrapper}>
-      {/* 출입구 선택 */}
-      <GateSelector inline currentGate={selectedGate} onSelect={handleGateSelect} />
-      {!selectedGate && <GateSelector onSelect={gid => { setSelectedGate(gid); handleGateSelect(gid); }} />}
-
-      {/* 지도 */}
       <MapCanvas
         booths={boothsData as Booth[]}
-        mode={mode} zoom={zoom} offset={offset} animating={animating}
+        mode={mode}
+        zoom={zoom}
+        offset={offset}
+        animating={animating}
         selectedBooth={selectedBooth}
-        navStart={navStartS} navEnd={navEndS}
+        navStart={navStartS}
+        navEnd={navEndS}
         navResult={navResult}
         routeBooths={displayRouteBooths}
         multiResult={multiResult}
@@ -231,21 +348,44 @@ const MapArea: React.FC<MapAreaProps> = ({ selectedBooth, onBoothSelect }) => {
         onWrapperClick={() => setMiniTooltip(null)}
         wrapperRef={wrapperRef}
       >
+        {/* 출입구 선택 */}
+        <GateSelector
+          inline
+          currentGate={selectedGate}
+          onSelect={handleGateSelect}
+        />
+
         {/* 미니 툴팁 */}
         {miniTooltip && mode !== 'search' && (
           <MiniTooltip
             booth={miniTooltip.booth}
-            x={miniTooltip.x} y={miniTooltip.y}
+            x={miniTooltip.x}
+            y={miniTooltip.y}
             mode={mode as 'navigate' | 'multiroute'}
             inRoute={displayRouteBooths.some(b => b.id === miniTooltip.booth.id)}
             onClose={() => setMiniTooltip(null)}
-            onSetStart={() => { setNavSlot('start'); assignNavPoint(miniTooltip.booth); }}
-            onSetEnd={()   => { setNavSlot('end');   assignNavPoint(miniTooltip.booth); }}
+            onSetStart={() => {
+              assignNavPoint(miniTooltip.booth, 'start');
+              setMiniTooltip(null);
+            }}
+
+            onSetEnd={() => {
+              assignNavPoint(miniTooltip.booth, 'end');
+              setMiniTooltip(null);
+            }}
             onToggleRoute={() => toggleRouteBooth(miniTooltip.booth)}
           />
         )}
       </MapCanvas>
 
+      {!selectedGate && (
+        <GateSelector
+          onSelect={gid => {
+            setSelectedGate(gid);
+            handleGateSelect(gid);
+          }}
+        />
+      )}
       {/* 줌 버튼 */}
       <div className={styles.zoomBtnGroup}>
         <button className={styles.zoomBtn} onClick={() => zoomAt(1.4)}>＋</button>
@@ -275,7 +415,11 @@ const MapArea: React.FC<MapAreaProps> = ({ selectedBooth, onBoothSelect }) => {
               navStart={navStartS} navEnd={navEndS}
               navSlot={navSlot} navResult={navResult}
               collapsed={navCollapsed}
-              onSelectSlot={slot => { setNavSlot(slot); setNavCollapsed(false); }}
+              onSelectSlot={slot => {
+                setNavSlot(slot);
+                setNavCollapsed(false);
+                setNavResult(null);
+              }}
               onSearch={() => navStartS && navEndS && runNavSearch(navStartS, navEndS)}
               onCollapsedClick={() => setNavCollapsed(false)}
               getFloor={getFloor} getHall={getHall}
@@ -287,6 +431,8 @@ const MapArea: React.FC<MapAreaProps> = ({ selectedBooth, onBoothSelect }) => {
             <RoutePanel
               booths={displayRouteBooths}
               totalDist={multiDist}
+              collapsed={routeCollapsed}
+              onCollapsedClick={() => setRouteCollapsed(false)}
               onRemove={toggleRouteBooth}
               onClear={() => { setRouteBooths([]); setMultiResult(null); }}
               onSearch={handleMultiSearch}

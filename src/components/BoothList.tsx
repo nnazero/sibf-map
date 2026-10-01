@@ -33,28 +33,50 @@ const BoothList: React.FC<Props> = ({
 }) => {
   const normalize = (s: string) => (s || '').replace(/[\s_]/g, '').toUpperCase();
 
+  const routeBoothIds = useMemo(() => {
+    return new Set(routeBooths.map(b => b.id));
+  }, [routeBooths]);
+
+  const favoriteBooths = useMemo(() => {
+    return booths.filter(b => favorites.has(b.id));
+  }, [booths, favorites]);
+
   const filteredBooths = useMemo(() => {
     if (activeTab === 'FAC') return [];
-    return booths
+
+    const baseBooths = activeTab === 'FAV'
+      ? favoriteBooths
+      : booths;
+
+    return baseBooths
       .filter(b => {
         if (!b?.booth_number) return false;
-        if (activeTab === 'FAV') return favorites.has(b.id);
-        return b.booth_number.replace(/[\s_]/g, '').toUpperCase()[0] === activeTab;
+        if (activeTab === 'FAV') return true;
+        return normalize(b.booth_number)[0] === activeTab;
       })
       .filter(b => {
         if (!searchTerm) return true;
+
         const cs = normalize(searchTerm);
         const sw = /^\d+$/.test(cs) && activeTab !== 'FAV' ? activeTab + cs : cs;
-        if (normalize(b.booth_number).includes(sw) || b.publisher_name?.toLowerCase().includes(searchTerm.toLowerCase())) return true;
+        const lowerTerm = searchTerm.toLowerCase();
+
+        if (
+          normalize(b.booth_number).includes(sw) ||
+          b.publisher_name?.toLowerCase().includes(lowerTerm)
+        ) return true;
+
         return b.tenants?.some(t =>
-          normalize(t.booth_number).includes(sw) || t.publisher_name?.toLowerCase().includes(searchTerm.toLowerCase())
+          normalize(t.booth_number).includes(sw) ||
+          t.publisher_name?.toLowerCase().includes(lowerTerm)
         ) ?? false;
       });
-  }, [booths, activeTab, searchTerm, favorites]);
+  }, [booths, activeTab, searchTerm, favoriteBooths]);
 
   const filteredFacilities = useMemo(() => {
     if (activeTab !== 'FAC') return [];
-    return facilities.filter(f => !searchTerm || f.label.toLowerCase().includes(searchTerm.toLowerCase()));
+    const lowerTerm = searchTerm.toLowerCase();
+    return facilities.filter(f => !searchTerm || f.label.toLowerCase().includes(lowerTerm));
   }, [facilities, activeTab, searchTerm]);
 
   return (
@@ -62,7 +84,7 @@ const BoothList: React.FC<Props> = ({
 
       {/* 편의시설 탭 */}
       {activeTab === 'FAC' && filteredFacilities.map(fac => {
-        const inRoute = routeBooths.some(b => b.id === fac.id);
+        const inRoute = routeBoothIds.has(fac.id);
         return (
           <div key={fac.id} className={styles.card} onClick={() => onFacilityClick(fac)}>
             <div className={styles.cardRow}>
@@ -87,7 +109,7 @@ const BoothList: React.FC<Props> = ({
 
       {/* 부스 탭 */}
       {activeTab !== 'FAC' && (filteredBooths.length > 0 ? filteredBooths.map(b => {
-        const inRoute = mode === 'multiroute' && routeBooths.some(rb => rb.id === b.id);
+        const inRoute = mode === 'multiroute' && routeBoothIds.has(b.id);
         const isFav = favorites.has(b.id);
         const isSelected =
           (mode === 'search'     && selectedBooth?.id === b.id) ||
@@ -132,4 +154,4 @@ const BoothList: React.FC<Props> = ({
   );
 };
 
-export default BoothList;
+export default React.memo(BoothList);
